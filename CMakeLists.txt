@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(DiRAC3-testsuite)
+project(DiRAC3-testsuite C)
 
 SET(DIRAC3_TESTSUITE_VERSION_MAJOR 0)
 SET(DIRAC3_TESTSUITE_VERSION_MINOR 1)

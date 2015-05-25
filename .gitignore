@@ -40,3 +40,5 @@
 # Directories
 bin/*
 build/*
+outputs/*
+scripts/*

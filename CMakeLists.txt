@@ -22,4 +22,10 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 # Directory for executables
 SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 
+# Directory for outputs
+SET(DIRAC3_TESTSUITE_OUTPUTS_PATH ${CMAKE_SOURCE_DIR}/outputs)
+
+# Directory for scripts
+SET(DIRAC3_TESTSUITE_SCRIPTS_PATH ${CMAKE_SOURCE_DIR}/scripts)
+
 add_subdirectory(src)

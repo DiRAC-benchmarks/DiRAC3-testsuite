@@ -76,3 +76,18 @@ foreach(STRIDE_CFILE ${STRIDE_CSOURCE})
 	add_dependencies       (stride-unoptimized ${STRIDE_CGTARGET})
 
 endforeach()
+
+# Generate run.cache script
+set(STRIDE_RUN_CACHE_IN "${CMAKE_CURRENT_SOURCE_DIR}/run.cache.in")
+set(STRIDE_RUN_CACHE    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.cache")
+FILE(GENERATE OUTPUT ${STRIDE_RUN_CACHE} INPUT ${STRIDE_RUN_CACHE_IN})
+
+# Generate script.cache script
+set(STRIDE_SCRIPT_CACHE_IN "${CMAKE_CURRENT_SOURCE_DIR}/script.cache.in")
+set(STRIDE_SCRIPT_CACHE    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/script.cache")
+FILE(GENERATE OUTPUT ${STRIDE_SCRIPT_CACHE} INPUT ${STRIDE_SCRIPT_CACHE_IN})
+
+# Configure runit script
+set(STRIDE_RUNIT_IN "${CMAKE_CURRENT_SOURCE_DIR}/runit.in")
+set(STRIDE_RUNIT    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/runit")
+configure_file(${STRIDE_RUNIT_IN} ${STRIDE_RUNIT})

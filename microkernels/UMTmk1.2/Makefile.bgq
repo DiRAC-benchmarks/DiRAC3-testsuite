@@ -1,0 +1,54 @@
+#BHEADER****************************************************************
+# (c) 2006   The Regents of the University of California               *
+#                                                                      *
+# See the file COPYRIGHT_and_DISCLAIMER for a complete copyright       *
+# notice and disclaimer.                                               *
+#                                                                      *
+#EHEADER****************************************************************
+
+F90      = /bgsys/drivers/ppcfloor/comm/xl/bin/mpixlf95_r
+
+CC       = /bgsys/drivers/ppcfloor/comm/xl/bin/mpixlc_r
+
+LDR      = /bgsys/drivers/ppcfloor/comm/xl/bin/mpixlf95_r
+
+FLOOR     = /bgsys/drivers/ppcfloor
+
+INCDIR    =  -I$(FLOOR) -I/bgsys/drivers/ppcfloor/spi/include/kernel/cnk
+
+FFLAGS   = -c -O3 -g -qhot  $(INCDIR) -qsimd=auto -qsmp=omp -qnosave -qfree=f90 -qsuffix=cpp=F90
+
+CFLAGS   = -c -O3 -g -qhot  $(INCDIR) -qsimd=auto  -qalias=allp -qsmp=omp 
+
+LDFLAGS  = -lm -qsmp=omp -pg
+ 
+LIBS     = 
+LIB_DIRS = -L$(FLOOR)/spi/lib -lSPI_l1p -lSPI_cnk  -L/usr/local/tools/mpitrace/lib -lmpihpm -L/bgsys/drivers/ppcfloor/bgpm/lib -lbgpm -lmassv -lmass_simd
+PROG     = UMTmk
+
+OBJS     = main.o snswp3d.o 
+
+all : $(PROG)
+
+$(PROG) : $(OBJS)
+	$(LDR)  $(LDFLAGS) -o $(PROG) $(OBJS) $(LIB_DIRS) $(LIBS)
+
+clean :
+	rm -f *.o *.mod $(PROG) batch.* core job.out *.lst *~ 
+
+
+.SUFFIXES : .o .F90 .c
+
+#*****************************************************************
+#* Rules for Fortran and C object file dependencies
+#*****************************************************************
+.F90.o :
+	$(F90) $(FFLAGS) $*.F90 
+
+.c.o :
+	$(CC) $(CFLAGS) $*.c 
+
+
+
+
+

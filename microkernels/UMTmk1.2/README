@@ -1,0 +1,67 @@
+UMTmk1.2
+========
+
+Purpose of Benchmark 
+====================
+
+UMTmk measures single CPU (serial) performance in the presence of heavy memory access.
+
+Characteristics of Benchmark 
+============================
+
+UMTmk is a Microkernel Benchmark  based on UMT, which is an LLNL ASC proxy application (mini-app). 
+UMT performs three-dimensional, non-linear, radiation transport calculations using deterministic (Sn) methods.
+The microkernel will measure the performance of a set of loops encapsulated in the F90 function snswp3d. 
+The function snswp3d is UMT's largest consumer of CPU resources. 
+By initializing the F90 objects  with a set of realistic data we have attempted to mimic 
+the performance of UMT on bidders' hardware/software platforms. 
+
+Building UMTmk1.2
+=================
+
+1.	bunzip2 UMTmk1.2.tar.bz2 
+2.	tar oxvf UMTmk1.2.tar
+3.	cd /home/einstein/UMTmk1.2
+4.	Peruse /home/einstein/UMTmk1.2/README
+5.	Modify Makefile to reflect the platform's compilers, compiler options, libraries, MPI wrappers etc. SIMD and/or other vectorization may be turned on and is encouraged.
+6.	gmake clean
+7.	gmake
+8.	The executable is: /home/einstein/UMTmk1.2/UMTmk
+
+Executing UMTmk1.2
+==================
+
+Execute the binary UMTmk - single CPU  
+
+Two problem sizes have been provided in two directories, small and large.
+The "small" case has 9336 zones, 64 groups and takes 0.0578 seconds to execute
+The "large" case has 43200 zones, 16 groups and takes 0.1137 seconds to execute
+
+The code will read its input data from 4 ASCII files 
+fort.10
+fort.11
+fort.13
+fort.14
+
+Hence, to run the code
+1. cd UMTmk1.2/small
+2. ../UMTmk
+3. cd UMTmk1.2/large
+4. ../UMTmk
+
+Bidders wishing to reduce the CPU cycles and hence the time for 
+simulation of new hardware on simulators please change line 10 of fort.11, 
+which is the number of groups, to something smaller.
+
+
+Verification and Validation
+===========================
+For the two cases discussed above, "small" and "lsrge", two output files have been provided for 
+comparison:
+./large/UMTmk1.2_large.out
+./small/UMTmk1.2_small.out
+
+Compare your output with the apprpriate UMTmk1.2 output file, especially the line with
+  V&V chk =  
+
+

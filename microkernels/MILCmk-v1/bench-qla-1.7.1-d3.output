@@ -1,0 +1,120 @@
+QLA_Precision = D
+OMP THREADS = 64
+omp_get_wtick = 0.01
+len = 4096
+len/thread = 64
+QLA_V_vpeq_M_times_pV           :      258497 time= 0.17 mem=41203 mflops=10301
+QLA_V_veq_Ma_times_V            :     49.5022 time= 0.22 mem=32358 mflops= 8898
+QLA_V_vmeq_pV                   :    -29307.3 time= 0.26 mem=33641 mflops= 1402
+QLA_D_vpeq_spproj_M_times_pD    :      383250 time= 0.27 mem=27252 mflops= 6359
+QLA_M_veq_M_times_pM            :     181.402 time= 0.16 mem=38257 mflops=17535
+QLA_r_veq_norm2_V               :      126976 time= 0.67 mem=10781 mflops= 2695
+QLA_c_veq_V_dot_V               :  1.6123e+10 time= 0.84 mem= 8576 mflops= 2144
+len = 8192
+len/thread = 128
+QLA_V_vpeq_M_times_pV           :      129265 time= 0.14 mem=52851 mflops=13213
+QLA_V_veq_Ma_times_V            :     49.5029 time= 0.17 mem=40909 mflops=11250
+QLA_V_vmeq_pV                   :    -14653.3 time= 0.17 mem=51009 mflops= 2125
+QLA_D_vpeq_spproj_M_times_pD    :      191716 time= 0.25 mem=29022 mflops= 6772
+QLA_M_veq_M_times_pM            :     181.408 time= 0.14 mem=44142 mflops=20232
+QLA_r_veq_norm2_V               :      253959 time= 0.40 mem=18220 mflops= 4555
+QLA_c_veq_V_dot_V               : 6.44953e+10 time= 0.49 mem=14718 mflops= 3679
+len = 16384
+len/thread = 256
+QLA_V_vpeq_M_times_pV           :     64633.4 time= 0.12 mem=61540 mflops=15385
+QLA_V_veq_Ma_times_V            :      49.503 time= 0.15 mem=46846 mflops=12883
+QLA_V_vmeq_pV                   :    -7325.44 time= 0.12 mem=69939 mflops= 2914
+QLA_D_vpeq_spproj_M_times_pD    :     95866.2 time= 0.24 mem=29995 mflops= 6999
+QLA_M_veq_M_times_pM            :     181.409 time= 0.13 mem=47818 mflops=21917
+QLA_r_veq_norm2_V               :      507932 time= 0.25 mem=29069 mflops= 7267
+QLA_c_veq_V_dot_V               : 2.57995e+11 time= 0.31 mem=23045 mflops= 5761
+len = 32768
+len/thread = 512
+QLA_V_vpeq_M_times_pV           :     32303.6 time= 0.11 mem=67094 mflops=16774
+QLA_V_veq_Ma_times_V            :     49.5003 time= 0.14 mem=51042 mflops=14037
+QLA_V_vmeq_pV                   :    -3661.84 time= 0.10 mem=85777 mflops= 3574
+QLA_D_vpeq_spproj_M_times_pD    :     48011.7 time= 0.24 mem=30471 mflops= 7110
+QLA_M_veq_M_times_pM            :     181.391 time= 0.12 mem=49806 mflops=22828
+QLA_r_veq_norm2_V               : 1.01582e+06 time= 0.17 mem=41223 mflops=10306
+QLA_c_veq_V_dot_V               :  1.0319e+12 time= 0.22 mem=32177 mflops= 8044
+len = 65536
+len/thread = 1024
+QLA_V_vpeq_M_times_pV           :     16174.8 time= 0.10 mem=69933 mflops=17483
+QLA_V_veq_Ma_times_V            :     49.5006 time= 0.13 mem=53041 mflops=14586
+QLA_V_vmeq_pV                   :    -1830.01 time= 0.09 mem=96566 mflops= 4024
+QLA_D_vpeq_spproj_M_times_pD    :     24012.3 time= 0.24 mem=30135 mflops= 7031
+QLA_M_veq_M_times_pM            :     181.393 time= 0.12 mem=50552 mflops=23170
+QLA_r_veq_norm2_V               : 2.03165e+06 time= 0.14 mem=52045 mflops=13011
+QLA_c_veq_V_dot_V               :  4.1276e+12 time= 0.18 mem=40101 mflops=10025
+len = 131072
+len/thread = 2048
+QLA_V_vpeq_M_times_pV           :     8087.97 time= 0.10 mem=69545 mflops=17386
+QLA_V_veq_Ma_times_V            :     49.5002 time= 0.13 mem=53140 mflops=14613
+QLA_V_vmeq_pV                   :    -914.023 time= 0.08 mem=102669 mflops= 4278
+QLA_D_vpeq_spproj_M_times_pD    :     12089.6 time= 0.27 mem=26871 mflops= 6270
+QLA_M_veq_M_times_pM            :      181.39 time= 0.22 mem=28216 mflops=12932
+QLA_r_veq_norm2_V               : 4.06324e+06 time= 0.12 mem=59989 mflops=14997
+QLA_c_veq_V_dot_V               : 1.65099e+13 time= 0.16 mem=45714 mflops=11428
+len = 262144
+len/thread = 4096
+QLA_V_vpeq_M_times_pV           :     4066.12 time= 0.29 mem=25412 mflops= 6353
+QLA_V_veq_Ma_times_V            :     49.5002 time= 0.28 mem=25725 mflops= 7074
+QLA_V_vmeq_pV                   :    -456.004 time= 0.08 mem=105302 mflops= 4388
+QLA_D_vpeq_spproj_M_times_pD    :     6051.05 time= 0.27 mem=27153 mflops= 6336
+QLA_M_veq_M_times_pM            :      181.39 time= 0.22 mem=28461 mflops=13045
+QLA_r_veq_norm2_V               :  8.1265e+06 time= 0.11 mem=64789 mflops=16197
+QLA_c_veq_V_dot_V               :   6.604e+13 time= 0.15 mem=49012 mflops=12253
+len = 524288
+len/thread = 8192
+QLA_V_vpeq_M_times_pV           :        2034 time= 0.28 mem=25660 mflops= 6415
+QLA_V_veq_Ma_times_V            :        49.5 time= 0.27 mem=26105 mflops= 7179
+QLA_V_vmeq_pV                   :        -228 time= 0.30 mem=28550 mflops= 1190
+QLA_D_vpeq_spproj_M_times_pD    :     3109.17 time= 0.28 mem=26907 mflops= 6278
+QLA_M_veq_M_times_pM            :     181.389 time= 0.22 mem=28687 mflops=13148
+QLA_r_veq_norm2_V               : 1.62529e+07 time= 0.11 mem=67138 mflops=16785
+QLA_c_veq_V_dot_V               : 2.64158e+14 time= 0.32 mem=22476 mflops= 5619
+len = 1048576
+len/thread = 16384
+QLA_V_vpeq_M_times_pV           :        1018 time= 0.28 mem=25816 mflops= 6454
+QLA_V_veq_Ma_times_V            :        49.5 time= 0.28 mem=26345 mflops= 7245
+QLA_V_vmeq_pV                   :        -114 time= 0.31 mem=28704 mflops= 1196
+QLA_D_vpeq_spproj_M_times_pD    :     1560.83 time= 0.28 mem=27400 mflops= 6393
+QLA_M_veq_M_times_pM            :     181.389 time= 0.22 mem=28803 mflops=13201
+QLA_r_veq_norm2_V               : 3.25059e+07 time= 0.31 mem=23024 mflops= 5756
+QLA_c_veq_V_dot_V               : 1.05663e+15 time= 0.32 mem=22559 mflops= 5640
+len = 2097152
+len/thread = 32768
+QLA_V_vpeq_M_times_pV           :         510 time= 0.28 mem=25949 mflops= 6487
+QLA_V_veq_Ma_times_V            :        49.5 time= 0.28 mem=26497 mflops= 7287
+QLA_V_vmeq_pV                   :         -56 time= 0.30 mem=28839 mflops= 1202
+QLA_D_vpeq_spproj_M_times_pD    :     786.667 time= 0.27 mem=27557 mflops= 6430
+QLA_M_veq_M_times_pM            :     181.389 time= 0.22 mem=28754 mflops=13179
+QLA_r_veq_norm2_V               : 6.50117e+07 time= 0.31 mem=23197 mflops= 5799
+QLA_c_veq_V_dot_V               : 4.22652e+15 time= 0.32 mem=22777 mflops= 5694
+len = 4194304
+len/thread = 65536
+QLA_V_vpeq_M_times_pV           :         256 time= 0.28 mem=25992 mflops= 6498
+QLA_V_veq_Ma_times_V            :        49.5 time= 0.30 mem=26558 mflops= 7303
+QLA_V_vmeq_pV                   :         -28 time= 0.31 mem=28795 mflops= 1200
+QLA_D_vpeq_spproj_M_times_pD    :         477 time= 0.32 mem=27878 mflops= 6505
+QLA_M_veq_M_times_pM            :     181.389 time= 0.25 mem=28932 mflops=13260
+QLA_r_veq_norm2_V               : 1.30023e+08 time= 0.31 mem=23322 mflops= 5831
+QLA_c_veq_V_dot_V               : 1.69061e+16 time= 0.31 mem=23045 mflops= 5761
+len = 8388608
+len/thread = 131072
+QLA_V_vpeq_M_times_pV           :         129 time= 0.28 mem=26009 mflops= 6502
+QLA_V_veq_Ma_times_V            :        49.5 time= 0.30 mem=26624 mflops= 7322
+QLA_V_vmeq_pV                   :         -14 time= 0.34 mem=28824 mflops= 1201
+QLA_D_vpeq_spproj_M_times_pD    :     322.167 time= 0.43 mem=28010 mflops= 6536
+QLA_M_veq_M_times_pM            :     181.389 time= 0.25 mem=28961 mflops=13274
+QLA_r_veq_norm2_V               : 2.60047e+08 time= 0.31 mem=23477 mflops= 5869
+QLA_c_veq_V_dot_V               : 6.76244e+16 time= 0.31 mem=23012 mflops= 5753
+len = 16777216
+len/thread = 262144
+QLA_V_vpeq_M_times_pV           :     86.6667 time= 0.37 mem=26102 mflops= 6525
+QLA_V_veq_Ma_times_V            :        49.5 time= 0.30 mem=26642 mflops= 7327
+QLA_V_vmeq_pV                   :          -6 time= 0.33 mem=28881 mflops= 1203
+QLA_D_vpeq_spproj_M_times_pD    :     167.333 time= 0.43 mem=28078 mflops= 6552
+QLA_M_veq_M_times_pM            :     181.389 time= 0.25 mem=28918 mflops=13254
+QLA_r_veq_norm2_V               : 5.20094e+08 time= 0.31 mem=23533 mflops= 5883
+QLA_c_veq_V_dot_V               : 2.70497e+17 time= 0.35 mem=23138 mflops= 5785

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pushd ${DIRAC3_TESTSUITE_OUTPUTS_PATH}
+for HACCMK_JOB in ${HACCMK_JOB_01} ${HACCMK_JOB_02} ${HACCMK_JOB_04} ${HACCMK_JOB_08} ${HACCMK_JOB_16} ${HACCMK_JOB_32} 
+do
+
+    grep "Number of OMP threads" $HACCMK_JOB.output
+    grep "Kernel elapsed time"   $HACCMK_JOB.output
+    grep "Total  elapsed time"   $HACCMK_JOB.output
+    grep "Result validation"     $HACCMK_JOB.output
+    grep "Result expected"       $HACCMK_JOB.output
+
+done
+popd

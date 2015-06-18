@@ -1,3 +1,8 @@
+# :TODO:
+# Link to M_LIBRARY using target_link_libraries not LDFLAGS as in original Makefile
+# Script files should be targets with custom commands so that make clean removes them
+# Construction of executables inside for loops should be a single function
+
 # Build targets for optimized and unoptimized executables
 add_custom_target(stride-optimized)
 add_custom_target(stride-unoptimized)
@@ -28,7 +33,7 @@ add_library           (STRIDE_SECF OBJECT secf.c)
 set_target_properties (STRIDE_SECF PROPERTIES COMPILE_FLAGS "${STRIDE_CFLAGS}")
 
 # Fortran Source
-FILE(GLOB STRIDE_FSOURCE *.f)
+file(GLOB STRIDE_FSOURCE *.f)
 
 # Fortran Executables from each file
 foreach(STRIDE_FFILE ${STRIDE_FSOURCE})
@@ -52,9 +57,9 @@ foreach(STRIDE_FFILE ${STRIDE_FSOURCE})
 endforeach()
 
 # C Source
-FILE(GLOB STRIDE_CSOURCE *.c)
-FILE(GLOB STRIDE_CSOURCE_REMOVE secc.c secf.c)
-LIST(REMOVE_ITEM STRIDE_CSOURCE ${STRIDE_CSOURCE_REMOVE})
+file(GLOB STRIDE_CSOURCE *.c)
+file(GLOB STRIDE_CSOURCE_REMOVE secc.c secf.c)
+list(REMOVE_ITEM STRIDE_CSOURCE ${STRIDE_CSOURCE_REMOVE})
 
 # C Executables from each file
 foreach(STRIDE_CFILE ${STRIDE_CSOURCE})
@@ -80,12 +85,12 @@ endforeach()
 # Generate run.cache script
 set(STRIDE_RUN_CACHE_IN "${CMAKE_CURRENT_SOURCE_DIR}/run.cache.in")
 set(STRIDE_RUN_CACHE    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.cache")
-FILE(GENERATE OUTPUT ${STRIDE_RUN_CACHE} INPUT ${STRIDE_RUN_CACHE_IN})
+file(GENERATE OUTPUT ${STRIDE_RUN_CACHE} INPUT ${STRIDE_RUN_CACHE_IN})
 
 # Generate script.cache script
 set(STRIDE_SCRIPT_CACHE_IN "${CMAKE_CURRENT_SOURCE_DIR}/script.cache.in")
 set(STRIDE_SCRIPT_CACHE    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/script.cache")
-FILE(GENERATE OUTPUT ${STRIDE_SCRIPT_CACHE} INPUT ${STRIDE_SCRIPT_CACHE_IN})
+file(GENERATE OUTPUT ${STRIDE_SCRIPT_CACHE} INPUT ${STRIDE_SCRIPT_CACHE_IN})
 
 # Configure runit script
 set(STRIDE_RUNIT_IN "${CMAKE_CURRENT_SOURCE_DIR}/runit.in")

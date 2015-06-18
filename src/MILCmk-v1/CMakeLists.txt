@@ -20,8 +20,8 @@ include_directories(${MILCMK_QLA_DIR})
 
 # Source files
 set(MILCMK_BENCH_SOURCE "qla_bench.c")
-FILE(GLOB MILCMK_FSOURCE ${MILCMK_QLA_DIR}/QLA_F3*.c)
-FILE(GLOB MILCMK_DSOURCE ${MILCMK_QLA_DIR}/QLA_D3*.c)
+file(GLOB MILCMK_FSOURCE ${MILCMK_QLA_DIR}/QLA_F3*.c)
+file(GLOB MILCMK_DSOURCE ${MILCMK_QLA_DIR}/QLA_D3*.c)
 
 # Single precision floating point executable
 get_filename_component(MILCMK_FTARGET ${MILCMK_QLA_DIR} NAME_WE)

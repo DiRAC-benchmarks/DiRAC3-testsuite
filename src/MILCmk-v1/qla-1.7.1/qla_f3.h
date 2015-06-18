@@ -1,6 +1,8 @@
 #ifndef _QLA_F3_H
 #define _QLA_F3_H
 
+#include "alignment_macros.h"
+
 /***************************************************************/
 /* Level 1 Linear Algebra API QLA precision F color 3 */
 /***************************************************************/

@@ -1,6 +1,7 @@
-# Find OpenMP and MPI
+# Find OpenMP, MPI and Math
 find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)
+find_library(M_LIBRARY m REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
 
 # Compiler flags
@@ -28,14 +29,14 @@ get_filename_component(MILCMK_FTARGET ${MILCMK_QLA_DIR} NAME_WE)
 set(MILCMK_FTARGET "qla_bench-${MILCMK_FTARGET}-f3")
 add_executable(${MILCMK_FTARGET} ${MILCMK_BENCH_SOURCE} ${MILCMK_FSOURCE} ${MILCMK_ALIGNMENT_SOURCE})
 set_target_properties(${MILCMK_FTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAGSF}")
-target_link_libraries(${MILCMK_FTARGET} ${OpenMP_C_FLAGS} ${MPI_LIBRARIES})
+target_link_libraries(${MILCMK_FTARGET} ${OpenMP_C_FLAGS} ${MPI_LIBRARIES} ${M_LIBRARY})
 
 # Double precision floating point executable
 get_filename_component(MILCMK_DTARGET ${MILCMK_QLA_DIR} NAME_WE)
 set(MILCMK_DTARGET "qla_bench-${MILCMK_DTARGET}-d3")
 add_executable(${MILCMK_DTARGET} ${MILCMK_BENCH_SOURCE} ${MILCMK_DSOURCE} ${MILCMK_ALIGNMENT_SOURCE})
 set_target_properties(${MILCMK_DTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAGSD}")
-target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_LIBRARIES})
+target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_LIBRARIES} ${M_LIBRARY})
 
 # Configure run script
 set(MILCMK_OMP_NUM_THREADS 64)

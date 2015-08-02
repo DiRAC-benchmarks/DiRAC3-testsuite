@@ -1,0 +1,52 @@
+# Find OpenMP, MPI and Math
+find_package(OpenMP REQUIRED)
+find_package(MPI REQUIRED)
+find_library(M_LIBRARY m REQUIRED)
+include_directories(${MPI_INCLUDE_PATH})
+
+# Compiler flags
+# set(MILCMK_COPT "-O5 -qhot=level=2 -qsimd=auto")
+set(MILCMK_COPT "-std=c99 -O3")
+set(MILCMK_CFLAGSA "-DHAVE_XLC")
+set(MILCMK_CFLAGSF "${MILCMK_CFLAGSA} ${MILCMK_COPT} ${OpenMP_C_FLAGS} -DQLA_Precision=\\'F\\' -DQLA_Colors=3 -DQLA_Nc=3")
+set(MILCMK_CFLAGSD "${MILCMK_CFLAGSA} ${MILCMK_COPT} ${OpenMP_C_FLAGS} -DQLA_Precision=\\'D\\' -DQLA_Colors=3 -DQLA_Nc=3")
+
+# Compiler alignment macros
+set(MILCMK_ALIGNMENT_SOURCE "alignment_macros.c")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
+# Include directory containing QLA
+set(MILCMK_QLA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/qla-1.7.1")
+include_directories(${MILCMK_QLA_DIR})
+
+# Source files
+set(MILCMK_BENCH_SOURCE "qla_bench.c")
+file(GLOB MILCMK_FSOURCE ${MILCMK_QLA_DIR}/QLA_F3*.c)
+file(GLOB MILCMK_DSOURCE ${MILCMK_QLA_DIR}/QLA_D3*.c)
+
+# Single precision floating point executable
+get_filename_component(MILCMK_FTARGET ${MILCMK_QLA_DIR} NAME_WE)
+set(MILCMK_FTARGET "qla_bench-${MILCMK_FTARGET}-f3")
+add_executable(${MILCMK_FTARGET} ${MILCMK_BENCH_SOURCE} ${MILCMK_FSOURCE} ${MILCMK_ALIGNMENT_SOURCE})
+set_target_properties(${MILCMK_FTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAGSF}")
+target_link_libraries(${MILCMK_FTARGET} ${OpenMP_C_FLAGS} ${MPI_LIBRARIES} ${M_LIBRARY})
+
+# Double precision floating point executable
+get_filename_component(MILCMK_DTARGET ${MILCMK_QLA_DIR} NAME_WE)
+set(MILCMK_DTARGET "qla_bench-${MILCMK_DTARGET}-d3")
+add_executable(${MILCMK_DTARGET} ${MILCMK_BENCH_SOURCE} ${MILCMK_DSOURCE} ${MILCMK_ALIGNMENT_SOURCE})
+set_target_properties(${MILCMK_DTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAGSD}")
+target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_LIBRARIES} ${M_LIBRARY})
+
+# Configure run script
+set(MILCMK_OMP_NUM_THREADS 64)
+set(MILCMK_TZ "US/Central")
+set(MILCMK_PAMID_VERBOSE 1)
+set(MILCMK_RUNJOB_VERBOSE 4)
+set(MILCMK_OMP_WAIT_POLICY "active")
+set(MILCMK_BG_SMP_FAST_WAKEUP "yes")
+set(MILCMK_ENV "OMP_NUM_THREADS=${MILCMK_OMP_NUM_THREADS}:TZ=${MILCMK_TZ}:PAMID_VERBOSE=${MILCMK_PAMID_VERBOSE}:RUNJOB_VERBOSE=${MILCMK_RUNJOB_VERBOSE}:OMP_WAIT_POLICY=${MILCMK_OMP_WAIT_POLICY}:BG_SMP_FAST_WAKEUP=${MILCMK_BG_SMP_FAST_WAKEUP}")
+set(MILCMK_RUNTESTS_IN "${CMAKE_CURRENT_SOURCE_DIR}/runtests.in")
+set(MILCMK_RUNTESTS    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/runtests")
+configure_file(${MILCMK_RUNTESTS_IN} ${MILCMK_RUNTESTS})
+file(GENERATE OUTPUT ${MILCMK_RUNTESTS} INPUT ${MILCMK_RUNTESTS})

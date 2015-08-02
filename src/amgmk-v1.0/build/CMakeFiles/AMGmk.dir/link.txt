@@ -1,0 +1,1 @@
+/opt/cray/craype/2.2.1/bin/cc  -homp -O3 -hcpu=x86-64    CMakeFiles/AMGmk.dir/hypre_error.c.o CMakeFiles/AMGmk.dir/csr_matvec.c.o CMakeFiles/AMGmk.dir/laplace.c.o CMakeFiles/AMGmk.dir/vector.c.o CMakeFiles/AMGmk.dir/main.c.o CMakeFiles/AMGmk.dir/hypre_memory.c.o CMakeFiles/AMGmk.dir/csr_matrix.c.o CMakeFiles/AMGmk.dir/relax.c.o  -o AMGmk  

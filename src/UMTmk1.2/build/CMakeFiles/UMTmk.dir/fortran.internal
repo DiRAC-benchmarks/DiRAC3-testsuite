@@ -1,0 +1,8 @@
+# The fortran modules provided by this target.
+provides
+ constant_mod
+ geometry_mod
+ kind_mod
+ quadrature_mod
+ size_mod
+ zonedata_mod

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/GenSeq/main.cpp
+mpi.h
+/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/GenSeq/mpi.h
+stdio.h
+-
+stdint.h
+-
+stdlib.h
+-
+

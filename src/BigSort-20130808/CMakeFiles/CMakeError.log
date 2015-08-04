@@ -1,0 +1,164 @@
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1798563581/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1798563581.dir/build.make CMakeFiles/cmTryCompileExec1798563581.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1798563581.dir/src.c.o
+/opt/cray/craype/2.2.1/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTryCompileExec1798563581.dir/src.c.o   -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/src.c
+CC-571 craycc: ERROR 
+  An invalid option "openmp" appears on the command line.
+
+
+gmake[1]: *** [CMakeFiles/cmTryCompileExec1798563581.dir/src.c.o] Error 1
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1798563581/fast] Error 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1294649172/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1294649172.dir/build.make CMakeFiles/cmTryCompileExec1294649172.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1294649172.dir/src.c.o
+/opt/cray/craype/2.2.1/bin/cc   -DOpenMP_FLAG_DETECTED /openmp   -o CMakeFiles/cmTryCompileExec1294649172.dir/src.c.o   -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec1294649172
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1294649172.dir/link.txt --verbose=1
+/opt/cray/craype/2.2.1/bin/cc   -DOpenMP_FLAG_DETECTED /openmp    CMakeFiles/cmTryCompileExec1294649172.dir/src.c.o  -o cmTryCompileExec1294649172  
+/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld: cannot find /openmp: No such file or directory
+gmake[1]: *** [cmTryCompileExec1294649172] Error 1
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1294649172/fast] Error 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2708735319/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2708735319.dir/build.make CMakeFiles/cmTryCompileExec2708735319.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2708735319.dir/src.c.o
+/opt/cray/craype/2.2.1/bin/cc   -DOpenMP_FLAG_DETECTED -Qopenmp   -o CMakeFiles/cmTryCompileExec2708735319.dir/src.c.o   -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/src.c
+CC-2115 craycc: ERROR in command line
+  "-Qopenmp" is an invalid command-line option.
+gmake[1]: *** [CMakeFiles/cmTryCompileExec2708735319.dir/src.c.o] Error 1
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec2708735319/fast] Error 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1424732375/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1424732375.dir/build.make CMakeFiles/cmTryCompileExec1424732375.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1424732375.dir/src.cxx.o
+/opt/cray/craype/2.2.1/bin/CC    -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTryCompileExec1424732375.dir/src.cxx.o -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/src.cxx
+CC-571 crayc++: ERROR 
+  An invalid option "openmp" appears on the command line.
+
+
+gmake[1]: *** [CMakeFiles/cmTryCompileExec1424732375.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1424732375/fast] Error 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1897413412/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1897413412.dir/build.make CMakeFiles/cmTryCompileExec1897413412.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1897413412.dir/src.cxx.o
+/opt/cray/craype/2.2.1/bin/CC    -DOpenMP_FLAG_DETECTED /openmp   -o CMakeFiles/cmTryCompileExec1897413412.dir/src.cxx.o -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec1897413412
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1897413412.dir/link.txt --verbose=1
+/opt/cray/craype/2.2.1/bin/CC    -DOpenMP_FLAG_DETECTED /openmp    CMakeFiles/cmTryCompileExec1897413412.dir/src.cxx.o  -o cmTryCompileExec1897413412  
+/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld: cannot find /openmp: No such file or directory
+gmake[1]: *** [cmTryCompileExec1897413412] Error 1
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec1897413412/fast] Error 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec540795413/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec540795413.dir/build.make CMakeFiles/cmTryCompileExec540795413.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec540795413.dir/src.cxx.o
+/opt/cray/craype/2.2.1/bin/CC    -DOpenMP_FLAG_DETECTED -Qopenmp   -o CMakeFiles/cmTryCompileExec540795413.dir/src.cxx.o -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp/src.cxx
+CC-2115 crayc++: ERROR in command line
+  "-Qopenmp" is an invalid command-line option.
+gmake[1]: *** [CMakeFiles/cmTryCompileExec540795413.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec540795413/fast] Error 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+

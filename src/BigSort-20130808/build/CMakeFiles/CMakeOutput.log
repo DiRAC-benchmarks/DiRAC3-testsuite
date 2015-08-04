@@ -1,0 +1,349 @@
+The system is: Linux - 3.0.101-0.5-default - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/cray/craype/2.2.1/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Cray, found in "/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/2.8.12.1/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /opt/cray/craype/2.2.1/bin/CC 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Cray, found in "/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/2.8.12.1/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2326818978/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2326818978.dir/build.make CMakeFiles/cmTryCompileExec2326818978.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2326818978.dir/testCCompiler.c.o
+/opt/cray/craype/2.2.1/bin/cc    -o CMakeFiles/cmTryCompileExec2326818978.dir/testCCompiler.c.o   -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec2326818978
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2326818978.dir/link.txt --verbose=1
+/opt/cray/craype/2.2.1/bin/cc       CMakeFiles/cmTryCompileExec2326818978.dir/testCCompiler.c.o  -o cmTryCompileExec2326818978  
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec295734577/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec295734577.dir/build.make CMakeFiles/cmTryCompileExec295734577.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o
+/opt/cray/craype/2.2.1/bin/cc    -o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o   -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec295734577
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec295734577.dir/link.txt --verbose=1
+/opt/cray/craype/2.2.1/bin/cc     -v CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec295734577   
+
+/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lmpich_cray -lsci_cray_mp -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec295734577 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o
+
+/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/objcopy --remove-section=.note.ftn_module_data cmTryCompileExec295734577
+rmdir /tmp/pe_34345/ipa_tmp_34345/
+rm /tmp/pe_34345//pldir/PL_global_data
+rm /tmp/pe_34345//pldir/PL_path
+rmdir /tmp/pe_34345//pldir
+rmdir /tmp/pe_34345/
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec295734577/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec295734577.dir/build.make CMakeFiles/cmTryCompileExec295734577.dir/build]
+  ignore line: [gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp']
+  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/cray/craype/2.2.1/bin/cc    -o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o   -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec295734577]
+  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec295734577.dir/link.txt --verbose=1]
+  ignore line: [/opt/cray/craype/2.2.1/bin/cc     -v CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec295734577   ]
+  ignore line: []
+  link line: [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lmpich_cray -lsci_cray_mp -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec295734577 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o]
+    arg [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld] ==> ignore
+    arg [/usr/lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/crti.o] ==> ignore
+    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o] ==> ignore
+    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o] ==> ignore
+    arg [/opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [--rpath=/opt/cray/cce/8.3.7/craylibs/x86-64] ==> ignore
+    arg [-L/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
+    arg [-rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> ignore
+    arg [-L/opt/gcc/4.8.1/snos/lib64] ==> dir [/opt/gcc/4.8.1/snos/lib64]
+    arg [-rpath=/opt/cray/gcc-libs/] ==> ignore
+    arg [--undefined=_ATP_Data_Globals] ==> ignore
+    arg [--undefined=__atpHandlerInstall] ==> ignore
+    arg [-L/opt/cray/dmapp/default/lib64] ==> dir [/opt/cray/dmapp/default/lib64]
+    arg [-L/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
+    arg [-L/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
+    arg [-L/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
+    arg [-L/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
+    arg [-L/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
+    arg [-L/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
+    arg [-L/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
+    arg [-L/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
+    arg [-L/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
+    arg [-L/opt/cray/atp/1.7.5/lib] ==> dir [/opt/cray/atp/1.7.5/lib]
+    arg [-L/opt/cray/cce/8.3.7/craylibs/x86-64] ==> dir [/opt/cray/cce/8.3.7/craylibs/x86-64]
+    arg [-L/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
+    arg [-lAtpSigHandler] ==> lib [AtpSigHandler]
+    arg [-lAtpSigHCommData] ==> lib [AtpSigHCommData]
+    arg [-lsci_cray_mpi_mp] ==> lib [sci_cray_mpi_mp]
+    arg [-lmpich_cray] ==> lib [mpich_cray]
+    arg [-lsci_cray_mp] ==> lib [sci_cray_mp]
+    arg [-lpgas-dmapp] ==> lib [pgas-dmapp]
+    arg [-lcray-c++-rts] ==> lib [cray-c++-rts]
+    arg [-lcraystdc++] ==> lib [craystdc++]
+    arg [-lxpmem] ==> lib [xpmem]
+    arg [-ldmapp] ==> lib [dmapp]
+    arg [-lpmi] ==> lib [pmi]
+    arg [-ludreg] ==> lib [udreg]
+    arg [-lalpslli] ==> lib [alpslli]
+    arg [-lalpsutil] ==> lib [alpsutil]
+    arg [-lrca] ==> lib [rca]
+    arg [-lwlm_detect] ==> lib [wlm_detect]
+    arg [-lugni] ==> lib [ugni]
+    arg [-lomp] ==> lib [omp]
+    arg [-lcraymp] ==> lib [craymp]
+    arg [-lmodules] ==> lib [modules]
+    arg [-lfi] ==> lib [fi]
+    arg [-lf] ==> lib [f]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lcraymath] ==> lib [craymath]
+    arg [-lm] ==> lib [m]
+    arg [-lgfortran] ==> lib [gfortran]
+    arg [-lquadmath] ==> lib [quadmath]
+    arg [-lu] ==> lib [u]
+    arg [-lrt] ==> lib [rt]
+    arg [-lcsup] ==> lib [csup]
+    arg [--whole-archive] ==> ignore
+    arg [-ltcmalloc_minimal] ==> lib [tcmalloc_minimal]
+    arg [--no-whole-archive] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lpthread] ==> lib [pthread]
+    arg [--start-group] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lcsup] ==> lib [csup]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--end-group] ==> ignore
+    arg [-T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld] ==> ignore
+    arg [-L/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
+    arg [-L/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
+    arg [-L//usr/lib64] ==> dir [//usr/lib64]
+    arg [-EL] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec295734577] ==> ignore
+    arg [--undefined=__pthread_initialize_minimal] ==> ignore
+    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o] ==> ignore
+    arg [/usr/lib64/crtn.o] ==> ignore
+  remove lib [gcc_eh]
+  remove lib [gcc]
+  collapse library dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
+  collapse library dir [/opt/gcc/4.8.1/snos/lib64] ==> [/opt/gcc/4.8.1/snos/lib64]
+  collapse library dir [/opt/cray/dmapp/default/lib64] ==> [/opt/cray/dmapp/default/lib64]
+  collapse library dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
+  collapse library dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
+  collapse library dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
+  collapse library dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
+  collapse library dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
+  collapse library dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
+  collapse library dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
+  collapse library dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
+  collapse library dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
+  collapse library dir [/opt/cray/atp/1.7.5/lib] ==> [/opt/cray/atp/1.7.5/lib]
+  collapse library dir [/opt/cray/cce/8.3.7/craylibs/x86-64] ==> [/opt/cray/cce/8.3.7/craylibs/x86-64]
+  collapse library dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
+  collapse library dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
+  collapse library dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
+  collapse library dir [//usr/lib64] ==> [//usr/lib64]
+  implicit libs: [AtpSigHandler;AtpSigHCommData;sci_cray_mpi_mp;mpich_cray;sci_cray_mp;pgas-dmapp;cray-c++-rts;craystdc++;xpmem;dmapp;pmi;udreg;alpslli;alpsutil;rca;wlm_detect;ugni;omp;craymp;modules;fi;f;pthread;craymath;m;gfortran;quadmath;u;rt;csup;tcmalloc_minimal;stdc++;pthread;c;csup;m]
+  implicit dirs: [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64;/opt/gcc/4.8.1/snos/lib64;/opt/cray/dmapp/default/lib64;/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib;/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib;/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64;/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64;/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64;/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64;/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64;/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64;/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64;/opt/cray/atp/1.7.5/lib;/opt/cray/cce/8.3.7/craylibs/x86-64;/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64;/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1;/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib;//usr/lib64]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec516642593/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec516642593.dir/build.make CMakeFiles/cmTryCompileExec516642593.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec516642593.dir/testCXXCompiler.cxx.o
+/opt/cray/craype/2.2.1/bin/CC     -o CMakeFiles/cmTryCompileExec516642593.dir/testCXXCompiler.cxx.o -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec516642593
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec516642593.dir/link.txt --verbose=1
+/opt/cray/craype/2.2.1/bin/CC        CMakeFiles/cmTryCompileExec516642593.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec516642593  
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1963665754/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1963665754.dir/build.make CMakeFiles/cmTryCompileExec1963665754.dir/build
+gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o
+/opt/cray/craype/2.2.1/bin/CC     -o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1963665754
+/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1963665754.dir/link.txt --verbose=1
+/opt/cray/craype/2.2.1/bin/CC      -v CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1963665754   
+
+/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lsci_cray_mp -lmpichcxx_cray -lmpich_cray -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup -lcray-c++-rts -lcraystdc++ -lsupc++ --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec1963665754 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o
+
+/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/objcopy --remove-section=.note.ftn_module_data cmTryCompileExec1963665754
+rmdir /tmp/pe_34604/ipa_tmp_34604/
+rm /tmp/pe_34604//pldir/PL_global_data
+rm /tmp/pe_34604//pldir/PL_path
+rmdir /tmp/pe_34604//pldir
+rmdir /tmp/pe_34604/
+gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec1963665754/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1963665754.dir/build.make CMakeFiles/cmTryCompileExec1963665754.dir/build]
+  ignore line: [gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp']
+  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/opt/cray/craype/2.2.1/bin/CC     -o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1963665754]
+  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1963665754.dir/link.txt --verbose=1]
+  ignore line: [/opt/cray/craype/2.2.1/bin/CC      -v CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1963665754   ]
+  ignore line: []
+  link line: [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lsci_cray_mp -lmpichcxx_cray -lmpich_cray -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup -lcray-c++-rts -lcraystdc++ -lsupc++ --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec1963665754 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o]
+    arg [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld] ==> ignore
+    arg [/usr/lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/crti.o] ==> ignore
+    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o] ==> ignore
+    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o] ==> ignore
+    arg [/opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [--rpath=/opt/cray/cce/8.3.7/craylibs/x86-64] ==> ignore
+    arg [-L/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
+    arg [-rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> ignore
+    arg [-L/opt/gcc/4.8.1/snos/lib64] ==> dir [/opt/gcc/4.8.1/snos/lib64]
+    arg [-rpath=/opt/cray/gcc-libs/] ==> ignore
+    arg [--undefined=_ATP_Data_Globals] ==> ignore
+    arg [--undefined=__atpHandlerInstall] ==> ignore
+    arg [-L/opt/cray/dmapp/default/lib64] ==> dir [/opt/cray/dmapp/default/lib64]
+    arg [-L/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
+    arg [-L/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
+    arg [-L/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
+    arg [-L/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
+    arg [-L/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
+    arg [-L/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
+    arg [-L/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
+    arg [-L/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
+    arg [-L/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
+    arg [-L/opt/cray/atp/1.7.5/lib] ==> dir [/opt/cray/atp/1.7.5/lib]
+    arg [-L/opt/cray/cce/8.3.7/craylibs/x86-64] ==> dir [/opt/cray/cce/8.3.7/craylibs/x86-64]
+    arg [-L/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
+    arg [-lAtpSigHandler] ==> lib [AtpSigHandler]
+    arg [-lAtpSigHCommData] ==> lib [AtpSigHCommData]
+    arg [-lsci_cray_mpi_mp] ==> lib [sci_cray_mpi_mp]
+    arg [-lsci_cray_mp] ==> lib [sci_cray_mp]
+    arg [-lmpichcxx_cray] ==> lib [mpichcxx_cray]
+    arg [-lmpich_cray] ==> lib [mpich_cray]
+    arg [-lpgas-dmapp] ==> lib [pgas-dmapp]
+    arg [-lcray-c++-rts] ==> lib [cray-c++-rts]
+    arg [-lcraystdc++] ==> lib [craystdc++]
+    arg [-lxpmem] ==> lib [xpmem]
+    arg [-ldmapp] ==> lib [dmapp]
+    arg [-lpmi] ==> lib [pmi]
+    arg [-ludreg] ==> lib [udreg]
+    arg [-lalpslli] ==> lib [alpslli]
+    arg [-lalpsutil] ==> lib [alpsutil]
+    arg [-lrca] ==> lib [rca]
+    arg [-lwlm_detect] ==> lib [wlm_detect]
+    arg [-lugni] ==> lib [ugni]
+    arg [-lomp] ==> lib [omp]
+    arg [-lcraymp] ==> lib [craymp]
+    arg [-lmodules] ==> lib [modules]
+    arg [-lfi] ==> lib [fi]
+    arg [-lf] ==> lib [f]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lcraymath] ==> lib [craymath]
+    arg [-lm] ==> lib [m]
+    arg [-lgfortran] ==> lib [gfortran]
+    arg [-lquadmath] ==> lib [quadmath]
+    arg [-lu] ==> lib [u]
+    arg [-lrt] ==> lib [rt]
+    arg [-lcsup] ==> lib [csup]
+    arg [-lcray-c++-rts] ==> lib [cray-c++-rts]
+    arg [-lcraystdc++] ==> lib [craystdc++]
+    arg [-lsupc++] ==> lib [supc++]
+    arg [--whole-archive] ==> ignore
+    arg [-ltcmalloc_minimal] ==> lib [tcmalloc_minimal]
+    arg [--no-whole-archive] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lpthread] ==> lib [pthread]
+    arg [--start-group] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lcsup] ==> lib [csup]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--end-group] ==> ignore
+    arg [-T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld] ==> ignore
+    arg [-L/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
+    arg [-L/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
+    arg [-L//usr/lib64] ==> dir [//usr/lib64]
+    arg [-EL] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1963665754] ==> ignore
+    arg [--undefined=__pthread_initialize_minimal] ==> ignore
+    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o] ==> ignore
+    arg [/usr/lib64/crtn.o] ==> ignore
+  remove lib [gcc_eh]
+  remove lib [gcc]
+  collapse library dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
+  collapse library dir [/opt/gcc/4.8.1/snos/lib64] ==> [/opt/gcc/4.8.1/snos/lib64]
+  collapse library dir [/opt/cray/dmapp/default/lib64] ==> [/opt/cray/dmapp/default/lib64]
+  collapse library dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
+  collapse library dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
+  collapse library dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
+  collapse library dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
+  collapse library dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
+  collapse library dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
+  collapse library dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
+  collapse library dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
+  collapse library dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
+  collapse library dir [/opt/cray/atp/1.7.5/lib] ==> [/opt/cray/atp/1.7.5/lib]
+  collapse library dir [/opt/cray/cce/8.3.7/craylibs/x86-64] ==> [/opt/cray/cce/8.3.7/craylibs/x86-64]
+  collapse library dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
+  collapse library dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
+  collapse library dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
+  collapse library dir [//usr/lib64] ==> [//usr/lib64]
+  implicit libs: [AtpSigHandler;AtpSigHCommData;sci_cray_mpi_mp;sci_cray_mp;mpichcxx_cray;mpich_cray;pgas-dmapp;cray-c++-rts;craystdc++;xpmem;dmapp;pmi;udreg;alpslli;alpsutil;rca;wlm_detect;ugni;omp;craymp;modules;fi;f;pthread;craymath;m;gfortran;quadmath;u;rt;csup;cray-c++-rts;craystdc++;supc++;tcmalloc_minimal;stdc++;pthread;c;csup;m]
+  implicit dirs: [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64;/opt/gcc/4.8.1/snos/lib64;/opt/cray/dmapp/default/lib64;/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib;/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib;/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64;/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64;/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64;/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64;/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64;/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64;/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64;/opt/cray/atp/1.7.5/lib;/opt/cray/cce/8.3.7/craylibs/x86-64;/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64;/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1;/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib;//usr/lib64]
+  implicit fwks: []
+
+

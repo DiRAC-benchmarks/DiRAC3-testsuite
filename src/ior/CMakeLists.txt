@@ -1,8 +1,5 @@
 # MPI Library
-find_package(MPI REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
-# C Math Library
-find_library(M_LIBRARY m REQUIRED)
 
 # Source Headers
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -17,7 +14,7 @@ list(REMOVE_ITEM IOR_SOURCE ${IOR_SOURCE_REMOVE})
 
 # IOR Executable
 add_executable(ior ${IOR_SOURCE})
-target_link_libraries(ior ${MPI_LIBRARIES} ${M_LIBRARY})
+target_link_libraries(ior ${MPI_LIBRARIES} ${M_LIBRARIES})
 
 # Preprocessor Definitions
 add_definitions(-DHAVE_CONFIG_H)

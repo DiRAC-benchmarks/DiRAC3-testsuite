@@ -1,1 +1,0 @@
-/opt/cray/craype/2.2.1/bin/CC   -homp -hrestrict=a -O3 -hfp3    CMakeFiles/ShuffSeq.dir/main.cpp.o  -o ShuffSeq  

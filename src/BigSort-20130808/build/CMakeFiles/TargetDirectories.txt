@@ -1,4 +1,0 @@
-/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/BigSort/CMakeFiles/BigSort.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CheckOrder/CMakeFiles/CheckOrder.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/GenSeq/CMakeFiles/GenSeq.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/ShuffleSeq/CMakeFiles/ShuffSeq.dir

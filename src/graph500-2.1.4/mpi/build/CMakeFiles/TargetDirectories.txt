@@ -1,8 +1,0 @@
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/GS.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/H.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/S.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/graph500_mpi_custom.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/graph500_mpi_one_sided.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/graph500_mpi_replicated.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/graph500_mpi_replicated_csc.dir
-/work/d63/d63/shared/DiRAC3-testsuite/src/graph500-2.1.4/mpi/build/CMakeFiles/graph500_mpi_simple.dir

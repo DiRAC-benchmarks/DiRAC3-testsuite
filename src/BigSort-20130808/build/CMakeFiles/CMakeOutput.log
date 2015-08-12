@@ -1,6 +1,6 @@
-The system is: Linux - 3.0.101-0.5-default - x86_64
+The system is: Linux - 3.0.101-0.46-default - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /opt/cray/craype/2.2.1/bin/cc 
+Compiler: /opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc 
 Build flags: 
 Id flags: 
 
@@ -10,10 +10,10 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is Cray, found in "/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/2.8.12.1/CompilerIdC/a.out"
+The C compiler identification is Intel, found in "/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/3.0.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /opt/cray/craype/2.2.1/bin/CC 
+Compiler: /opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc 
 Build flags: 
 Id flags: 
 
@@ -23,327 +23,321 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is Cray, found in "/work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/2.8.12.1/CompilerIdCXX/a.out"
+The CXX compiler identification is Intel, found in "/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/3.0.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+Change Dir: /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/gmake "cmTryCompileExec2326818978/fast"
-/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2326818978.dir/build.make CMakeFiles/cmTryCompileExec2326818978.dir/build
-gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2326818978.dir/testCCompiler.c.o
-/opt/cray/craype/2.2.1/bin/cc    -o CMakeFiles/cmTryCompileExec2326818978.dir/testCCompiler.c.o   -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec2326818978
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2326818978.dir/link.txt --verbose=1
-/opt/cray/craype/2.2.1/bin/cc       CMakeFiles/cmTryCompileExec2326818978.dir/testCCompiler.c.o  -o cmTryCompileExec2326818978  
-gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/gmake" "cmTryCompileExec744417489/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec744417489.dir/build.make CMakeFiles/cmTryCompileExec744417489.dir/build
+gmake[1]: Entering directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec744417489.dir/testCCompiler.c.o
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc    -o CMakeFiles/cmTryCompileExec744417489.dir/testCCompiler.c.o   -c /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec744417489
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec744417489.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc       CMakeFiles/cmTryCompileExec744417489.dir/testCCompiler.c.o  -o cmTryCompileExec744417489 -rdynamic 
+gmake[1]: Leaving directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+Change Dir: /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/gmake "cmTryCompileExec295734577/fast"
-/usr/bin/gmake -f CMakeFiles/cmTryCompileExec295734577.dir/build.make CMakeFiles/cmTryCompileExec295734577.dir/build
-gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o
-/opt/cray/craype/2.2.1/bin/cc    -o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o   -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec295734577
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec295734577.dir/link.txt --verbose=1
-/opt/cray/craype/2.2.1/bin/cc     -v CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec295734577   
-
-/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lmpich_cray -lsci_cray_mp -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec295734577 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o
-
-/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/objcopy --remove-section=.note.ftn_module_data cmTryCompileExec295734577
-rmdir /tmp/pe_34345/ipa_tmp_34345/
-rm /tmp/pe_34345//pldir/PL_global_data
-rm /tmp/pe_34345//pldir/PL_path
-rmdir /tmp/pe_34345//pldir
-rmdir /tmp/pe_34345/
-gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/gmake" "cmTryCompileExec210793128/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec210793128.dir/build.make CMakeFiles/cmTryCompileExec210793128.dir/build
+gmake[1]: Entering directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc    -o CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec210793128
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec210793128.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc     -v CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec210793128 -rdynamic  
+icc version 14.0.0 (gcc version 4.3.0 compatibility)
+/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/mcpcom    -mP1OPT_version=14.0-intel64 -mGLOB_diag_file=CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.diag -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=430 "-mGLOB_options_string=-v -o cmTryCompileExec210793128 -rdynamic" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64 -mGLOB_as_output_backup_file_name=/tmp/iccKNjevHas_.s -mIPOPT_activate -mGLOB_em64t -mGLOB_product_id_code=0x22006d92 -mP3OPT_use_mspp_call_convention -mPGOPTI_value_profile_use=T -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=icc589052569d3Ralk -mP2OPT_hlo -mP2OPT_hpo_rtt_control=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/libiml_attr.so -mIPOPT_link -mIPOPT_ipo_activate -mIPOPT_mo_activate -mIPOPT_source_files_list=/tmp/iccslis28N01t -mIPOPT_mo_global_data -mIPOPT_link_script_file=/tmp/iccscriptHf25vy "-mIPOPT_cmdline_link="/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o" "-export-dynamic" "--eh-frame-hdr" "--build-id" "-dynamic-linker" "/lib64/ld-linux-x86-64.so.2" "-o" "cmTryCompileExec210793128" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib" "-L/opt/sgi/mpt/mpt-2.11/lib" "-L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/" "-L/lib/../lib64" "-L/lib/../lib64/" "-L/usr/lib/../lib64" "-L/usr/lib/../lib64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/" "-L/home/cosmos/share/x86_64/pp9/lib64" "-L/home/cosmos/share/x86_64/pp9/lib/" "-L/opt/sgi/mpt/mpt-2.11/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../" "-L/lib64" "-L/lib/" "-L/usr/lib64" "-L/usr/lib" "CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o" "-Bstatic" "-limf" "-lsvml" "-lirng" "-Bdynamic" "-lm" "-Bstatic" "-lipgo" "-ldecimal" "--as-needed" "-Bdynamic" "-lcilkrts" "-lstdc++" "--no-as-needed" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc" "-lsvml" "-Bdynamic" "-lc" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc_s" "-Bdynamic" "-ldl" "-lc" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o"" -mIPOPT_il_in_obj -mIPOPT_ipo_activate_warn=FALSE -mIPOPT_obj_output_file_name=/tmp/ipo_iccEWEq72.o -mIPOPT_whole_archive_fixup_file_name=/tmp/iccwarch0yefYq -mGLOB_linker_version=2.23.1 -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_driver_tempfile_name=/tmp/icctempfileKeGOyv -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ipo_iccEWEq72.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_NONE -mP1OPT_source_file_name=ipo_out.c CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o -mIPOPT_object_files=T -mIPOPT_assembly_files=/tmp/iccalismltH5b -mIPOPT_generated_tempfiles=/tmp/iccelisYuULzg -mIPOPT_embedded_object_base_name=/tmp/icceobjY8HQ3k -mIPOPT_cmdline_link_new_name=/tmp/iccllisMqCVxp
+ld    /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o -export-dynamic --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec210793128 -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1 -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib -L/opt/sgi/mpt/mpt-2.11/lib -L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/ -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/ -L/home/cosmos/share/x86_64/pp9/lib64 -L/home/cosmos/share/x86_64/pp9/lib/ -L/opt/sgi/mpt/mpt-2.11/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o -Bstatic -limf -lsvml -lirng -Bdynamic -lm -Bstatic -lipgo -ldecimal --as-needed -Bdynamic -lcilkrts -lstdc++ --no-as-needed -lgcc -lgcc_s -Bstatic -lirc -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o
+gmake[1]: Leaving directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec295734577/fast"]
-  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec295734577.dir/build.make CMakeFiles/cmTryCompileExec295734577.dir/build]
-  ignore line: [gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp']
-  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/opt/cray/craype/2.2.1/bin/cc    -o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o   -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec295734577]
-  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec295734577.dir/link.txt --verbose=1]
-  ignore line: [/opt/cray/craype/2.2.1/bin/cc     -v CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec295734577   ]
-  ignore line: []
-  link line: [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lmpich_cray -lsci_cray_mp -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec295734577 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o]
-    arg [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld] ==> ignore
-    arg [/usr/lib64/crt1.o] ==> ignore
-    arg [/usr/lib64/crti.o] ==> ignore
-    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o] ==> ignore
-    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o] ==> ignore
-    arg [/opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o] ==> ignore
-    arg [CMakeFiles/cmTryCompileExec295734577.dir/CMakeCCompilerABI.c.o] ==> ignore
-    arg [-Bstatic] ==> ignore
-    arg [--rpath=/opt/cray/cce/8.3.7/craylibs/x86-64] ==> ignore
-    arg [-L/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
-    arg [-rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> ignore
-    arg [-L/opt/gcc/4.8.1/snos/lib64] ==> dir [/opt/gcc/4.8.1/snos/lib64]
-    arg [-rpath=/opt/cray/gcc-libs/] ==> ignore
-    arg [--undefined=_ATP_Data_Globals] ==> ignore
-    arg [--undefined=__atpHandlerInstall] ==> ignore
-    arg [-L/opt/cray/dmapp/default/lib64] ==> dir [/opt/cray/dmapp/default/lib64]
-    arg [-L/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
-    arg [-L/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
-    arg [-L/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
-    arg [-L/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
-    arg [-L/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
-    arg [-L/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
-    arg [-L/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
-    arg [-L/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
-    arg [-L/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
-    arg [-L/opt/cray/atp/1.7.5/lib] ==> dir [/opt/cray/atp/1.7.5/lib]
-    arg [-L/opt/cray/cce/8.3.7/craylibs/x86-64] ==> dir [/opt/cray/cce/8.3.7/craylibs/x86-64]
-    arg [-L/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
-    arg [-lAtpSigHandler] ==> lib [AtpSigHandler]
-    arg [-lAtpSigHCommData] ==> lib [AtpSigHCommData]
-    arg [-lsci_cray_mpi_mp] ==> lib [sci_cray_mpi_mp]
-    arg [-lmpich_cray] ==> lib [mpich_cray]
-    arg [-lsci_cray_mp] ==> lib [sci_cray_mp]
-    arg [-lpgas-dmapp] ==> lib [pgas-dmapp]
-    arg [-lcray-c++-rts] ==> lib [cray-c++-rts]
-    arg [-lcraystdc++] ==> lib [craystdc++]
-    arg [-lxpmem] ==> lib [xpmem]
-    arg [-ldmapp] ==> lib [dmapp]
-    arg [-lpmi] ==> lib [pmi]
-    arg [-ludreg] ==> lib [udreg]
-    arg [-lalpslli] ==> lib [alpslli]
-    arg [-lalpsutil] ==> lib [alpsutil]
-    arg [-lrca] ==> lib [rca]
-    arg [-lwlm_detect] ==> lib [wlm_detect]
-    arg [-lugni] ==> lib [ugni]
-    arg [-lomp] ==> lib [omp]
-    arg [-lcraymp] ==> lib [craymp]
-    arg [-lmodules] ==> lib [modules]
-    arg [-lfi] ==> lib [fi]
-    arg [-lf] ==> lib [f]
-    arg [-lpthread] ==> lib [pthread]
-    arg [-lcraymath] ==> lib [craymath]
-    arg [-lm] ==> lib [m]
-    arg [-lgfortran] ==> lib [gfortran]
-    arg [-lquadmath] ==> lib [quadmath]
-    arg [-lu] ==> lib [u]
-    arg [-lrt] ==> lib [rt]
-    arg [-lcsup] ==> lib [csup]
-    arg [--whole-archive] ==> ignore
-    arg [-ltcmalloc_minimal] ==> lib [tcmalloc_minimal]
-    arg [--no-whole-archive] ==> ignore
-    arg [-lstdc++] ==> lib [stdc++]
-    arg [-lpthread] ==> lib [pthread]
-    arg [--start-group] ==> ignore
-    arg [-lc] ==> lib [c]
-    arg [-lcsup] ==> lib [csup]
-    arg [-lgcc_eh] ==> lib [gcc_eh]
-    arg [-lm] ==> lib [m]
-    arg [-lgcc] ==> lib [gcc]
-    arg [--end-group] ==> ignore
-    arg [-T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld] ==> ignore
-    arg [-L/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
-    arg [-L/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
-    arg [-L//usr/lib64] ==> dir [//usr/lib64]
-    arg [-EL] ==> ignore
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTryCompileExec210793128/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec210793128.dir/build.make CMakeFiles/cmTryCompileExec210793128.dir/build]
+  ignore line: [gmake[1]: Entering directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc    -o CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec210793128]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec210793128.dir/link.txt --verbose=1]
+  ignore line: [/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icc     -v CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec210793128 -rdynamic  ]
+  ignore line: [icc version 14.0.0 (gcc version 4.3.0 compatibility)]
+  ignore line: [/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/mcpcom    -mP1OPT_version=14.0-intel64 -mGLOB_diag_file=CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.diag -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=430 "-mGLOB_options_string=-v -o cmTryCompileExec210793128 -rdynamic" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64 -mGLOB_as_output_backup_file_name=/tmp/iccKNjevHas_.s -mIPOPT_activate -mGLOB_em64t -mGLOB_product_id_code=0x22006d92 -mP3OPT_use_mspp_call_convention -mPGOPTI_value_profile_use=T -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=icc589052569d3Ralk -mP2OPT_hlo -mP2OPT_hpo_rtt_control=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/libiml_attr.so -mIPOPT_link -mIPOPT_ipo_activate -mIPOPT_mo_activate -mIPOPT_source_files_list=/tmp/iccslis28N01t -mIPOPT_mo_global_data -mIPOPT_link_script_file=/tmp/iccscriptHf25vy "-mIPOPT_cmdline_link="/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o" "-export-dynamic" "--eh-frame-hdr" "--build-id" "-dynamic-linker" "/lib64/ld-linux-x86-64.so.2" "-o" "cmTryCompileExec210793128" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib" "-L/opt/sgi/mpt/mpt-2.11/lib" "-L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/" "-L/lib/../lib64" "-L/lib/../lib64/" "-L/usr/lib/../lib64" "-L/usr/lib/../lib64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/" "-L/home/cosmos/share/x86_64/pp9/lib64" "-L/home/cosmos/share/x86_64/pp9/lib/" "-L/opt/sgi/mpt/mpt-2.11/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../" "-L/lib64" "-L/lib/" "-L/usr/lib64" "-L/usr/lib" "CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o" "-Bstatic" "-limf" "-lsvml" "-lirng" "-Bdynamic" "-lm" "-Bstatic" "-lipgo" "-ldecimal" "--as-needed" "-Bdynamic" "-lcilkrts" "-lstdc++" "--no-as-needed" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc" "-lsvml" "-Bdynamic" "-lc" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc_s" "-Bdynamic" "-ldl" "-lc" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o"" -mIPOPT_il_in_obj -mIPOPT_ipo_activate_warn=FALSE -mIPOPT_obj_output_file_name=/tmp/ipo_iccEWEq72.o -mIPOPT_whole_archive_fixup_file_name=/tmp/iccwarch0yefYq -mGLOB_linker_version=2.23.1 -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_driver_tempfile_name=/tmp/icctempfileKeGOyv -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ipo_iccEWEq72.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_NONE -mP1OPT_source_file_name=ipo_out.c CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o -mIPOPT_object_files=T -mIPOPT_assembly_files=/tmp/iccalismltH5b -mIPOPT_generated_tempfiles=/tmp/iccelisYuULzg -mIPOPT_embedded_object_base_name=/tmp/icceobjY8HQ3k -mIPOPT_cmdline_link_new_name=/tmp/iccllisMqCVxp]
+  link line: [ld    /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o -export-dynamic --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec210793128 -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1 -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib -L/opt/sgi/mpt/mpt-2.11/lib -L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/ -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/ -L/home/cosmos/share/x86_64/pp9/lib64 -L/home/cosmos/share/x86_64/pp9/lib/ -L/opt/sgi/mpt/mpt-2.11/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o -Bstatic -limf -lsvml -lirng -Bdynamic -lm -Bstatic -lipgo -ldecimal --as-needed -Bdynamic -lcilkrts -lstdc++ --no-as-needed -lgcc -lgcc_s -Bstatic -lirc -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o]
+    arg [ld] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec295734577] ==> ignore
-    arg [--undefined=__pthread_initialize_minimal] ==> ignore
-    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o] ==> ignore
-    arg [/usr/lib64/crtn.o] ==> ignore
-  remove lib [gcc_eh]
+    arg [cmTryCompileExec210793128] ==> ignore
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib] ==> dir [/home/cosmos/share/x86_64/pp9/lib]
+    arg [-L/opt/sgi/mpt/mpt-2.11/lib] ==> dir [/opt/sgi/mpt/mpt-2.11/lib]
+    arg [-L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> dir [/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib/../lib64] ==> dir [/home/cosmos/share/x86_64/pp9/lib/../lib64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib/../lib64/] ==> dir [/home/cosmos/share/x86_64/pp9/lib/../lib64/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/lib/../lib64/] ==> dir [/lib/../lib64/]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/../lib64/] ==> dir [/usr/lib/../lib64/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib64] ==> dir [/home/cosmos/share/x86_64/pp9/lib64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib/] ==> dir [/home/cosmos/share/x86_64/pp9/lib/]
+    arg [-L/opt/sgi/mpt/mpt-2.11/lib/] ==> dir [/opt/sgi/mpt/mpt-2.11/lib/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../]
+    arg [-L/lib64] ==> dir [/lib64]
+    arg [-L/lib/] ==> dir [/lib/]
+    arg [-L/usr/lib64] ==> dir [/usr/lib64]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTryCompileExec210793128.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [-limf] ==> lib [imf]
+    arg [-lsvml] ==> lib [svml]
+    arg [-lirng] ==> lib [irng]
+    arg [-Bdynamic] ==> ignore
+    arg [-lm] ==> lib [m]
+    arg [-Bstatic] ==> ignore
+    arg [-lipgo] ==> lib [ipgo]
+    arg [-ldecimal] ==> lib [decimal]
+    arg [--as-needed] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-lcilkrts] ==> lib [cilkrts]
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [--no-as-needed] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-Bstatic] ==> ignore
+    arg [-lirc] ==> lib [irc]
+    arg [-lsvml] ==> lib [svml]
+    arg [-Bdynamic] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-Bstatic] ==> ignore
+    arg [-lirc_s] ==> lib [irc_s]
+    arg [-Bdynamic] ==> ignore
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o] ==> ignore
   remove lib [gcc]
-  collapse library dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
-  collapse library dir [/opt/gcc/4.8.1/snos/lib64] ==> [/opt/gcc/4.8.1/snos/lib64]
-  collapse library dir [/opt/cray/dmapp/default/lib64] ==> [/opt/cray/dmapp/default/lib64]
-  collapse library dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
-  collapse library dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
-  collapse library dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
-  collapse library dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
-  collapse library dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
-  collapse library dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
-  collapse library dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
-  collapse library dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
-  collapse library dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
-  collapse library dir [/opt/cray/atp/1.7.5/lib] ==> [/opt/cray/atp/1.7.5/lib]
-  collapse library dir [/opt/cray/cce/8.3.7/craylibs/x86-64] ==> [/opt/cray/cce/8.3.7/craylibs/x86-64]
-  collapse library dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
-  collapse library dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
-  collapse library dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
-  collapse library dir [//usr/lib64] ==> [//usr/lib64]
-  implicit libs: [AtpSigHandler;AtpSigHCommData;sci_cray_mpi_mp;mpich_cray;sci_cray_mp;pgas-dmapp;cray-c++-rts;craystdc++;xpmem;dmapp;pmi;udreg;alpslli;alpsutil;rca;wlm_detect;ugni;omp;craymp;modules;fi;f;pthread;craymath;m;gfortran;quadmath;u;rt;csup;tcmalloc_minimal;stdc++;pthread;c;csup;m]
-  implicit dirs: [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64;/opt/gcc/4.8.1/snos/lib64;/opt/cray/dmapp/default/lib64;/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib;/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib;/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64;/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64;/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64;/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64;/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64;/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64;/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64;/opt/cray/atp/1.7.5/lib;/opt/cray/cce/8.3.7/craylibs/x86-64;/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64;/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1;/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib;//usr/lib64]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1] ==> [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64] ==> [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64] ==> [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib] ==> [/home/cosmos/share/x86_64/pp9/lib]
+  collapse library dir [/opt/sgi/mpt/mpt-2.11/lib] ==> [/opt/sgi/mpt/mpt-2.11/lib]
+  collapse library dir [/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> [/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib/../lib64] ==> [/home/cosmos/share/x86_64/pp9/lib64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib/../lib64/] ==> [/home/cosmos/share/x86_64/pp9/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/] ==> [/usr/lib64/gcc/x86_64-suse-linux/4.3]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/lib/../lib64/] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/../lib64/] ==> [/usr/lib64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib64] ==> [/home/cosmos/share/x86_64/pp9/lib64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib/] ==> [/home/cosmos/share/x86_64/pp9/lib]
+  collapse library dir [/opt/sgi/mpt/mpt-2.11/lib/] ==> [/opt/sgi/mpt/mpt-2.11/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/] ==> [/usr/x86_64-suse-linux/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../] ==> [/usr/lib64]
+  collapse library dir [/lib64] ==> [/lib64]
+  collapse library dir [/lib/] ==> [/lib]
+  collapse library dir [/usr/lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [imf;svml;irng;m;ipgo;decimal;cilkrts;stdc++;irc;svml;c;irc_s;dl;c]
+  implicit dirs: [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1;/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64;/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64;/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64;/home/cosmos/share/x86_64/pp9/lib;/opt/sgi/mpt/mpt-2.11/lib;/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64;/home/cosmos/share/x86_64/pp9/lib64;/usr/lib64/gcc/x86_64-suse-linux/4.3;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib;/lib;/usr/lib]
   implicit fwks: []
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+Change Dir: /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/gmake "cmTryCompileExec516642593/fast"
-/usr/bin/gmake -f CMakeFiles/cmTryCompileExec516642593.dir/build.make CMakeFiles/cmTryCompileExec516642593.dir/build
-gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec516642593.dir/testCXXCompiler.cxx.o
-/opt/cray/craype/2.2.1/bin/CC     -o CMakeFiles/cmTryCompileExec516642593.dir/testCXXCompiler.cxx.o -c /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec516642593
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec516642593.dir/link.txt --verbose=1
-/opt/cray/craype/2.2.1/bin/CC        CMakeFiles/cmTryCompileExec516642593.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec516642593  
-gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/gmake" "cmTryCompileExec2798935520/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2798935520.dir/build.make CMakeFiles/cmTryCompileExec2798935520.dir/build
+gmake[1]: Entering directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2798935520.dir/testCXXCompiler.cxx.o
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc     -o CMakeFiles/cmTryCompileExec2798935520.dir/testCXXCompiler.cxx.o -c /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec2798935520
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2798935520.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc        CMakeFiles/cmTryCompileExec2798935520.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2798935520 -rdynamic 
+gmake[1]: Leaving directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
+Change Dir: /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/gmake "cmTryCompileExec1963665754/fast"
-/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1963665754.dir/build.make CMakeFiles/cmTryCompileExec1963665754.dir/build
-gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o
-/opt/cray/craype/2.2.1/bin/CC     -o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec1963665754
-/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1963665754.dir/link.txt --verbose=1
-/opt/cray/craype/2.2.1/bin/CC      -v CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1963665754   
-
-/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lsci_cray_mp -lmpichcxx_cray -lmpich_cray -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup -lcray-c++-rts -lcraystdc++ -lsupc++ --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec1963665754 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o
-
-/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/objcopy --remove-section=.note.ftn_module_data cmTryCompileExec1963665754
-rmdir /tmp/pe_34604/ipa_tmp_34604/
-rm /tmp/pe_34604//pldir/PL_global_data
-rm /tmp/pe_34604//pldir/PL_path
-rmdir /tmp/pe_34604//pldir
-rmdir /tmp/pe_34604/
-gmake[1]: Leaving directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/gmake" "cmTryCompileExec30498/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec30498.dir/build.make CMakeFiles/cmTryCompileExec30498.dir/build
+gmake[1]: Entering directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc     -o CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec30498
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec30498.dir/link.txt --verbose=1
+/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc      -v CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec30498 -rdynamic  
+icpc version 14.0.0 (gcc version 4.3.0 compatibility)
+/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/mcpcom    -mP1OPT_version=14.0-intel64 -mGLOB_diag_file=CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.diag -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=430 "-mGLOB_options_string=-v -o cmTryCompileExec30498 -rdynamic" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64 -mGLOB_as_output_backup_file_name=/tmp/icpcJROamEas_.s -mIPOPT_activate -mGLOB_em64t -mGLOB_product_id_code=0x22006d8f -mP3OPT_use_mspp_call_convention -mPGOPTI_value_profile_use=T -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=icpc568469402QTmJ7S -mP2OPT_hlo -mP2OPT_hpo_rtt_control=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/libiml_attr.so -mIPOPT_link -mIPOPT_ipo_activate -mIPOPT_mo_activate -mIPOPT_source_files_list=/tmp/icpcslisgQ4eid -mIPOPT_mo_global_data -mIPOPT_link_script_file=/tmp/icpcscriptvXWejm "-mIPOPT_cmdline_link="/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o" "-export-dynamic" "--eh-frame-hdr" "--build-id" "-dynamic-linker" "/lib64/ld-linux-x86-64.so.2" "-o" "cmTryCompileExec30498" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib" "-L/opt/sgi/mpt/mpt-2.11/lib" "-L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/" "-L/lib/../lib64" "-L/lib/../lib64/" "-L/usr/lib/../lib64" "-L/usr/lib/../lib64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/" "-L/home/cosmos/share/x86_64/pp9/lib64" "-L/home/cosmos/share/x86_64/pp9/lib/" "-L/opt/sgi/mpt/mpt-2.11/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../" "-L/lib64" "-L/lib/" "-L/usr/lib64" "-L/usr/lib" "CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o" "-Bstatic" "-limf" "-lsvml" "-lirng" "-Bdynamic" "-lm" "-Bstatic" "-lipgo" "-ldecimal" "--as-needed" "-Bdynamic" "-lcilkrts" "--no-as-needed" "-lstdc++" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc" "-lsvml" "-Bdynamic" "-lc" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc_s" "-Bdynamic" "-ldl" "-lc" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o"" -mIPOPT_il_in_obj -mIPOPT_ipo_activate_warn=FALSE -mIPOPT_obj_output_file_name=/tmp/ipo_icpcPcbpcl.o -mIPOPT_whole_archive_fixup_file_name=/tmp/icpcwarch0jrp86 -mGLOB_linker_version=2.23.1 -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_driver_tempfile_name=/tmp/icpctempfile47MUfg -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ipo_icpcPcbpcl.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_NONE -mP1OPT_source_file_name=ipo_out.c CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o -mIPOPT_object_files=T -mIPOPT_assembly_files=/tmp/icpcalisTCZheD -mIPOPT_generated_tempfiles=/tmp/icpcelis1p5gfM -mIPOPT_embedded_object_base_name=/tmp/icpceobjYhhggV -mIPOPT_cmdline_link_new_name=/tmp/icpcllistxwfh4
+ld    /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o -export-dynamic --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec30498 -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1 -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib -L/opt/sgi/mpt/mpt-2.11/lib -L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/ -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/ -L/home/cosmos/share/x86_64/pp9/lib64 -L/home/cosmos/share/x86_64/pp9/lib/ -L/opt/sgi/mpt/mpt-2.11/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -limf -lsvml -lirng -Bdynamic -lm -Bstatic -lipgo -ldecimal --as-needed -Bdynamic -lcilkrts --no-as-needed -lstdc++ -lgcc -lgcc_s -Bstatic -lirc -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o
+gmake[1]: Leaving directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec1963665754/fast"]
-  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1963665754.dir/build.make CMakeFiles/cmTryCompileExec1963665754.dir/build]
-  ignore line: [gmake[1]: Entering directory `/fs3/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp']
-  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_progress_report /work/d63/d63/shared/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/opt/cray/craype/2.2.1/bin/CC     -o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -c /home2/y07/y07/cmake/2.8.12-i386/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec1963665754]
-  ignore line: [/home2/y07/y07/cmake/2.8.12-i386/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1963665754.dir/link.txt --verbose=1]
-  ignore line: [/opt/cray/craype/2.2.1/bin/CC      -v CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1963665754   ]
-  ignore line: []
-  link line: [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld /usr/lib64/crt1.o /usr/lib64/crti.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o /opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o -Bstatic --rpath=/opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64 -L /opt/gcc/4.8.1/snos/lib64 -rpath=/opt/cray/gcc-libs/ --undefined=_ATP_Data_Globals --undefined=__atpHandlerInstall -L /opt/cray/dmapp/default/lib64 -L /opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib -L /opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib -L /opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64 -L /opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64 -L /opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64 -L /opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64 -L /opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64 -L /opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64 -L /opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64 -L /opt/cray/atp/1.7.5/lib -L /opt/cray/cce/8.3.7/craylibs/x86-64 -L /opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64 -lAtpSigHandler -lAtpSigHCommData -lsci_cray_mpi_mp -lsci_cray_mp -lmpichcxx_cray -lmpich_cray -lpgas-dmapp -lcray-c++-rts -lcraystdc++ -lxpmem -ldmapp -lpmi -ludreg -lalpslli -lalpsutil -lrca -lwlm_detect -lugni -lomp -lcraymp -lmodules -lfi -lf -lpthread -lcraymath -lm -lgfortran -lquadmath -lu -lrt -lcsup -lcray-c++-rts -lcraystdc++ -lsupc++ --whole-archive -ltcmalloc_minimal --no-whole-archive -lstdc++ -lpthread --start-group -lc -lcsup -lgcc_eh -lm -lgcc --end-group -T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld -L /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1 -L /opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib -L //usr/lib64 -EL -o cmTryCompileExec1963665754 --undefined=__pthread_initialize_minimal /opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o /usr/lib64/crtn.o]
-    arg [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/bin/ld] ==> ignore
-    arg [/usr/lib64/crt1.o] ==> ignore
-    arg [/usr/lib64/crti.o] ==> ignore
-    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtbeginT.o] ==> ignore
-    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtfastmath.o] ==> ignore
-    arg [/opt/cray/cce/8.3.7/craylibs/x86-64/no_mmap.o] ==> ignore
-    arg [CMakeFiles/cmTryCompileExec1963665754.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-Bstatic] ==> ignore
-    arg [--rpath=/opt/cray/cce/8.3.7/craylibs/x86-64] ==> ignore
-    arg [-L/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
-    arg [-rpath=/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> ignore
-    arg [-L/opt/gcc/4.8.1/snos/lib64] ==> dir [/opt/gcc/4.8.1/snos/lib64]
-    arg [-rpath=/opt/cray/gcc-libs/] ==> ignore
-    arg [--undefined=_ATP_Data_Globals] ==> ignore
-    arg [--undefined=__atpHandlerInstall] ==> ignore
-    arg [-L/opt/cray/dmapp/default/lib64] ==> dir [/opt/cray/dmapp/default/lib64]
-    arg [-L/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
-    arg [-L/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
-    arg [-L/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
-    arg [-L/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
-    arg [-L/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
-    arg [-L/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
-    arg [-L/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
-    arg [-L/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
-    arg [-L/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
-    arg [-L/opt/cray/atp/1.7.5/lib] ==> dir [/opt/cray/atp/1.7.5/lib]
-    arg [-L/opt/cray/cce/8.3.7/craylibs/x86-64] ==> dir [/opt/cray/cce/8.3.7/craylibs/x86-64]
-    arg [-L/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
-    arg [-lAtpSigHandler] ==> lib [AtpSigHandler]
-    arg [-lAtpSigHCommData] ==> lib [AtpSigHCommData]
-    arg [-lsci_cray_mpi_mp] ==> lib [sci_cray_mpi_mp]
-    arg [-lsci_cray_mp] ==> lib [sci_cray_mp]
-    arg [-lmpichcxx_cray] ==> lib [mpichcxx_cray]
-    arg [-lmpich_cray] ==> lib [mpich_cray]
-    arg [-lpgas-dmapp] ==> lib [pgas-dmapp]
-    arg [-lcray-c++-rts] ==> lib [cray-c++-rts]
-    arg [-lcraystdc++] ==> lib [craystdc++]
-    arg [-lxpmem] ==> lib [xpmem]
-    arg [-ldmapp] ==> lib [dmapp]
-    arg [-lpmi] ==> lib [pmi]
-    arg [-ludreg] ==> lib [udreg]
-    arg [-lalpslli] ==> lib [alpslli]
-    arg [-lalpsutil] ==> lib [alpsutil]
-    arg [-lrca] ==> lib [rca]
-    arg [-lwlm_detect] ==> lib [wlm_detect]
-    arg [-lugni] ==> lib [ugni]
-    arg [-lomp] ==> lib [omp]
-    arg [-lcraymp] ==> lib [craymp]
-    arg [-lmodules] ==> lib [modules]
-    arg [-lfi] ==> lib [fi]
-    arg [-lf] ==> lib [f]
-    arg [-lpthread] ==> lib [pthread]
-    arg [-lcraymath] ==> lib [craymath]
-    arg [-lm] ==> lib [m]
-    arg [-lgfortran] ==> lib [gfortran]
-    arg [-lquadmath] ==> lib [quadmath]
-    arg [-lu] ==> lib [u]
-    arg [-lrt] ==> lib [rt]
-    arg [-lcsup] ==> lib [csup]
-    arg [-lcray-c++-rts] ==> lib [cray-c++-rts]
-    arg [-lcraystdc++] ==> lib [craystdc++]
-    arg [-lsupc++] ==> lib [supc++]
-    arg [--whole-archive] ==> ignore
-    arg [-ltcmalloc_minimal] ==> lib [tcmalloc_minimal]
-    arg [--no-whole-archive] ==> ignore
-    arg [-lstdc++] ==> lib [stdc++]
-    arg [-lpthread] ==> lib [pthread]
-    arg [--start-group] ==> ignore
-    arg [-lc] ==> lib [c]
-    arg [-lcsup] ==> lib [csup]
-    arg [-lgcc_eh] ==> lib [gcc_eh]
-    arg [-lm] ==> lib [m]
-    arg [-lgcc] ==> lib [gcc]
-    arg [--end-group] ==> ignore
-    arg [-T/opt/cray/cce/8.3.7/craylibs/x86-64/2.23.1.cce.ld] ==> ignore
-    arg [-L/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
-    arg [-L/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
-    arg [-L//usr/lib64] ==> dir [//usr/lib64]
-    arg [-EL] ==> ignore
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTryCompileExec30498/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec30498.dir/build.make CMakeFiles/cmTryCompileExec30498.dir/build]
+  ignore line: [gmake[1]: Entering directory `/fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /fast/space/projects/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc     -o CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec30498]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec30498.dir/link.txt --verbose=1]
+  ignore line: [/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc      -v CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec30498 -rdynamic  ]
+  ignore line: [icpc version 14.0.0 (gcc version 4.3.0 compatibility)]
+  ignore line: [/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/mcpcom    -mP1OPT_version=14.0-intel64 -mGLOB_diag_file=CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.diag -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=430 "-mGLOB_options_string=-v -o cmTryCompileExec30498 -rdynamic" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64 -mGLOB_as_output_backup_file_name=/tmp/icpcJROamEas_.s -mIPOPT_activate -mGLOB_em64t -mGLOB_product_id_code=0x22006d8f -mP3OPT_use_mspp_call_convention -mPGOPTI_value_profile_use=T -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=icpc568469402QTmJ7S -mP2OPT_hlo -mP2OPT_hpo_rtt_control=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/nfs/software/intel/composer_xe_2013_sp1.0.080/bin/intel64/libiml_attr.so -mIPOPT_link -mIPOPT_ipo_activate -mIPOPT_mo_activate -mIPOPT_source_files_list=/tmp/icpcslisgQ4eid -mIPOPT_mo_global_data -mIPOPT_link_script_file=/tmp/icpcscriptvXWejm "-mIPOPT_cmdline_link="/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o" "-export-dynamic" "--eh-frame-hdr" "--build-id" "-dynamic-linker" "/lib64/ld-linux-x86-64.so.2" "-o" "cmTryCompileExec30498" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib" "-L/opt/sgi/mpt/mpt-2.11/lib" "-L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64" "-L/home/cosmos/share/x86_64/pp9/lib/../lib64/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/" "-L/lib/../lib64" "-L/lib/../lib64/" "-L/usr/lib/../lib64" "-L/usr/lib/../lib64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/" "-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/" "-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/" "-L/home/cosmos/share/x86_64/pp9/lib64" "-L/home/cosmos/share/x86_64/pp9/lib/" "-L/opt/sgi/mpt/mpt-2.11/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/" "-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../" "-L/lib64" "-L/lib/" "-L/usr/lib64" "-L/usr/lib" "CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o" "-Bstatic" "-limf" "-lsvml" "-lirng" "-Bdynamic" "-lm" "-Bstatic" "-lipgo" "-ldecimal" "--as-needed" "-Bdynamic" "-lcilkrts" "--no-as-needed" "-lstdc++" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc" "-lsvml" "-Bdynamic" "-lc" "-lgcc" "-lgcc_s" "-Bstatic" "-lirc_s" "-Bdynamic" "-ldl" "-lc" "/usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o" "/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o"" -mIPOPT_il_in_obj -mIPOPT_ipo_activate_warn=FALSE -mIPOPT_obj_output_file_name=/tmp/ipo_icpcPcbpcl.o -mIPOPT_whole_archive_fixup_file_name=/tmp/icpcwarch0jrp86 -mGLOB_linker_version=2.23.1 -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_driver_tempfile_name=/tmp/icpctempfile47MUfg -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ipo_icpcPcbpcl.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_NONE -mP1OPT_source_file_name=ipo_out.c CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o -mIPOPT_object_files=T -mIPOPT_assembly_files=/tmp/icpcalisTCZheD -mIPOPT_generated_tempfiles=/tmp/icpcelis1p5gfM -mIPOPT_embedded_object_base_name=/tmp/icpceobjYhhggV -mIPOPT_cmdline_link_new_name=/tmp/icpcllistxwfh4]
+  link line: [ld    /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o -export-dynamic --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec30498 -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1 -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64 -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib -L/opt/sgi/mpt/mpt-2.11/lib -L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64 -L/home/cosmos/share/x86_64/pp9/lib/../lib64/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/ -L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/ -L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/ -L/home/cosmos/share/x86_64/pp9/lib64 -L/home/cosmos/share/x86_64/pp9/lib/ -L/opt/sgi/mpt/mpt-2.11/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/ -L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -limf -lsvml -lirng -Bdynamic -lm -Bstatic -lipgo -ldecimal --as-needed -Bdynamic -lcilkrts --no-as-needed -lstdc++ -lgcc -lgcc_s -Bstatic -lirc -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o]
+    arg [ld] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/crtbegin.o] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec1963665754] ==> ignore
-    arg [--undefined=__pthread_initialize_minimal] ==> ignore
-    arg [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1/crtend.o] ==> ignore
-    arg [/usr/lib64/crtn.o] ==> ignore
-  remove lib [gcc_eh]
+    arg [cmTryCompileExec30498] ==> ignore
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib] ==> dir [/home/cosmos/share/x86_64/pp9/lib]
+    arg [-L/opt/sgi/mpt/mpt-2.11/lib] ==> dir [/opt/sgi/mpt/mpt-2.11/lib]
+    arg [-L/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> dir [/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib/../lib64] ==> dir [/home/cosmos/share/x86_64/pp9/lib/../lib64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib/../lib64/] ==> dir [/home/cosmos/share/x86_64/pp9/lib/../lib64/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/lib/../lib64/] ==> dir [/lib/../lib64/]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/../lib64/] ==> dir [/usr/lib/../lib64/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/]
+    arg [-L/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/] ==> dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib64] ==> dir [/home/cosmos/share/x86_64/pp9/lib64]
+    arg [-L/home/cosmos/share/x86_64/pp9/lib/] ==> dir [/home/cosmos/share/x86_64/pp9/lib/]
+    arg [-L/opt/sgi/mpt/mpt-2.11/lib/] ==> dir [/opt/sgi/mpt/mpt-2.11/lib/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../]
+    arg [-L/lib64] ==> dir [/lib64]
+    arg [-L/lib/] ==> dir [/lib/]
+    arg [-L/usr/lib64] ==> dir [/usr/lib64]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTryCompileExec30498.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [-limf] ==> lib [imf]
+    arg [-lsvml] ==> lib [svml]
+    arg [-lirng] ==> lib [irng]
+    arg [-Bdynamic] ==> ignore
+    arg [-lm] ==> lib [m]
+    arg [-Bstatic] ==> ignore
+    arg [-lipgo] ==> lib [ipgo]
+    arg [-ldecimal] ==> lib [decimal]
+    arg [--as-needed] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-lcilkrts] ==> lib [cilkrts]
+    arg [--no-as-needed] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-Bstatic] ==> ignore
+    arg [-lirc] ==> lib [irc]
+    arg [-lsvml] ==> lib [svml]
+    arg [-Bdynamic] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-Bstatic] ==> ignore
+    arg [-lirc_s] ==> lib [irc_s]
+    arg [-Bdynamic] ==> ignore
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/crtend.o] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/crtn.o] ==> ignore
   remove lib [gcc]
-  collapse library dir [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64] ==> [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64]
-  collapse library dir [/opt/gcc/4.8.1/snos/lib64] ==> [/opt/gcc/4.8.1/snos/lib64]
-  collapse library dir [/opt/cray/dmapp/default/lib64] ==> [/opt/cray/dmapp/default/lib64]
-  collapse library dir [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib] ==> [/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib]
-  collapse library dir [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib] ==> [/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib]
-  collapse library dir [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64] ==> [/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64]
-  collapse library dir [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64] ==> [/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64]
-  collapse library dir [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64] ==> [/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64]
-  collapse library dir [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64] ==> [/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64]
-  collapse library dir [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64] ==> [/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64]
-  collapse library dir [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64] ==> [/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64]
-  collapse library dir [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64] ==> [/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64]
-  collapse library dir [/opt/cray/atp/1.7.5/lib] ==> [/opt/cray/atp/1.7.5/lib]
-  collapse library dir [/opt/cray/cce/8.3.7/craylibs/x86-64] ==> [/opt/cray/cce/8.3.7/craylibs/x86-64]
-  collapse library dir [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64] ==> [/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64]
-  collapse library dir [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1] ==> [/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1]
-  collapse library dir [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib] ==> [/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib]
-  collapse library dir [//usr/lib64] ==> [//usr/lib64]
-  implicit libs: [AtpSigHandler;AtpSigHCommData;sci_cray_mpi_mp;sci_cray_mp;mpichcxx_cray;mpich_cray;pgas-dmapp;cray-c++-rts;craystdc++;xpmem;dmapp;pmi;udreg;alpslli;alpsutil;rca;wlm_detect;ugni;omp;craymp;modules;fi;f;pthread;craymath;m;gfortran;quadmath;u;rt;csup;cray-c++-rts;craystdc++;supc++;tcmalloc_minimal;stdc++;pthread;c;csup;m]
-  implicit dirs: [/opt/cray/cce/8.3.7/CC/x86-64/lib/x86-64;/opt/gcc/4.8.1/snos/lib64;/opt/cray/dmapp/default/lib64;/opt/cray/mpt/7.1.1/gni/mpich2-cray/83/lib;/opt/cray/libsci/13.0.1/CRAY/83/sandybridge/lib;/opt/cray/rca/1.0.0-2.0501.48090.7.46.ari/lib64;/opt/cray/alps/5.1.1-2.0501.8507.1.1.ari/lib64;/opt/cray/xpmem/0.1-2.0501.48424.3.3.ari/lib64;/opt/cray/dmapp/7.0.1-1.0501.8315.8.4.ari/lib64;/opt/cray/pmi/5.0.6-1.0000.10439.140.2.ari/lib64;/opt/cray/ugni/5.0-1.0501.8253.10.22.ari/lib64;/opt/cray/udreg/2.3.2-1.0501.7914.1.13.ari/lib64;/opt/cray/atp/1.7.5/lib;/opt/cray/cce/8.3.7/craylibs/x86-64;/opt/cray/wlm_detect/1.0-1.0501.47908.2.2.ari/lib64;/opt/gcc/4.8.1/snos/lib/gcc/x86_64-suse-linux/4.8.1;/opt/cray/cce/8.3.7/cray-binutils/x86_64-unknown-linux-gnu/lib;//usr/lib64]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1] ==> [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64] ==> [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64] ==> [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib] ==> [/home/cosmos/share/x86_64/pp9/lib]
+  collapse library dir [/opt/sgi/mpt/mpt-2.11/lib] ==> [/opt/sgi/mpt/mpt-2.11/lib]
+  collapse library dir [/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64] ==> [/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib/../lib64] ==> [/home/cosmos/share/x86_64/pp9/lib64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib/../lib64/] ==> [/home/cosmos/share/x86_64/pp9/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/] ==> [/usr/lib64/gcc/x86_64-suse-linux/4.3]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../lib64/] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/lib/../lib64/] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/../lib64/] ==> [/usr/lib64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64]
+  collapse library dir [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64/] ==> [/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib64] ==> [/home/cosmos/share/x86_64/pp9/lib64]
+  collapse library dir [/home/cosmos/share/x86_64/pp9/lib/] ==> [/home/cosmos/share/x86_64/pp9/lib]
+  collapse library dir [/opt/sgi/mpt/mpt-2.11/lib/] ==> [/opt/sgi/mpt/mpt-2.11/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/lib/] ==> [/usr/x86_64-suse-linux/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/4.3/../../../] ==> [/usr/lib64]
+  collapse library dir [/lib64] ==> [/lib64]
+  collapse library dir [/lib/] ==> [/lib]
+  collapse library dir [/usr/lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [imf;svml;irng;m;ipgo;decimal;cilkrts;stdc++;irc;svml;c;irc_s;dl;c]
+  implicit dirs: [/opt/intel/composer_xe_2013_sp1.0.080/tbb/lib/intel64/gcc4.1;/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64;/opt/intel/composer_xe_2013_sp1.0.080/ipp/lib/intel64;/opt/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64;/home/cosmos/share/x86_64/pp9/lib;/opt/sgi/mpt/mpt-2.11/lib;/nfs/software/intel/composer_xe_2013_sp1.0.080/compiler/lib/intel64;/home/cosmos/share/x86_64/pp9/lib64;/usr/lib64/gcc/x86_64-suse-linux/4.3;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib;/lib;/usr/lib]
   implicit fwks: []
 
 

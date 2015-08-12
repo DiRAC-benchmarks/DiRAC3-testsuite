@@ -7,14 +7,14 @@ find_package(OpenMP REQUIRED)
 add_executable(HACCmk main.c Step10_orig.c mysecond.c)
 
 # Optimization flags
-set (OPENMP_C_REPORT_FLAGS "") # gcc
+#set (OPENMP_C_REPORT_FLAGS "") # gcc
 # set(OPENMP_C_REPORT_FLAGS "-openmp-report2") # intel compiler linux
 set(VERBOSE_OPTIMIZATION_FLAGS "-fopt-info-optall-optimized") # gcc
 # set(VERBOSE_OPTIMIZATION_FLAGS "-vec-report6 -opt-report3") # intel v13 and v14 only. use -qopt-report interface for v15
 set(FAST_MATH_FLAGS "-ffast-math") # gcc
 # set(FAST_MATH_FLAGS "-no-prec-div") # intel
-set(AVX_FLAGS "-march=core-avx2 -Wa,-q") # gcc using Clang assembler (MacOSX)
-# set(AVX_FLAGS "-xAVX") # intel
+#set(AVX_FLAGS "-march=core-avx2 -Wa,-q") # gcc using Clang assembler (MacOSX)
+set(AVX_FLAGS "-xAVX") # intel
 
 # Define compiler flags
 set(CFLAGS_MAIN     "-O0 ${OpenMP_C_FLAGS} ${OPENMP_C_REPORT_FLAGS} -Wall")

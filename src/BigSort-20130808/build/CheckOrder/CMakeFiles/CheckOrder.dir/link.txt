@@ -1,1 +1,0 @@
-/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc   -openmp  -O3     CMakeFiles/CheckOrder.dir/check_order.cpp.o CMakeFiles/CheckOrder.dir/main.cpp.o  -o CheckOrder -rdynamic -lmpi 

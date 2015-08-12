@@ -2,8 +2,7 @@
 # Automatically detect compiler and select flags
 # Remove unnatural language from old Makefiles in favour of cleaner CMake style
 
-# Find OpenMP and create executable
-find_package(OpenMP REQUIRED)
+# Create executable
 add_executable(HACCmk main.c Step10_orig.c mysecond.c)
 
 # Optimization flags

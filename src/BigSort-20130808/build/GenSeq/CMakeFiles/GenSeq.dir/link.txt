@@ -1,1 +1,0 @@
-/opt/intel/composer_xe_2013_sp1.0.080/bin/intel64/icpc   -openmp  -O3     CMakeFiles/GenSeq.dir/main.cpp.o  -o GenSeq -rdynamic -lmpi 

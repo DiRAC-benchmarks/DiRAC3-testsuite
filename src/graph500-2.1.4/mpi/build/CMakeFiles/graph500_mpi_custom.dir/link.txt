@@ -1,1 +1,0 @@
-/opt/cray/craype/2.2.1/bin/cc  -homp -hrestrict=a -O3 -hfp3 -DGRAPH_GENERATOR_MPI    CMakeFiles/graph500_mpi_custom.dir/bfs_custom.c.o  -o graph500_mpi_custom  

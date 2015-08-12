@@ -1,1 +1,0 @@
-/work/d63/d63/shared/DiRAC3-testsuite/src/amgmk-v1.0/build/CMakeFiles/AMGmk.dir

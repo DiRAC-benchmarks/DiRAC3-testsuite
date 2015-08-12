@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(DiRAC3-testsuite C Fortran)
+project(DiRAC3-testsuite C CXX Fortran)
 
 SET(DIRAC3_TESTSUITE_VERSION_MAJOR 0)
 SET(DIRAC3_TESTSUITE_VERSION_MINOR 1)
@@ -28,4 +28,10 @@ SET(DIRAC3_TESTSUITE_OUTPUTS_PATH ${CMAKE_SOURCE_DIR}/outputs)
 # Directory for scripts
 SET(DIRAC3_TESTSUITE_SCRIPTS_PATH ${CMAKE_SOURCE_DIR}/scripts)
 
+# Find necessary packages and libraries
+find_package(OpenMP REQUIRED)
+find_package(MPI REQUIRED)
+find_library(M_LIBRARIES m REQUIRED)
+
+# Add source
 add_subdirectory(src)

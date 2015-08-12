@@ -1,5 +1,5 @@
 # :TODO:
-# Link to M_LIBRARY using target_link_libraries not LDFLAGS as in original Makefile
+# Link to M_LIBRARIES using target_link_libraries not LDFLAGS as in original Makefile
 # Script files should be targets with custom commands so that make clean removes them
 # Construction of executables inside for loops should be a single function
 
@@ -11,9 +11,6 @@ add_custom_target(stride-unoptimized)
 add_custom_target(stride-benchmarks)
 add_dependencies(stride-benchmarks stride-optimized stride-unoptimized)
 
-# C Math Library
-find_library(M_LIBRARY m REQUIRED)
-
 # Optimized Compiler Flags
 set(STRIDE_FFLAGS  "-O3 -DLINUX")
 set(STRIDE_CFLAGS  "-O3 -DLINUX")
@@ -23,8 +20,8 @@ set(STRIDE_GFFLAGS "-g  -DLINUX")
 set(STRIDE_GCFLAGS "-g  -DLINUX")
 
 # Libraries
-set(STRIDE_LDCFLAGS "${M_LIBRARY}")
-set(STRIDE_LDFFLAGS ""            )
+set(STRIDE_LDCFLAGS "${M_LIBRARIES}")
+set(STRIDE_LDFFLAGS ""              )
 
 # Object Files
 add_library           (STRIDE_SECC OBJECT secc.c)

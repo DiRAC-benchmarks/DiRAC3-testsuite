@@ -1,0 +1,412 @@
+20150903155124
+/cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS ~/cosma5/IOR_DiRAC/NS.FPS 
+
+Usage: ./mpiexec [global opts] [exec1 local opts] : [exec2 local opts] : ...
+
+Global options (passed to all executables):
+
+  Global environment options:
+    -genv {name} {value}             environment variable name and value
+    -genvlist {env1,env2,...}        environment variable list to pass
+    -genvnone                        do not pass any environment variables
+    -genvall                         pass all environment variables not managed
+                                          by the launcher (default)
+
+  Other global options:
+    -f {name} | -hostfile {name}     file containing the host names
+    -hosts {host list}               comma separated host list
+    -configfile {name}               config file containing MPMD launch options
+    -machine {name} | -machinefile {name}
+                                     file mapping procs to machines
+    -pmi-connect {nocache|lazy-cache|cache}
+                                     set the PMI connections mode to use
+    -pmi-aggregate                   aggregate PMI messages
+    -pmi-noaggregate                 do not  aggregate PMI messages
+    -trace {<libraryname>}           trace the application using <libraryname>
+                                     profiling library; default is libVT.so
+    -check-mpi {<libraryname>}       check the application using <libraryname>
+                                     checking library; default is libVTmc.so
+    -ilp64                           Preload ilp64 wrapper library for support default size of
+                                     integer 8 bytes
+    -mps                             set variables for MPI Performance Snapshot (MPS)
+    -trace-pt2pt                     collect information about
+                                     Point to Point operations
+    -trace-collectives               collect information about
+                                     Collective operations
+    -tune [<confname>]               apply the tuned data produced by
+                                     the MPI Tuner utility
+    -noconf                          do not use any mpiexec's configuration files
+    -branch-count {leaves_num}       set the number of children in tree
+    -gwdir {dirname}                 working directory to use
+    -gpath {dirname}                 path to executable to use
+    -gumask {umask}                  mask to perform umask
+    -tmpdir {tmpdir}                 temporary directory for cleanup input file
+    -cleanup                         create input file for clean up
+
+
+Local options (passed to individual executables):
+
+  Local environment options:
+    -env {name} {value}              environment variable name and value
+    -envlist {env1,env2,...}         environment variable list to pass
+    -envnone                         do not pass any environment variables
+    -envall                          pass all environment variables (default)
+
+  Other local options:
+    -wdir {dirname}                  working directory to use
+    -path {dirname}                  path to executable to use
+    -umask {umask}                   mask to perform umask
+    -n/-np {value}                   number of processes
+    {exec_name} {args}               executable name and arguments
+
+
+Hydra specific options (treated as global):
+
+  Bootstrap options:
+    -bootstrap                       bootstrap server to use
+     (ssh rsh pdsh fork slurm srun ll llspawn.stdio lsf blaunch sge qrsh persist jmi service pbsdsh)
+    -bootstrap-exec                  executable to use to bootstrap processes
+    -bootstrap-exec-args             additional options to pass to bootstrap server
+    -enable-x/-disable-x             enable or disable X forwarding
+
+  Resource management kernel options:
+    -rmk                             resource management kernel to use (user slurm srun ll llspawn.stdio lsf blaunch sge qrsh pbs cobalt)
+
+  Processor topology options:
+    -binding                         process-to-core binding mode
+
+  Checkpoint/Restart options:
+    -ckpoint {on|off}                enable/disable checkpoints for this run
+    -ckpoint-interval                checkpoint interval
+    -ckpoint-prefix                  destination for checkpoint files (stable storage, typically a cluster-wide file system)
+    -ckpoint-tmp-prefix              temporary/fast/local storage to speed up checkpoints
+    -ckpoint-preserve                number of checkpoints to keep (default: 1, i.e. keep only last checkpoint)
+    -ckpointlib                      checkpointing library (blcr)
+    -ckpoint-logfile                 checkpoint activity/status log file (appended)
+    -restart                         restart previously checkpointed application
+    -ckpoint-num                     checkpoint number to restart
+
+  Demux engine options:
+    -demux                           demux engine (poll select)
+
+  Debugger support options:
+    -tv                              run processes under TotalView
+    -tva {pid}                       attach existing mpiexec process to TotalView
+    -idb                             run processes under IDB
+    -idba {pid}                      attach existing mpiexec process to IDB
+    -gdb                             run processes under GDB
+    -gdba {pid}                      attach existing mpiexec process to GDB
+    -gdb-ia                          run processes under Intel IA specific GDB
+
+  Other Hydra options:
+    -v | -verbose                    verbose mode
+    -info                            build information
+    -print-rank-map                  print rank mapping
+    -print-all-exitcodes             print exit codes of all processes
+    -iface                           network interface to use
+    -help                            show this message
+    -perhost <n>                     place consecutive <n> processes on each host
+    -ppn <n>                         stand for "process per node"; an alias to -perhost <n>
+    -grr <n>                         stand for "group round robin"; an alias to -perhost <n>
+    -rr                              involve "round robin" startup scheme
+    -s <spec>                        redirect stdin to all or 1,2 or 2-4,6 MPI processes (0 by default)
+    -ordered-output                  avoid data output intermingling
+    -profile                         turn on internal profiling
+    -prepend-rank                    prepend rank to output
+    -prepend-pattern                 prepend pattern to output
+    -outfile-pattern                 direct stdout to file
+    -errfile-pattern                 direct stderr to file
+    -localhost                       local hostname for the launching node
+
+Intel(R) MPI Library for Linux* OS, Version 5.0 Update 3 Build 20150128 (build id: 11250)
+Copyright (C) 2003-2015, Intel Corporation. All rights reserved.
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+Began: Thu Sep  3 15:51:26 2015
+Command line used: /cosma5/data/dr002/dc-kash1/ior_hdf5/bin/ior -vvv -b 16g -f /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/con.ior
+Machine: Linux m5255
+Start time skew across all tasks: 0.00 sec
+
+Test 0 started: Thu Sep  3 15:51:26 2015
+Path: /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS
+FS: 2435.9 TiB   Used FS: 83.3%   Inodes: 1280.0 Mi   Used Inodes: 4.6%
+Participating tasks: 16
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+Summary:
+	api                = HDF5-1.8.14 (Parallel)
+	test filename      = /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/iorTest
+	access             = file-per-process, independent
+	pattern            = segmented (1 segment)
+	ordering in a file = sequential offsets
+	ordering inter file= constant task offsets = 1
+	clients            = 16 (1 per node)
+	repetitions        = 1
+	xfersize           = 4 MiB
+	blocksize          = 16 GiB
+	aggregate filesize = 256 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+write     8342       16777216   4096       0.021781   31.12      2.65       31.42      0   
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+read      4018       16777216   4096       0.227566   65.18      1.45       65.25      0   
+remove    -          -          -          -          -          -          0.034903   0   
+
+Max Write: 8342.09 MiB/sec (8747.31 MB/sec)
+Max Read:  4017.74 MiB/sec (4212.90 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write        8342.09    8342.09    8342.09       0.00   31.42428 0 16 1 1 1 1 1 0 0 1 17179869184 4194304 274877906944 HDF5 0
+read         4017.74    4017.74    4017.74       0.00   65.24669 0 16 1 1 1 1 1 0 0 1 17179869184 4194304 274877906944 HDF5 0
+
+Finished: Thu Sep  3 15:53:23 2015
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+Began: Thu Sep  3 15:53:24 2015
+Command line used: /cosma5/data/dr002/dc-kash1/ior_hdf5/bin/ior -vvv -b 32g -f /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/con.ior
+Machine: Linux m5255
+Start time skew across all tasks: 0.00 sec
+
+Test 0 started: Thu Sep  3 15:53:24 2015
+Path: /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS
+FS: 2435.9 TiB   Used FS: 83.3%   Inodes: 1280.0 Mi   Used Inodes: 4.6%
+Participating tasks: 8
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+Summary:
+	api                = HDF5-1.8.14 (Parallel)
+	test filename      = /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/iorTest
+	access             = file-per-process, independent
+	pattern            = segmented (1 segment)
+	ordering in a file = sequential offsets
+	ordering inter file= constant task offsets = 1
+	clients            = 8 (1 per node)
+	repetitions        = 1
+	xfersize           = 4 MiB
+	blocksize          = 32 GiB
+	aggregate filesize = 256 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+write     9014       33554432   4096       0.059069   28.99      2.76       29.08      0   
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+read      3906       33554432   4096       0.128922   67.05      2.32       67.10      0   
+remove    -          -          -          -          -          -          0.032530   0   
+
+Max Write: 9014.35 MiB/sec (9452.23 MB/sec)
+Max Read:  3906.48 MiB/sec (4096.24 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write        9014.35    9014.35    9014.35       0.00   29.08075 0 8 1 1 1 1 1 0 0 1 34359738368 4194304 274877906944 HDF5 0
+read         3906.48    3906.48    3906.48       0.00   67.10486 0 8 1 1 1 1 1 0 0 1 34359738368 4194304 274877906944 HDF5 0
+
+Finished: Thu Sep  3 15:55:20 2015
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+Began: Thu Sep  3 15:55:21 2015
+Command line used: /cosma5/data/dr002/dc-kash1/ior_hdf5/bin/ior -vvv -b 64g -f /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/con.ior
+Machine: Linux m5255
+Start time skew across all tasks: 0.00 sec
+
+Test 0 started: Thu Sep  3 15:55:21 2015
+Path: /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS
+FS: 2435.9 TiB   Used FS: 83.3%   Inodes: 1280.0 Mi   Used Inodes: 4.6%
+Participating tasks: 4
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+Summary:
+	api                = HDF5-1.8.14 (Parallel)
+	test filename      = /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/iorTest
+	access             = file-per-process, independent
+	pattern            = segmented (1 segment)
+	ordering in a file = sequential offsets
+	ordering inter file= constant task offsets = 1
+	clients            = 4 (1 per node)
+	repetitions        = 1
+	xfersize           = 4 MiB
+	blocksize          = 64 GiB
+	aggregate filesize = 256 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+write     5757       67108864   4096       0.019355   45.53      3.62       45.54      0   
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+read      3602       67108864   4096       0.136440   72.71      2.50       72.77      0   
+remove    -          -          -          -          -          -          0.019722   0   
+
+Max Write: 5756.92 MiB/sec (6036.57 MB/sec)
+Max Read:  3602.42 MiB/sec (3777.41 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write        5756.92    5756.92    5756.92       0.00   45.53542 0 4 1 1 1 1 1 0 0 1 68719476736 4194304 274877906944 HDF5 0
+read         3602.42    3602.42    3602.42       0.00   72.76879 0 4 1 1 1 1 1 0 0 1 68719476736 4194304 274877906944 HDF5 0
+
+Finished: Thu Sep  3 15:57:39 2015
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+Began: Thu Sep  3 15:57:40 2015
+Command line used: /cosma5/data/dr002/dc-kash1/ior_hdf5/bin/ior -vvv -b 128g -f /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/con.ior
+Machine: Linux m5255
+Start time skew across all tasks: 0.00 sec
+
+Test 0 started: Thu Sep  3 15:57:40 2015
+Path: /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS
+FS: 2435.9 TiB   Used FS: 83.3%   Inodes: 1280.0 Mi   Used Inodes: 4.6%
+Participating tasks: 2
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+Summary:
+	api                = HDF5-1.8.14 (Parallel)
+	test filename      = /cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS/iorTest
+	access             = file-per-process, independent
+	pattern            = segmented (1 segment)
+	ordering in a file = sequential offsets
+	ordering inter file= constant task offsets = 1
+	clients            = 2 (1 per node)
+	repetitions        = 1
+	xfersize           = 4 MiB
+	blocksize          = 128 GiB
+	aggregate filesize = 256 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+write     2819.07    134217728  4096       0.016722   92.98      12.70      92.99      0   
+delaying 10 seconds . . .
+
+hints passed to access property list {
+}
+ior WARNING: showHints not working for HDF5.
+read      2713.35    134217728  4096       0.085450   96.55      2.20       96.61      0   
+remove    -          -          -          -          -          -          0.019221   0   
+
+Max Write: 2819.07 MiB/sec (2956.01 MB/sec)
+Max Read:  2713.35 MiB/sec (2845.15 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write        2819.07    2819.07    2819.07       0.00   92.98948 0 2 1 1 1 1 1 0 0 1 137438953472 4194304 274877906944 HDF5 0
+read         2713.35    2713.35    2713.35       0.00   96.61281 0 2 1 1 1 1 1 0 0 1 137438953472 4194304 274877906944 HDF5 0
+
+Finished: Thu Sep  3 16:01:10 2015
+~/cosma5/IOR_DiRAC/NS.FPS 
+
+------------------------------------------------------------
+Sender: LSF System <hpcadmin@m5255>
+Subject: Job 529456: <NS_FPS_HDF5> Done
+
+Job <NS_FPS_HDF5> was submitted from host <cosma-a> by user <dc-kash1> in cluster <cosma-p_cluster1>.
+Job was executed on host(s) <1*m5255>, in queue <cosma5>, as user <dc-kash1> in cluster <cosma-p_cluster1>.
+                            <1*m5256>
+                            <1*m5267>
+                            <1*m5268>
+                            <1*m5319>
+                            <1*m5330>
+                            <1*m5331>
+                            <1*m5353>
+                            <1*m5354>
+                            <1*m5356>
+                            <1*m5361>
+                            <1*m5364>
+                            <1*m5392>
+                            <1*m5417>
+                            <1*m5360>
+                            <1*m5019>
+</cosma/home/dr002/dc-kash1> was used as the home directory.
+</cosma/home/dr002/dc-kash1/cosma5/IOR_DiRAC/NS.FPS> was used as the working directory.
+Started at Thu Sep  3 15:51:24 2015
+Results reported at Thu Sep  3 16:01:10 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/tcsh
+
+#BSUB -n 16
+#BSUB -x
+#BSUB -R "span[ptile=1]"
+#BSUB -J NS_FPS_HDF5
+#BSUB -oo NS_FPS_HDF5.out.%J
+#BSUB -eo NS_FPS_HDF5.err.%J
+#BSUB -q cosma5
+#BSUB -P dr002
+#BSUB -W 08:00
+ 
+  
+set TARGET="/cosma5/data/dr002/dc-kash1/IOR_DiRAC/NS.FPS"
+set IOR="/cosma5/data/dr002/dc-kash1/ior_hdf5/bin/ior"
+set IOR_SCRIPT="$TARGET/con.ior"
+
+
+module remove platform_mpi/9.1.2
+module remove hdf5/1.8.14
+module load intel_mpi/5.0.3
+module load parallel_hdf5/1.8.14-mt
+
+date '+%Y%m%d%H%M%S'
+
+pushd $TARGET
+
+
+set numNodes= ( 16 8 4 2 1 )
+set blockSize=( 16 32 64 128 256 )
+
+foreach test (`seq 5`)
+    @ test=$test - 1
+    mpirun -np $numNodes[$test]  $IOR -vvv  -b $blockSize[$test]g -f $IOR_SCRIPT
+end
+popd
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   1379.98 sec.
+    Max Memory :       235 MB
+    Max Swap   :      1360 MB
+
+    Max Processes  :        14
+    Max Threads    :        21
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <NS_FPS_HDF5.err.529456> for stderr output of this job.
+

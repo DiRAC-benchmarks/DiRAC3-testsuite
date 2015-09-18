@@ -1,5 +1,4 @@
 add_subdirectory(amgmk-v1.0)
-add_subdirectory(BigSort-20130808)
 add_subdirectory(graph500-2.1.4)
 add_subdirectory(HACCmk)
 add_subdirectory(ior)

@@ -1,1 +1,2 @@
-python ./stream_plot.py site:cosma cosma.gold  site:complexity complexity.gold site:cosmos cosmos_2.gold site:archer archer.gold
+#python ./stream_plot.py site:cosma cosma.gold  site:complexity complexity.gold site:cosmos cosmos_2.gold site:archer archer.gold
+python ./stream_plot.py site:cosma cosma.gold  site:complexity complexity.gold site:archer archer.gold

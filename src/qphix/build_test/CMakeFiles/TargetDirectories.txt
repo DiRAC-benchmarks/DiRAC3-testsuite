@@ -1,0 +1,2 @@
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/build_test/tests/CMakeFiles/time_dslash_noqdp.dir
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/build_test/lib/CMakeFiles/qphix_solver.dir

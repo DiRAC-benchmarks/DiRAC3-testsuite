@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/qphix/print_utils.h
+cstdio
+-
+cstdarg
+-
+qphix/qphix_config.h
+../include/qphix/qphix/qphix_config.h
+
+../include/qphix/qphix_config.h
+qphix_config_internal.h
+../include/qphix/qphix_config_internal.h
+
+../include/qphix/qphix_config_internal.h
+
+../include/qphix/threadbind.h
+
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/lib/generic_threadbind.cc
+qphix/threadbind.h
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/lib/qphix/threadbind.h
+qphix/print_utils.h
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/lib/qphix/print_utils.h
+
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/lib/print_utils.cc
+qphix/print_utils.h
+/home/skashyap/work/DiRAC3-testsuite/src/qphix/lib/qphix/print_utils.h
+map
+-
+qmp.h
+-
+

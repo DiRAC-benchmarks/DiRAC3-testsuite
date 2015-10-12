@@ -160,16 +160,16 @@ am_time_dslash_noqdp_OBJECTS = time_dslash_noqdp.$(OBJEXT) \
 	timeDslashNoQDP.$(OBJEXT)
 time_dslash_noqdp_OBJECTS = $(am_time_dslash_noqdp_OBJECTS)
 time_dslash_noqdp_LDADD = $(LDADD)
-AM_V_P = $(am__v_P_@AM_V@)
-am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+AM_V_P = $(am__v_P_$(V))
+am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
 am__v_P_1 = :
-AM_V_GEN = $(am__v_GEN_@AM_V@)
-am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+AM_V_GEN = $(am__v_GEN_$(V))
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
 am__v_GEN_0 = @echo "  GEN     " $@;
 am__v_GEN_1 = 
-AM_V_at = $(am__v_at_@AM_V@)
-am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+AM_V_at = $(am__v_at_$(V))
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
 am__v_at_0 = @
 am__v_at_1 = 
 DEFAULT_INCLUDES = -I. -I$(top_builddir)/include/qphix
@@ -178,27 +178,27 @@ am__depfiles_maybe = depfiles
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
-AM_V_CXX = $(am__v_CXX_@AM_V@)
-am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+AM_V_CXX = $(am__v_CXX_$(V))
+am__v_CXX_ = $(am__v_CXX_$(AM_DEFAULT_VERBOSITY))
 am__v_CXX_0 = @echo "  CXX     " $@;
 am__v_CXX_1 = 
 CXXLD = $(CXX)
 CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
 	-o $@
-AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
-am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+AM_V_CXXLD = $(am__v_CXXLD_$(V))
+am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-AM_V_CC = $(am__v_CC_@AM_V@)
-am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+AM_V_CC = $(am__v_CC_$(V))
+am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
 am__v_CC_0 = @echo "  CC      " $@;
 am__v_CC_1 = 
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-AM_V_CCLD = $(am__v_CCLD_@AM_V@)
-am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+AM_V_CCLD = $(am__v_CCLD_$(V))
+am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
 SOURCES = $(t_clov_dslash_SOURCES) $(t_clov_invert_from_file_SOURCES) \
@@ -235,19 +235,20 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /Users/sid/Work/qphix/config/missing --run aclocal-1.15
-AMTAR = ${SHELL} /Users/sid/Work/qphix/config/missing --run tar
-AUTOCONF = ${SHELL} /Users/sid/Work/qphix/config/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/sid/Work/qphix/config/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/sid/Work/qphix/config/missing --run automake-1.15
+ACLOCAL = aclocal-1.15
+AMTAR = $${TAR-tar}
+AM_DEFAULT_VERBOSITY = 1
+AUTOCONF = autoconf
+AUTOHEADER = autoheader
+AUTOMAKE = automake-1.15
 AWK = awk
-CC = clang-omp++
+CC = gcc-5
 CCDEPMODE = depmode=gcc3
-CFLAGS = -fopenmp -g -O2 -mavx  -Drestrict=__restrict__
+CFLAGS = -fopenmp -g -O3 -mavx  -Drestrict=__restrict__ -std=c99
 CPPFLAGS = 
-CXX = clang-omp++
+CXX = g++-5
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -fopenmp -g -O2 -finline-functions -std=c++14 -mavx -Drestrict=__restrict__
+CXXFLAGS = -fopenmp -g -O3 -finline-functions -std=c++11 -mavx -Drestrict=__restrict__
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -264,7 +265,7 @@ LDFLAGS =
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /Users/sid/Work/qphix/config/missing --run makeinfo
+MAKEINFO = makeinfo
 MKDIR_P = ../config/install-sh -c -d
 OBJEXT = o
 PACKAGE = cpp_wilson_dslash
@@ -285,17 +286,17 @@ SET_MAKE =
 SHELL = /bin/sh
 STRIP = 
 VERSION = 1.0.0
-abs_builddir = /Users/sid/Work/qphix/tests
-abs_srcdir = /Users/sid/Work/qphix/tests
-abs_top_builddir = /Users/sid/Work/qphix
-abs_top_srcdir = /Users/sid/Work/qphix
-ac_ct_CC = clang-omp++
+abs_builddir = /Users/sid/Work/DiRAC3-testsuite/src/qphix/tests
+abs_srcdir = /Users/sid/Work/DiRAC3-testsuite/src/qphix/tests
+abs_top_builddir = /Users/sid/Work/DiRAC3-testsuite/src/qphix
+abs_top_srcdir = /Users/sid/Work/DiRAC3-testsuite/src/qphix
+ac_ct_CC = gcc-5
 ac_ct_CXX = 
 am__include = include
 am__leading_dot = .
 am__quote = 
-am__tar = ${AMTAR} chof - "$$tardir"
-am__untar = ${AMTAR} xf -
+am__tar = $${TAR-tar} chof - "$$tardir"
+am__untar = $${TAR-tar} xf -
 bindir = ${exec_prefix}/bin
 build = x86_64-apple-darwin15.0.0
 build_alias = 
@@ -316,16 +317,16 @@ host_vendor = apple
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/sid/Work/qphix/config/install-sh
+install_sh = ${SHELL} /Users/sid/Work/DiRAC3-testsuite/src/qphix/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/config/install-sh -c -d
+mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /Users/sid/Work/qphix
+prefix = /Users/sid/Work/DiRAC3-testsuite/src/qphix/build_auto
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -529,14 +530,14 @@ include ./$(DEPDIR)/time_dslash_noqdp.Po
 	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ $<
+#	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ $<
 
 .cc.obj:
 	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
 	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

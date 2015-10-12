@@ -11,7 +11,7 @@ project(qphix C CXX)
 
 SET(PARALLEL_ARCH "scalar")
 
-SET(SOALEN 8)
+SET(SOALEN 4)
 
 SET(USE_CEAN "no")
 
@@ -21,7 +21,7 @@ SET(build_clover "no")
 
 SET(USE_FAKE_COMMS "no")
 
-SET( qmt_enabled "no")
+SET(qmt_enabled "no")
 
 SET(QDPXX_GIVEN "no")
 
@@ -43,7 +43,7 @@ if(${QDPXX_GIVEN} STREQUAL "yes")
 else()
   if(${PARALLEL_ARCH} STREQUAL "scalar")
     MESSAGE("Scalar Build! Not checking for QMP")
-    SET(QPHIX_SCALAR true)
+    SET(QPHIX_SCALAR 1)
     set(QPHIX_AUX_CFLAGS "")
 		set(QPHIX_AUX_LDFLAGS "")
 		set(QPHIX_AUX_LIBS "")
@@ -140,6 +140,9 @@ if(${build_qpx} STREQUAL "yes")
   SET(QPHIX_BUILD_QPX true)
 endif()
 
+
 add_subdirectory(lib)
 add_subdirectory(include)
 add_subdirectory(tests)
+
+configure_file(${CMAKE_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_SOURCE_DIR}/include/qphix/qphix_config_internal.h) 

@@ -11,7 +11,7 @@ project(qphix C CXX)
 
 SET(PARALLEL_ARCH "scalar")
 
-SET(SOALEN 4)
+SET(SOALEN 16)
 
 SET(USE_CEAN "no")
 
@@ -28,8 +28,8 @@ SET(QDPXX_GIVEN "no")
 SET(proc "AVX")
 
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -openmp -g -O2 -finline-functions -std=c++11 -mavx  -Drestrict=__restrict__ ")
-set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS} -openmp -g  -O2 -std=c99 -mavx -Drestrict=__restrict__ ")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -finline-functions -std=c++11 -mavx  -Drestrict=__restrict__ ")
+set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -Drestrict=__restrict__ ")
 
 FIND_PACKAGE(OpenMP)
   IF(OPENMP_FOUND)

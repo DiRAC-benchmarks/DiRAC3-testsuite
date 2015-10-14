@@ -1,1 +1,0 @@
-./time_dslash_noqdp -x 8 -y 8 -z 8 -t 8  -by 8 -bz 8 -pxy 1 -pxyz 0 -c 20 -sy 1 -sz 2 -minct 1 -compress12 -geom 1 1 1 1 -i 500 --prec=f

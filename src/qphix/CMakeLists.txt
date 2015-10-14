@@ -11,7 +11,7 @@ project(qphix C CXX)
 
 SET(PARALLEL_ARCH "scalar")
 
-SET(SOALEN 16)
+SET(SOALEN 8)
 
 SET(USE_CEAN "no")
 

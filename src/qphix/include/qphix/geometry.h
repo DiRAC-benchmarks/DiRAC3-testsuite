@@ -134,7 +134,9 @@ namespace QPhiX {
 	p.startBlock = stblk;
 	stblk += p.Cyz;
 	rem -= p.Cyz;
-	//	masterPrintf("Phase %d: Cyz = %d Ct = %d, start = %d\n", n_phases, p.Cyz, p.Ct, p.startBlock);
+
+	masterPrintf("ctd %d: ctu = %d n_cores_per_minct = %d, MinCt = %d\n", ctd, ctu, n_cores_per_minct, MinCt);
+	//masterPrintf("Phase %d: Cyz = %d Ct = %d, start = %d\n", n_phases, p.Cyz, p.Ct, p.startBlock);
 	n_phases++;
       }
     }

@@ -1,2 +1,0 @@
-/usr/bin/ar cq libqphix_solver.a  CMakeFiles/qphix_solver.dir/print_utils.cc.o CMakeFiles/qphix_solver.dir/generic_threadbind.cc.o
-/usr/bin/ranlib libqphix_solver.a

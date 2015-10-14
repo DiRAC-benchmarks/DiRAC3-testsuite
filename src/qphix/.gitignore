@@ -5,8 +5,6 @@
 *~
 
 # Makefile.in-s -- use autoreconf to create these
-configure
-Makefile.in
 
 
 # Compiled source #
@@ -30,6 +28,9 @@ Makefile.in
 *.rar
 *.tar
 *.zip
+
+build_soa*
+
 
 # Logs and databases #
 ######################

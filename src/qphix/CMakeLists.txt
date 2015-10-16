@@ -145,4 +145,4 @@ add_subdirectory(lib)
 add_subdirectory(include)
 add_subdirectory(tests)
 
-configure_file(${CMAKE_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_SOURCE_DIR}/include/qphix/qphix_config_internal.h) 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h) 

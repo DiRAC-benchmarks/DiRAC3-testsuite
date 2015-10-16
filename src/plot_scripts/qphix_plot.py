@@ -14,10 +14,84 @@ minct="2"
 grep_pattern_command = re.compile(r'time_dslash_noqdp -x')
 grep_pattern_gflops = re.compile(r'GFLOPS total')
 grep_pattern_lattice = re.compile('-x\s*\d+\s*-y\s*\d+\s*-z\s*\d+\s*-t\s*\d+')
-grep_pattern_block = re.compile('-by\s*\d\s*-bz\s*\d')
-grep_pattern_core = re.compile('-c\s*\d')
+grep_pattern_block = re.compile('-by\s*\d+\s*-bz\s*\d+')
+grep_pattern_core = re.compile('-c\s*\d*')
 grep_pattern_minct = re.compile('-minct\s*'+minct)
-level1 = {}
+level1={}
+lattice={}
+colors = ['b','g','r','c','m','y','k']
+def plotFile():
+    lattlist = lattice.keys()
+    lattlist.sort()
+    init = 0;
+
+    for latt in lattlist:
+
+        fig,axs = plt.subplots()
+        basewidth=0.1
+
+
+        rects=[]
+        block_labels = []
+        print latt
+        blocks=lattice[latt]
+
+        blocklist = blocks.keys()
+        blocklist.sort()
+        for block in blocklist:
+            cores_s=[]
+            band_s=[]
+
+            cores_i=[]
+            band_f=[]
+
+            print "\t%s" % block
+            cores = blocks[block]
+
+            corelist =  [int(x) for x in cores.keys()]
+            corelist.sort()
+            for core in corelist:
+                flops = float(cores[str(core)])
+                print('\t\t{} : {}'.format(core, flops))
+                cores_s.append(str(core))
+                band_s.append(str(flops))
+                cores_i.append(int(core))
+                band_f.append(float(flops))
+
+            color1 = colors[init]
+            color2 = colors[init+1]
+
+            block_labels.append(block)
+            axs.plot(cores_i, np.array(band_f), label=block,marker='+', linestyle='--')
+
+            axs.set_xticks(cores_i)
+            #axs.set_xlim([-0.1,4.1])
+            axs.set_xticklabels(cores_s)
+
+
+        axs.set_ylabel('GFLOPS')
+        axs.set_xlabel('Cores')
+
+        font = {'family' : 'monospace',
+                'color'  : 'black',
+                'weight' : 'normal',
+                'size'   : 12,
+                }
+
+        # these are matplotlib.patch.Patch properties
+        props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+        chartTitle = latt
+        axs.text(0.85, 0.95, chartTitle, transform=axs.transAxes, fontsize=14,
+                verticalalignment='top', bbox=props, fontdict=font)
+
+        # plt.text(0.5, 1.08, Title, horizontalalignment='center', family='monospace',fontsize=20,  transform = axs.transAxes)
+        # axs.legend(API, loc='best', bbox_to_anchor=(1, 0.5))
+        axs.legend(block_labels, loc='upper left')
+        # axs.set_ylim([0,12])
+        # axs.set_yscale("log", nonposx='clip')
+        plt.show()
+
+
 
 def processFile(file_contents):
     flag=0
@@ -48,7 +122,7 @@ def processFile(file_contents):
             next
 
 
-    lattice={}
+
     for k in level1.keys():
         k.rstrip('\n')
         #print k
@@ -98,20 +172,8 @@ def processFile(file_contents):
             # print "Core:"+core+"\n"
             # print "GFlops:%f"% fGflops
 
-    lattlist = lattice.keys()
-    lattlist.sort()
 
-    for latt in lattlist:
-        print latt
-        blocks=lattice[latt]
 
-        blocklist = blocks.keys()
-        blocklist.sort()
-        for block in blocklist:
-            print "\t%s" % block
-            cores = blocks[block]
-            for core, flops in sorted(cores.iteritems(), key=lambda (k,v): (v,k)):
-                print('\t\t{} : {}'.format(core, flops))
 
 
 for IOR_file_i in sys.argv[1:]:
@@ -119,3 +181,4 @@ for IOR_file_i in sys.argv[1:]:
     read_file = IOR_file.readlines()
     line_count=len(read_file)
     processFile(read_file)
+    plotFile()

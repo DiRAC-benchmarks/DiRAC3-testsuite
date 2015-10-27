@@ -33,6 +33,8 @@ FIND_PACKAGE(OpenMP)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
   ENDIF()
 
+find_package(MPI)
+find_library(M_LIBRARY m)
 
 SET(QDPXX_GIVEN "no")
 
@@ -43,13 +45,11 @@ set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -Drestrict=__restr
 
 set(REPR "REPR_FUNDAMENTAL")
 
-add_definitions(${REPR})
+# add_definitions(-DREPR_NAME=${REPR})
 
-add_definitions(-DREPR_NAME=${REPR})
+add_definitions(-DREPR_NAME="$REPR")
 add_definitions("-DWITH_MPI")
 add_definitions("-D${REPR}")
-
-
 
 FIND_PACKAGE(OpenMP)
   IF(OPENMP_FOUND)
@@ -79,8 +79,7 @@ add_subdirectory(Inverters)
 add_subdirectory(Make)
 add_subdirectory(Bench)
 
-
-
 message(STATUS "${SRCS}")
 include_directories(${TOPDIR}/Include)
 add_executable (bsmbench ${SRCS})
+target_link_libraries(bsmbench  ${MPI_C_LIBRARIES} ${M_LIBRARIES})

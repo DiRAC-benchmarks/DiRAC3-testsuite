@@ -40,9 +40,6 @@ SET(QDPXX_GIVEN "no")
 
 SET(proc "AVX")
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -finline-functions -std=c++11 -mavx  -Drestrict=__restrict__ ")
-set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -Drestrict=__restrict__ ")
-
 set(REPR "REPR_FUNDAMENTAL")
 
 # add_definitions(-DREPR_NAME=${REPR})

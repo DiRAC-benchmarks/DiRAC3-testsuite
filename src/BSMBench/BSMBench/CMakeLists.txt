@@ -36,10 +36,6 @@ FIND_PACKAGE(OpenMP)
 find_package(MPI)
 find_library(M_LIBRARY m)
 
-SET(QDPXX_GIVEN "no")
-
-SET(proc "AVX")
-
 set(REPR "REPR_FUNDAMENTAL")
 
 # add_definitions(-DREPR_NAME=${REPR})
@@ -53,14 +49,6 @@ FIND_PACKAGE(OpenMP)
     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
   ENDIF()
-
-  set(NG 3)
-  MESSAGE("Writing suN headers...")
- # file(COPY ${TOPDIR}/Include/su${NG}.h DESTINATION ${TOPDIR}/Include/suN.h)
- # file(COPY ${TOPDIR}/Include/su${NG}_types.h DESTINATION ${TOPDIR}/Include/suN_types.h)
-  MESSAGE("Writing representation header...")
- # file(COPY ${TOPDIR}/Include/su$(NG)_repr_func.h ${TOPDIR}/Include/suN_repr_func.h)
-
 
 
 add_subdirectory(Include)
@@ -78,5 +66,19 @@ add_subdirectory(Bench)
 
 message(STATUS "${SRCS}")
 include_directories(${TOPDIR}/Include)
-add_executable (bsmbench ${SRCS})
-target_link_libraries(bsmbench  ${MPI_C_LIBRARIES} ${M_LIBRARIES})
+
+
+add_executable (bsmbench_comms ${SRCS})
+target_include_directories(bsmbench_comms PUBLIC ${TOPDIR}/Include_comms)
+target_link_libraries(bsmbench_comms ${MPI_C_LIBRARIES} ${M_LIBRARIES})
+
+
+
+add_executable (bsmbench_balance ${SRCS})
+target_include_directories(bsmbench_balance PUBLIC ${TOPDIR}/Include_balanced)
+target_link_libraries(bsmbench_balance ${MPI_C_LIBRARIES} ${M_LIBRARIES})
+
+
+add_executable (bsmbench_compute ${SRCS})
+target_include_directories(bsmbench_compute PUBLIC ${TOPDIR}/Include_compute)
+target_link_libraries(bsmbench_compute ${MPI_C_LIBRARIES} ${M_LIBRARIES})

@@ -9,7 +9,7 @@ cmake_minimum_required (VERSION 2.6)
 project(qphix C CXX)
 #AC_CONFIG_AUX_DIR(config)
 
-SET(PARALLEL_ARCH "scalar")
+SET(PARALLEL_ARCH "parscalar")
 
 SET(SOALEN 8)
 
@@ -26,6 +26,10 @@ SET(qmt_enabled "no")
 SET(QDPXX_GIVEN "no")
 
 SET(proc "AVX")
+
+set(QMP_HOME "/cosma5/data/dr002/dc-kash1/qmp/build")
+
+MESSAGE("DEBUG ${QMP_HOME}")
 
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -finline-functions -std=c++11 -mavx  -Drestrict=__restrict__ ")
@@ -49,8 +53,34 @@ else()
 		set(QPHIX_AUX_LIBS "")
     set(QPHIX_BUILD_WITH_QDP false)
     SET(QPHIX_PARSCALAR false)
-  endif()
-endif()
+  elseif(${PARALLEL_ARCH} STREQUAL "parscalar")
+	MESSAGE("Parscalar build! Checking for QMP")
+	if("X${QMP_HOME}X" STREQUAL "XX")
+		FIND_PROGRAM(QMP_CONFIG qmp-config PATHS ENV PATH  NO_DEFAULT_PATH)
+	else()
+		FIND_PROGRAM(QMP_CONFIG qmp-config PATHS ${QMP_HOME}/bin ENV PATH  NO_DEFAULT_PATH)
+		MESSAGE(" QMP_CONFIG SERACH ${QMP_HOME}/bin")
+
+	endif()
+	
+	if("X${QMP_CONFIG}X" STREQUAL "XX")
+		MESSAGE( WARNING "configuration program qmp-config not found")
+		MESSAGE( WARNING "Set environment variables QMP_CFLAGS QMP_LDFAGS QMP_LIBS before configure")
+	else()
+		MESSAGE("Found QMP configuration program ${QMP_CONFIG}")
+		set (EXECUTE_COMMAND ${QMP_CONFIG} --cflags)
+		execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_CFLAGS)
+		set(${CMAKE_C_FLAGS} "${CMAKE_C_FLAGS} ${QPHIX_AUX_CFLAGS}")
+		set (EXECUTE_COMMAND ${QMP_CONFIG} --ldflags)
+		execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LDFLAGS)
+		FIND_LIBRARY(QMP_LIB qmp "${QMP_HOME}/lib")
+		set (EXECUTE_COMMAND ${QMP_CONFIG}  --libs)
+		execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LIBS)
+	endif() #qmpconfig
+	#TODO Sid to include simple program check here to test the QMP flags
+
+  endif() #parallel arch
+endif() #qdpxx
 
 
 if(${PARALLEL_ARCH} STREQUAL "scalar")
@@ -62,6 +92,17 @@ if(${PARALLEL_ARCH} STREQUAL "scalar")
   else()
     MESSAGE("This version does no comms")
   endif()
+
+elseif(${PARALLEL_ARCH} STREQUAL "parscalar")
+
+	add_definitions(-DQPHIX_PARSCALAR=1)
+	if(${USE_FAKE_COMMS} STREQUAL "yes")
+		MESSAGE(SEND_ERROR "Cannot use parscalar arch with fake comms")
+	else()
+		MESSAGE("Regular QMP COMMS")
+		add_definitions(-DQPHIX_DO_COMMS=1)
+		add_definitions(-DQPHIX_QMP_COMMS=1)
+	endif()
 endif()
 
 if(${SOALEN} EQUAL 1)
@@ -145,4 +186,4 @@ add_subdirectory(lib)
 add_subdirectory(include)
 add_subdirectory(tests)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h) 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_CURRENT_SOURCE_DIR} /include/qphix/qphix_config_internal.h) 

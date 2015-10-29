@@ -17,11 +17,8 @@ namespace QPhiX
     typedef typename Geometry<FT,veclen,soalen,compress12>::FourSpinorBlock FourSpinorBlock;
     typedef typename Geometry<FT,veclen,soalen,compress12>::TwoSpinorBlock TwoSpinorBlock;
     
-
-    Dslash(Geometry<FT,veclen, soalen,compress12>* geom_,
-	   double t_boundary_,
-	   double aniso_coeff_S_,
-	   double aniso_coeff_T_);
+    //Sid: This is invoked in timeDslashNoQDP.cc
+    Dslash(Geometry<FT,veclen, soalen,compress12>* geom_,double t_boundary_,double aniso_coeff_S_,double aniso_coeff_T_);
 
     /* Destructor */
     ~Dslash();

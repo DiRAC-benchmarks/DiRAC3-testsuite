@@ -368,6 +368,7 @@ namespace QPhiX
 						      int cb)
   {
     
+	  //Sid - get all the variables from Geometry
     const int Nxh = s->Nxh();
     const int Nx = s->Nx();
     const int Ny = s->Ny();
@@ -391,7 +392,9 @@ namespace QPhiX
     int smtid_z = smtid / Sy;
     int smtid_y = smtid - Sy * smtid_z;
     
+    //Sid: unsigned int 1111111 on each
     unsigned int accumulate[8] = { ~0U, ~0U, ~0U, ~0U, ~0U, ~0U, ~0U, ~0U };
+
     int nvecs = s->nVecs();
     
     const int gauge_line_in_floats = sizeof(SU3MatrixBlock)/sizeof(FT); // One gauge soavector
@@ -427,6 +430,7 @@ namespace QPhiX
     int *xfOffs_xodd[2], *xfOffs_xn_xodd[2];
     int *ybOffs_yn0, *ybOffs_y0, *yfOffs_ynn, *yfOffs_yn;
     int *atmp = (int*)((((unsigned long long)tmpspc)+0x3F) & ~0x3F);
+
     offs = &atmp[0];
     xbOffs_xodd[0] = &atmp[veclen*1];
     xbOffs_xodd[1] = &atmp[veclen*2];
@@ -446,7 +450,8 @@ namespace QPhiX
     
     int num_phases = s->getNumPhases();
     
-    for(int ph=0; ph < num_phases; ph++) { 
+    for(int ph=0; ph < num_phases; ph++) {
+
       const CorePhase& phase = s->getCorePhase(ph);
       const BlockPhase& binfo = block_info[tid*num_phases + ph];
       

@@ -34,8 +34,8 @@ Prec prec_user = FLOAT_PREC;
 bool thread_bind = false;
 
 
-void printHelp() 
-{ 
+void printHelp()
+{
        cout << "t_dslash -x Lx -y Ly -z Lz -t Lt -i iters -by BY -bz BZ -c NCores -sy SY -sz SZ  -pxy Pxy -pxyz Pxyz -minct MinCt -compress12 -geom Px Py Pz Pt -prec Prec -bind" << endl;
        cout << "   Lx is the lattice size in X" << endl;
        cout << "   Ly is the lattice size in Y" << endl;
@@ -53,13 +53,13 @@ void printHelp()
        cout << "   Prec for precision " << endl;
 }
 
-void processArgs(int argc, char *argv[]) 
+void processArgs(int argc, char *argv[])
 {
   int i=1;
   if (argc == 1) {
     printHelp();
   }
-  
+
   while( i < argc)  {
     if( string(argv[i]).compare("-x") == 0 ) {
       nrow_in[0]=atoi(argv[i+1]);
@@ -117,17 +117,17 @@ void processArgs(int argc, char *argv[])
       compress12 =true;
       i++;
     }
-    else if (string(argv[i]).compare("-prec") == 0 ) { 
+    else if (string(argv[i]).compare("-prec") == 0 ) {
 	string user_arg(argv[i+1]);
-	if( user_arg.compare("f") == 0 ) { 
+	if( user_arg.compare("f") == 0 ) {
 	  prec_user = FLOAT_PREC;
 	}
 
-	if( user_arg.compare("h") == 0 ) { 
+	if( user_arg.compare("h") == 0 ) {
 	  prec_user = HALF_PREC;
 	}
 
-	if( user_arg.compare("d") == 0 ) { 
+	if( user_arg.compare("d") == 0 ) {
 	  prec_user = DOUBLE_PREC;
 	}
 	i+=2 ;
@@ -138,23 +138,23 @@ void processArgs(int argc, char *argv[])
       qmp_geometry[2] = atoi(argv[i+3]);
       qmp_geometry[3] = atoi(argv[i+4]);
       i+=4;
-      
+
     }
     else {
       i++;
     }
-    
+
   }
 
   if( NCores_user < 0 ) { printHelp(); exit(1); }
   if( Sy_user < 0 ) { printHelp(); exit(1); }
   if( Sz_user < 0 ) { printHelp(); exit(1); }
-  
-  
+
+
   // Ct does not have to divide t, we can pick that up.
   if( By_user < 0 ) { By_user = nrow_in[1]; }
   if( Bz_user < 0 ) { Bz_user = nrow_in[2]; }
-  
+
 
 }
 
@@ -163,33 +163,36 @@ int main(int argc, char **argv)
 {
   // Initialize UnitTest jig
   processArgs(argc,argv);
+
   omp_set_num_threads(NCores_user*Sy_user*Sz_user);
-  
+
+  //Sid: QMP - not used, ignore this if block
 #ifdef QPHIX_QMP_COMMS
   // Initialize QMP
     QMP_thread_level_t prv;
-    if( QMP_init_msg_passing(&argc, &argv, QMP_THREAD_SINGLE, &prv) != QMP_SUCCESS ) { 
+    if( QMP_init_msg_passing(&argc, &argv, QMP_THREAD_SINGLE, &prv) != QMP_SUCCESS ) {
       QMP_error("Failed to initialize QMP\n");
       abort();
-      
+
     }
-  if ( QMP_is_primary_node() ) { 
+  if ( QMP_is_primary_node() ) {
 	printf("QMP IS INITIALIZED\n");
   }
-  
+
   // Declare the logical topology
-  if ( QMP_declare_logical_topology(qmp_geometry, 4)!= QMP_SUCCESS ) { 
+  if ( QMP_declare_logical_topology(qmp_geometry, 4)!= QMP_SUCCESS ) {
     QMP_error("Failed to declare QMP Logical Topology\n");
     abort();
   }
  #endif
 
-  QPhiX::masterPrintf("Declared QMP Topology: %d %d %d %d\n", 
+//this will be set to 1,1,1,1
+  QPhiX::masterPrintf("Declared QMP Topology: %d %d %d %d\n",
 		qmp_geometry[0], qmp_geometry[1], qmp_geometry[2], qmp_geometry[3]);
 
 
 #ifdef QPHIX_QPX_SOURCE
-  if( thread_bind ) { 
+  if( thread_bind ) {
     QPhiX::setThreadAffinity(NCores_user, Sy_user*Sz_user);
   }
   QPhiX::reportAffinity();
@@ -197,9 +200,9 @@ int main(int argc, char **argv)
 
   QPhiX::masterPrintf("Launching TestCase\n");
 
-  // Launch the test case. 
+  // Launch the test case.
   timeDslashNoQDP test(By_user, Bz_user, NCores_user, Sy_user, Sz_user, PadXY_user, PadXYZ_user, MinCt_user,  iters, compress12, prec_user);
-  
+  //Sid: nrow_in is the lattice size
   test.run(nrow_in, qmp_geometry);
 #ifdef QPHIX_QMP_COMMS
   QMP_finalize_msg_passing();

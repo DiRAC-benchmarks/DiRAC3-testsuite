@@ -93,4 +93,4 @@
 #endif
 /* Version number of package */
 
-#define VERSION 3.3.0
+#define VERSION 3.0.2

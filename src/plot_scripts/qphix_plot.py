@@ -5,18 +5,19 @@ import sys
 import re
 
 #configuration that we are interested in
-minct="2"
+minct="1"
 #############################################
 
 
 
 
-grep_pattern_command = re.compile(r'time_dslash_noqdp -x')
+grep_pattern_command = re.compile(r'time_dslash_noqdp -a')
 grep_pattern_gflops = re.compile(r'GFLOPS total')
 grep_pattern_lattice = re.compile('-x\s*\d+\s*-y\s*\d+\s*-z\s*\d+\s*-t\s*\d+')
 grep_pattern_block = re.compile('-by\s*\d+\s*-bz\s*\d+')
 grep_pattern_core = re.compile('-c\s*\d*')
 grep_pattern_minct = re.compile('-minct\s*'+minct)
+grep_pattern_1core = re.compile('-c 1 -sy')
 level1={}
 lattice={}
 colors = ['b','g','r','c','m','y','k']
@@ -24,24 +25,16 @@ def plotFile():
     lattlist = lattice.keys()
     lattlist.sort()
     init = 0;
-
     for latt in lattlist:
-
         fig,axs = plt.subplots()
-        basewidth=0.1
-
-
-        rects=[]
         block_labels = []
         print latt
         blocks=lattice[latt]
-
         blocklist = blocks.keys()
         blocklist.sort()
         for block in blocklist:
             cores_s=[]
             band_s=[]
-
             cores_i=[]
             band_f=[]
 
@@ -50,6 +43,7 @@ def plotFile():
 
             corelist =  [int(x) for x in cores.keys()]
             corelist.sort()
+
             for core in corelist:
                 flops = float(cores[str(core)])
                 print('\t\t{} : {}'.format(core, flops))
@@ -81,15 +75,16 @@ def plotFile():
         # these are matplotlib.patch.Patch properties
         props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
         chartTitle = latt
-        axs.text(0.85, 0.95, chartTitle, transform=axs.transAxes, fontsize=14,
-                verticalalignment='top', bbox=props, fontdict=font)
-
-        # plt.text(0.5, 1.08, Title, horizontalalignment='center', family='monospace',fontsize=20,  transform = axs.transAxes)
-        # axs.legend(API, loc='best', bbox_to_anchor=(1, 0.5))
-        axs.legend(block_labels, loc='upper left')
+        #axs.text(0.85, 0.95, chartTitle, transform=axs.transAxes, fontsize=14,verticalalignment='top', bbox=props, fontdict=font)
+        Title = "QPhiX - Lattice Size:"+chartTitle+" - COSMIC"
+        plt.text(0.5, 1.08, Title, horizontalalignment='center', family='monospace',fontsize=20,  transform = axs.transAxes)
+        axs.legend(block_labels, loc='best', bbox_to_anchor=(1, 0.5))
+        #axs.legend(block_labels, loc='upper left')
         # axs.set_ylim([0,12])
         # axs.set_yscale("log", nonposx='clip')
-        plt.show()
+        savepath = "/home/sid/Work/cosmic_charts/"+chartTitle+".png"
+        plt.savefig(savepath,bbox_inches='tight')
+        #plt.show()
 
 
 
@@ -98,11 +93,13 @@ def processFile(file_contents):
     minctCheck_flag = 0
     command = ""
     flop = ""
+    debug = 0
     for i in range(line_count):
         line = read_file[i]
         line.rstrip()
         line_check = re.search(grep_pattern_command, line)
         if(line_check):
+            #print "got command"+line
             minctCheck = grep_pattern_minct.search(line)
             if minctCheck is None:
                 minctCheck_flag=0
@@ -112,13 +109,16 @@ def processFile(file_contents):
             if(minctCheck_flag is 1):
                 flag = 1
                 command = line
+                oneCoreCheck = grep_pattern_1core.search(line)
                 next
         flop_check = re.search(grep_pattern_gflops,line)
+
         if(flop_check and flag == 1 ):
+
             flop = line
             flag = 0
             level1[command]=flop;
-            #print "command: %s \n Flops: %s\n" % (command,flop)
+
             next
 
 
@@ -154,6 +154,7 @@ def processFile(file_contents):
                 coreArray = strCore.split()
                 core = coreArray[1]
 
+
             strGFLOPS = level1[k]
             arrGFLOPS = strGFLOPS.split()
 
@@ -162,6 +163,7 @@ def processFile(file_contents):
             if block_string in blocks:
                 cores = blocks[block_string]
                 cores[core] = fGflops
+
             else:
                 cores={}
                 cores[core]=fGflops

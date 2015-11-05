@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/qphix/print_utils.h
+cstdio
+-
+cstdarg
+-
+qphix/qphix_config.h
+../include/qphix/qphix/qphix_config.h
+
+../include/qphix/qphix_config.h
+
+../include/qphix/threadbind.h
+
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/lib/generic_threadbind.cc
+qphix/threadbind.h
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/lib/qphix/threadbind.h
+qphix/print_utils.h
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/lib/qphix/print_utils.h
+
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/lib/print_utils.cc
+qphix/print_utils.h
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/lib/qphix/print_utils.h
+map
+-
+qmp.h
+-
+
+/cosma5/data/dr002/dc-kash1/qmp/build/include/qmp.h
+stdio.h
+-
+stddef.h
+-
+

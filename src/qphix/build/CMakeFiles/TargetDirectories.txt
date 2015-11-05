@@ -1,0 +1,2 @@
+/cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/qphix/build/lib/CMakeFiles/qphix_solver.dir
+/cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/qphix/build/tests/CMakeFiles/time_dslash_noqdp.dir

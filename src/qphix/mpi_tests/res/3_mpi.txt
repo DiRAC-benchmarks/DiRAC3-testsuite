@@ -1,0 +1,47 @@
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/build_mpi/time_dslash_noqdp -x 4 -y 8 -z 32 -t 32 -by 8 -bz 8 -pxy 1 -pxyz 0 -c 16 -sy 1 -sz 2 -minct 2 -compress12  -i 500 -prec f -geom 1 2 4 4
+QMP IS INITIALIZED
+Declared QMP Topology: 1 2 4 4
+Launching TestCase
+TIMING IN SINGLE PRECISION 
+VECLEN=8 SOALEN=8
+Global Lattice Size =  4 4 4 4
+Local Lattice Size =  4 2 1 1
+Block Sizes: By= 8 Bz=8
+Cores = 16
+SMT Grid: Sy=1 Sz=2
+Pad Factors: PadXY=1 PadXYZ=0
+Threads_per_core = 2
+Initializing Dslash
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+X length after checkerboarding (2) must be divisible by soalen (8)
+MPI Application rank 28 killed before MPI_Finalize() with signal 6

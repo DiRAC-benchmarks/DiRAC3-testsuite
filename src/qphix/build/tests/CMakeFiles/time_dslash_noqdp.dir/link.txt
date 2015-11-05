@@ -1,0 +1,1 @@
+/cosma/local/intel/Parallel_Studio_XE_2015-update3/bin/icpc    -openmp -g -O2 -finline-functions -std=c++11 -mavx  -Drestrict=__restrict__  -qopenmp   -L..//lib   CMakeFiles/time_dslash_noqdp.dir/time_dslash_noqdp.cc.o CMakeFiles/time_dslash_noqdp.dir/timeDslashNoQDP.cc.o  -o time_dslash_noqdp -rdynamic ../lib/libqphix_solver.a 

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 #!/bin/bash
 
-=======
->>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
 # Lx is the lattice size in X
 # Ly is the lattice size in Y
 # Lz is the lattice size in Z
@@ -25,21 +22,12 @@ for vol in "-x 4 -y 4 -z 4 -t 4 " "-x 4 -y 4 -z 4 -t 8 " "-x 4 -y 4 -z 8 -t 8 " 
 do
   for block in "-by 4 -bz 4"  "-by 4 -bz 8"  "-by 8 -bz 8"  "-by 8 -bz 16"  "-by 16 -bz 16"
   do
-<<<<<<< HEAD
     for minct in 1 2 
     do
       for c in `seq 16`
       do
       var=`echo $vol|sed -e 's/  *$//'`
       echo "./time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12 -geom 1 1 1 1 -i 500 --prec=f" > /cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/scripts/bench_qphix_${var}_${block}_${c}_${minct}.result
-=======
-    for minct in 1 2 4 8
-    do
-      for c in `seq 24`
-      do
-      var=`echo $vol|sed -e 's/  *$//'`
-      echo "./time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12 -geom 1 1 1 1 -i 500 --prec=f" > ./bench_qphix_${var}_${block}_${c}_${minct}.result
->>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
       done
     done
   done

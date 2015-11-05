@@ -51,11 +51,7 @@
 /* Parscalar Arch */
 
 #ifdef QPHIX_PARSCALAR
-<<<<<<< HEAD
 #define QPHIX_PARSCALAR 
-=======
-#define QPHIX_PARSCALAR false
->>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
 #endif
 
 /* QMP Comms */
@@ -72,11 +68,7 @@
 /* Scalar Arch */
 
 #ifdef QPHIX_SCALAR
-<<<<<<< HEAD
 #define QPHIX_SCALAR 
-=======
-#define QPHIX_SCALAR 1
->>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
 #endif
 
 /* Generate Scalar Specializations */
@@ -101,8 +93,4 @@
 #endif
 /* Version number of package */
 
-<<<<<<< HEAD
 #define VERSION 3.1.3
-=======
-#define VERSION 3.0.2
->>>>>>> 970c828c93215e8041a32cf07937be83ea8df086

@@ -1,6 +1,0 @@
-# set (CMAKE_CXX_FLAGS "-homp -hrestrict=a -O3 -hfp3")
-set (CMAKE_CXX_FLAGS "${OpenMP_CXX_FLAGS} -O3")
-file(GLOB GenSeq_SOURCES "*.cpp")
-add_executable(GenSeq ${GenSeq_SOURCES})
-include_directories(${MPI_C_INCLUDE_PATH})
-target_link_libraries(GenSeq ${MPI_CXX_LIBRARIES})

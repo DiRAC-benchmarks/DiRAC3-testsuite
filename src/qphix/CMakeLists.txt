@@ -32,15 +32,24 @@ set(QMP_HOME "/cosma5/data/dr002/dc-kash1/qmp/build")
 MESSAGE("DEBUG ${QMP_HOME}")
 
 
+<<<<<<< HEAD
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -finline-functions -std=c++11 -mavx -restrict")
 set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -restrict")
+=======
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -finline-functions -std=c++11 -mavx  -Drestrict=__restrict__ ")
+set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -Drestrict=__restrict__ ")
+>>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
 
 FIND_PACKAGE(OpenMP)
   IF(OPENMP_FOUND)
     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+<<<<<<< HEAD
     MESSAGE("DEBUG: adding this ${OpenMP_C_FLAGS}")
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
     MESSAGE("DEBUG: adding this for cxx ${OpenMP_CXX_FLAGS}")
+=======
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+>>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
   ENDIF()
 
 
@@ -70,6 +79,7 @@ else()
 		MESSAGE( WARNING "Set environment variables QMP_CFLAGS QMP_LDFAGS QMP_LIBS before configure")
 	else()
 		MESSAGE("Found QMP configuration program ${QMP_CONFIG}")
+<<<<<<< HEAD
 		#set (EXECUTE_COMMAND ${QMP_CONFIG} --cflags)
 		#execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_CFLAGS)
 		#set(${CMAKE_C_FLAGS} "${CMAKE_C_FLAGS} ${QPHIX_AUX_CFLAGS}")
@@ -83,6 +93,16 @@ else()
 		
 		#set (EXECUTE_COMMAND ${QMP_CONFIG}  --libs)
 		#execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LIBS)
+=======
+		set (EXECUTE_COMMAND ${QMP_CONFIG} --cflags)
+		execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_CFLAGS)
+		set(${CMAKE_C_FLAGS} "${CMAKE_C_FLAGS} ${QPHIX_AUX_CFLAGS}")
+		set (EXECUTE_COMMAND ${QMP_CONFIG} --ldflags)
+		execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LDFLAGS)
+		FIND_LIBRARY(QMP_LIB qmp "${QMP_HOME}/lib")
+		set (EXECUTE_COMMAND ${QMP_CONFIG}  --libs)
+		execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LIBS)
+>>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
 	endif() #qmpconfig
 	#TODO Sid to include simple program check here to test the QMP flags
 
@@ -188,6 +208,7 @@ if(${build_qpx} STREQUAL "yes")
   SET(QPHIX_BUILD_QPX true)
 endif()
 
+<<<<<<< HEAD
 MESSAGE("DEBUG: include dir : ${CMAKE_CURRENT_SOURCE_DIR}/include")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${QMP_HOME}/include)
@@ -210,3 +231,11 @@ MESSAGE("qmp link lib ${QMP_LIB}")
 #add_library(LIBQMP ${QMP_LIB})
 target_link_libraries(time_dslash_noqdp qphix_solver ${QMP_LIB} ${MPI_C_LIBRARIES})
 
+=======
+
+add_subdirectory(lib)
+add_subdirectory(include)
+add_subdirectory(tests)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_CURRENT_SOURCE_DIR} /include/qphix/qphix_config_internal.h) 
+>>>>>>> 970c828c93215e8041a32cf07937be83ea8df086

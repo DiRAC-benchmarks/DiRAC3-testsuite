@@ -25,13 +25,17 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <time.h>
+
 #ifndef _WIN32
 #include <regex.h>
-#ifdef __sun                    /* SunOS does not support statfs(), instead uses statvfs() */
-#include <sys/statvfs.h>
-#else                           /* !__sun */
+
+#if defined(__sun) || defined(__APPLE__)
+#define USE_STATVFS
+#include <sys/statvfs.h>        /* SunOS does not support statfs(), instead uses statvfs() */
+#else                           /* !USE_STATVFS */
 #include <sys/statfs.h>
-#endif                          /* __sun */
+#endif                          /* USE_STATVFS */
+
 #include <sys/time.h>           /* gettimeofday() */
 #endif
 
@@ -310,30 +314,30 @@ void ShowFileSystemSize(char *fileSystem)
         double totalFileSystemSizeHR;
         double usedFileSystemPercentage;
         double usedInodePercentage;
-#ifdef __sun                    /* SunOS does not support statfs(), instead uses statvfs() */
+#ifdef USE_STATVFS
         struct statvfs statusBuffer;
-#else                           /* !__sun */
+#else                           /* !USE_STATVFS */
         struct statfs statusBuffer;
-#endif                          /* __sun */
+#endif                          /* USE_STATVFS */
 
-#ifdef __sun
+#ifdef USE_STATVFS
         if (statvfs(fileSystem, &statusBuffer) != 0) {
                 ERR("unable to statvfs() file system");
         }
-#else                           /* !__sun */
+#else                           /* !USE_STATVFS */
         if (statfs(fileSystem, &statusBuffer) != 0) {
                 ERR("unable to statfs() file system");
         }
-#endif                          /* __sun */
+#endif                          /* USE_STATVFS */
 
         /* data blocks */
-#ifdef __sun
+#ifdef USE_STATVFS
         totalFileSystemSize = statusBuffer.f_blocks * statusBuffer.f_frsize;
         freeFileSystemSize = statusBuffer.f_bfree * statusBuffer.f_frsize;
-#else                           /* !__sun */
+#else                           /* !USE_STATVFS */
         totalFileSystemSize = statusBuffer.f_blocks * statusBuffer.f_bsize;
         freeFileSystemSize = statusBuffer.f_bfree * statusBuffer.f_bsize;
-#endif                          /* __sun */
+#endif                          /* USE_STATVFS */
 
         usedFileSystemPercentage = (1 - ((double)freeFileSystemSize
                                          / (double)totalFileSystemSize)) * 100;

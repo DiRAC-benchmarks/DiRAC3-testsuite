@@ -220,7 +220,11 @@ timeDslashNoQDP::runTest(const int lattSize[], const int qmp_geom[])
 
 				  int block = (t*Pxyz+z*Pxy)/nyg+(y/nyg)*nvecs+s;
 				  int test_sidharth = RE;
+<<<<<<< HEAD
 				  //masterPrintf("Sid:block = (t*Pxyz+z*Pxy)/nyg+(y/nyg)*nvecs+s x =%d block = %d -  t = %d\n - Pxyz %d - z %d - Pxy %d - nyg %d - y %d - nyg %d - nvecs %d - s %d test_sidharth %d\n", x,block, t, Pxyz,z,Pxy,nyg,y,nyg,nvecs,s,test_sidharth);
+=======
+				  masterPrintf("Sid:block = (t*Pxyz+z*Pxy)/nyg+(y/nyg)*nvecs+s x =%d block = %d -  t = %d\n - Pxyz %d - z %d - Pxy %d - nyg %d - y %d - nyg %d - nvecs %d - s %d test_sidharth %d\n", x,block, t, Pxyz,z,Pxy,nyg,y,nyg,nvecs,s,test_sidharth);
+>>>>>>> 970c828c93215e8041a32cf07937be83ea8df086
 
 				  // This will work out to be between 0 and veclen
 				  int xx = (y%nyg)*S+x;

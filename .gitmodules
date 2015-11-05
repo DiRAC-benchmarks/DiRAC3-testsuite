@@ -1,0 +1,6 @@
+[submodule "src/Grid"]
+	path = src/Grid
+	url = https://github.com/paboyle/Grid.git
+[submodule "src/Gadget3EagleBench"]
+	path = src/Gadget3EagleBench
+	url = https://github.com/DiRAC-benchmarks/Gadget3EagleBench

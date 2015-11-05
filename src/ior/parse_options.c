@@ -21,6 +21,10 @@
 #include <ctype.h>
 #include <string.h>
 
+#ifdef __APPLE__
+#include <sys/sysctl.h>
+#endif
+
 #include "ior.h"
 #include "aiori.h"
 #include "parse_options.h"
@@ -72,11 +76,22 @@ static size_t NodeMemoryStringToBytes(char *size_str)
         if (percent > 100 || percent < 0)
                 ERR("percentage must be between 0 and 100");
 
+#ifdef __APPLE__
+        {
+                /* man 3 sysconf claims OS X defines _SC_PHYS_PAGES, but it does
+                 * not (confirmed by grep) - we'll use sysctl instead.
+                 */
+                size_t len_mem = sizeof(mem);
+                if (sysctlbyname("hw.memsize", &mem, &len_mem, NULL, 0) != 0)
+                        ERR("sysctl hw.memsize is not supported");
+        }
+#else
         page_size = sysconf(_SC_PAGESIZE);
         num_pages = sysconf(_SC_PHYS_PAGES);
         if (num_pages == -1)
                 ERR("sysconf(_SC_PHYS_PAGES) is not supported");
         mem = page_size * num_pages;
+#endif
 
         return mem / 100 * percent;
 }

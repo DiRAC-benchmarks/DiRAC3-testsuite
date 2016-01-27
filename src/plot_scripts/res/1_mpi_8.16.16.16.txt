@@ -1,0 +1,222 @@
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/build_mpi_intel/time_dslash_noqdp  -x 32 -y 32 -z 32 -t 32 -by 8 -bz 8 -pxy 1 -pxyz 0 -c 16 -sy 1 -sz 2 -minct 2 -compress12  -i 500 -prec f -geom 2 2 2 2
+Sid:0 parnode rank m5249 hostname
+Sid:1 parnode rank m5264 hostname
+Sid:14 parnode rank m5300 hostname
+Sid:6 parnode rank m5289 hostname
+Sid:11 parnode rank m5296 hostname
+Sid:15 parnode rank m5301 hostname
+Sid:9 parnode rank m5293 hostname
+Sid:13 parnode rank m5299 hostname
+Sid:8 parnode rank m5291 hostname
+Sid:7 parnode rank m5290 hostname
+Sid:5 parnode rank m5288 hostname
+Sid:3 parnode rank m5286 hostname
+Sid:10 parnode rank m5295 hostname
+Sid:12 parnode rank m5298 hostname
+Sid:2 parnode rank m5285 hostname
+Sid:4 parnode rank m5287 hostname
+QMP IS INITIALIZED
+Declared QMP Topology: 2 2 2 2
+Launching TestCase
+TIMING IN SINGLE PRECISION 
+VECLEN=8 SOALEN=8
+Global Lattice Size =  32 32 32 32
+Local Lattice Size =  16 16 16 16
+Block Sizes: By= 8 Bz=8
+Cores = 16
+SMT Grid: Sy=1 Sz=2
+Pad Factors: PadXY=1 PadXYZ=0
+Threads_per_core = 2
+Initializing Dslash
+ctd 2: ctu = 2 n_cores_per_minct = 8, MinCt = 2
+Setting Up Blockinfo array: num_phases=1
+Phase info set up
+Precomputing offsets
+WILL Use 12 compression
+Initializing Fake Gauge Field:  0.0576398 sec
+Filling Input spinor:  0.0235319 sec
+Zeroing output spinor:  0.000294924 sec
+Timing on cb=0 isign=1
+=============================
+	 timing 0 of 3
+	 500 iterations in 8.981422e-01 seconds
+	 1.796284e+03 usec/iteration
+	 Performance: 385.273 GFLOPS total
+	 timing 1 of 3
+	 500 iterations in 4.474473e-01 seconds
+	 8.948946e+02 usec/iteration
+	 Performance: 773.343 GFLOPS total
+	 timing 2 of 3
+	 500 iterations in 3.721507e-01 seconds
+	 7.443013e+02 usec/iteration
+	 Performance: 929.812 GFLOPS total
+Timing on cb=1 isign=1
+=============================
+	 timing 0 of 3
+	 500 iterations in 3.876403e-01 seconds
+	 7.752805e+02 usec/iteration
+	 Performance: 892.658 GFLOPS total
+	 timing 1 of 3
+	 500 iterations in 4.957620e-01 seconds
+	 9.915241e+02 usec/iteration
+	 Performance: 697.976 GFLOPS total
+	 timing 2 of 3
+	 500 iterations in 3.497926e-01 seconds
+	 6.995852e+02 usec/iteration
+	 Performance: 989.244 GFLOPS total
+Timing on cb=0 isign=-1
+=============================
+	 timing 0 of 3
+	 500 iterations in 4.071167e-01 seconds
+	 8.142335e+02 usec/iteration
+	 Performance: 849.953 GFLOPS total
+	 timing 1 of 3
+	 500 iterations in 3.648231e-01 seconds
+	 7.296462e+02 usec/iteration
+	 Performance: 948.487 GFLOPS total
+	 timing 2 of 3
+	 500 iterations in 4.271744e-01 seconds
+	 8.543488e+02 usec/iteration
+	 Performance: 810.044 GFLOPS total
+Timing on cb=1 isign=-1
+=============================
+	 timing 0 of 3
+	 500 iterations in 4.336800e-01 seconds
+	 8.673599e+02 usec/iteration
+	 Performance: 797.893 GFLOPS total
+	 timing 1 of 3
+	 500 iterations in 6.543315e-01 seconds
+	 1.308663e+03 usec/iteration
+	 Performance: 528.83 GFLOPS total
+	 timing 2 of 3
+	 500 iterations in 3.998388e-01 seconds
+	 7.996777e+02 usec/iteration
+	 Performance: 865.424 GFLOPS total
+Creating Wilson Op
+Setting Up Blockinfo array: num_phases=1
+Phase info set up
+Precomputing offsets
+WILL Use 12 compression
+Timing M: isign=1
+=============================
+	 timing 0 of 3
+	 500 iterations in 8.177692e-01 seconds
+	 1.635538e+03 usec/iteration
+	 Performance: 869.358 GFLOPS total
+	              54.3349 GFLOPS / node
+	 timing 1 of 3
+	 500 iterations in 9.540880e-01 seconds
+	 1.908176e+03 usec/iteration
+	 Performance: 745.146 GFLOPS total
+	              46.5716 GFLOPS / node
+	 timing 2 of 3
+	 500 iterations in 1.023944e+00 seconds
+	 2.047887e+03 usec/iteration
+	 Performance: 694.31 GFLOPS total
+	              43.3944 GFLOPS / node
+Timing M: isign=-1
+=============================
+	 timing 0 of 3
+	 500 iterations in 9.929501e-01 seconds
+	 1.985900e+03 usec/iteration
+	 Performance: 715.982 GFLOPS total
+	              44.7489 GFLOPS / node
+	 timing 1 of 3
+	 500 iterations in 7.779747e-01 seconds
+	 1.555949e+03 usec/iteration
+	 Performance: 913.827 GFLOPS total
+	              57.1142 GFLOPS / node
+	 timing 2 of 3
+	 500 iterations in 1.174172e+00 seconds
+	 2.348344e+03 usec/iteration
+	 Performance: 605.477 GFLOPS total
+	              37.8423 GFLOPS / node
+Creating Solver
+Initializing CG Solver: Nvec=1 Ny=16 Nz=16 Nt=16
+Tuning Solver
+tuneCopyThreads: threads = 1, current_time=0.0101011 (s)
+tuneCopyThreads: threads = 2, current_time = 0.0100169 (s), best=0.0101011(s)
+tuneAypxThreads: threads = 1, current_time=0.0294302 (s)
+tuneAypxThreads: threads = 2, current_time = 0.0134079 (s), best=0.0294302(s)
+tuneNorm2Threads: threads = 1, current_time=0.022182 (s)
+tuneNorm2Threads: threads = 2, current_time = 0.00921202 (s), best=0.022182 (s)
+tuneXmyNorm2Threads: threads = 1, current_time=0.0345881 (s)
+tuneXMYThreads: threads = 2, current_time = 0.013917 (s), best=0.0345881(s)
+tuneRXUpdateThreads: threads = 1, current_time=0.061492 (s)
+tuneRXUpdateThreads: threads = 2, current_time = 0.078126 (s), best=0.061492(s)
+TuningResults: 
+	 copyThreads=2 threads
+	 aypxThreads=2 threads
+	 xmyNormThreads=2 threads
+	 rmammpNorm2rxpapThreads=2 threads
+	 norm2Threads=2 threads
+Starting solver
+Chi_sq=1.04737e+06 RsdTarget=1e-07
+Solver Time=0.629948(s)
+CG GFLOPS=494.829
+Starting solver
+Chi_sq=1.04742e+06 RsdTarget=1e-07
+Solver Time=0.479317(s)
+CG GFLOPS=650.335
+Starting solver
+Chi_sq=1.04646e+06 RsdTarget=1e-07
+Solver Time=0.437526(s)
+CG GFLOPS=712.452
+Starting solver
+Chi_sq=1.0498e+06 RsdTarget=1e-07
+Solver Time=0.513492(s)
+CG GFLOPS=607.052
+Starting solver
+Chi_sq=1.04811e+06 RsdTarget=1e-07
+Solver Time=0.435839(s)
+CG GFLOPS=715.21
+Creating BiCGStab Solver
+Tuning BiCGStab Solver
+tuneZeroThreads: threads = 1, current_time=0.011117 (s)
+tuneZeroThreads: threads = 2, current_time = 0.00578785 (s), best=0.011117(s)
+tuneNorm2Threads: threads = 1, current_time=0.023613 (s)
+tuneNorm2Threads: threads = 2, current_time = 0.00872993 (s), best=0.023613 (s)
+tuneXMYThreads: threads = 1, current_time=0.0286229 (s)
+tuneXMYThreads: threads = 2, current_time = 0.012454 (s), best=0.0286229(s)
+tuneCopyThreads: threads = 1, current_time=0.00575113 (s)
+tuneCopyThreads: threads = 2, current_time = 0.0052619 (s), best=0.00575113(s)
+tuneInnerProductThreads: threads = 1, current_time=0.044692 (s)
+tuneInnerProductThreads: threads = 2, current_time = 0.014837 (s), best=0.044692(s)
+tunePUpdateThreads: threads = 1, current_time=0.0334201 (s)
+tunePUpdateThreads: threads = 2, current_time = 0.0155449 (s), best=0.0334201(s)
+tuneSUpdateThreads: threads = 1, current_time=0.023309 (s)
+tuneSUpdateThreads: threads = 2, current_time = 0.012109 (s), best=0.023309(s)
+tuneRXUpdateThreads: threads = 1, current_time=0.198538 (s)
+tuneRXUpdateThreads: threads = 2, current_time = 0.0430861 (s), best=0.198538(s)
+TuningResults: 
+	 zeroThreads=2 threads
+	 copyThreads=2 threads
+	 xmyThreads=2 threads
+	 norm2Threads=2 threads
+	 innerProductThreads=2 threads
+	 pUpdateThreads=2 threads
+	 sUpdateThreads=2 threads
+	 rxUpdateThreads=2 threads
+Solver Time=0.318919(s)
+BICGSTAB GFLOPS=623.782
+Solver Time=0.385217(s)
+BICGSTAB GFLOPS=516.425
+Solver Time=0.280096(s)
+BICGSTAB GFLOPS=722.192
+Solver Time=0.293419(s)
+BICGSTAB GFLOPS=700.807
+Solver Time=0.327853(s)
+BICGSTAB GFLOPS=616.993
+Cleaning up
+Freeing BlockInfo
+Freeing tmpspc_all
+Freeing gbar
+Deleting Barriers
+Deleting Comms
+All Destructed
+Freeing BlockInfo
+Freeing tmpspc_all
+Freeing gbar
+Deleting Barriers
+Deleting Comms
+All Destructed

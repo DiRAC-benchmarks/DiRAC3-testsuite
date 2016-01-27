@@ -1,0 +1,127 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Begin optimization report for: ADVECTION_MODULE::ADVECTION
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at advection.f90(60,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 2 
+   remark #15477: vector loop cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at advection.f90(60,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at advection.f90(77,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(91,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 2 
+   remark #15477: vector loop cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at advection.f90(91,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at advection.f90(106,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(112,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(119,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(138,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 2 
+   remark #15477: vector loop cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at advection.f90(138,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at advection.f90(148,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(160,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 2 
+   remark #15477: vector loop cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at advection.f90(160,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at advection.f90(176,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(185,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(195,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(213,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(225,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 2 
+   remark #15477: vector loop cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at advection.f90(225,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at advection.f90(245,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(253,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at advection.f90(261,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+===========================================================================

@@ -1,0 +1,3 @@
+/home/sid/Work/DiRAC3-testsuite/src/BSMBench/BSMBench/build_test/CMakeFiles/bsmbench_balance.dir
+/home/sid/Work/DiRAC3-testsuite/src/BSMBench/BSMBench/build_test/CMakeFiles/bsmbench_comms.dir
+/home/sid/Work/DiRAC3-testsuite/src/BSMBench/BSMBench/build_test/CMakeFiles/bsmbench_compute.dir

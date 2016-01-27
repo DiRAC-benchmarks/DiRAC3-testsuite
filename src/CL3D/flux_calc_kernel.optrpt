@@ -1,0 +1,108 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Begin optimization report for: FLUX_CALC_KERNEL_MODULE::FLUX_CALC_KERNEL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at flux_calc_kernel.f90(58,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at flux_calc_kernel.f90(59,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at flux_calc_kernel.f90(60,7)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(60,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 9 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 29 
+         remark #15477: vector loop cost: 7.500 
+         remark #15478: estimated potential speedup: 3.410 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(60,7)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(60,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at flux_calc_kernel.f90(70,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at flux_calc_kernel.f90(71,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at flux_calc_kernel.f90(72,7)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(72,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 9 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 29 
+         remark #15477: vector loop cost: 7.500 
+         remark #15478: estimated potential speedup: 3.410 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(72,7)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(72,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at flux_calc_kernel.f90(82,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at flux_calc_kernel.f90(83,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at flux_calc_kernel.f90(84,7)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(84,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 8 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 29 
+         remark #15477: vector loop cost: 7.500 
+         remark #15478: estimated potential speedup: 3.420 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(84,7)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at flux_calc_kernel.f90(84,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

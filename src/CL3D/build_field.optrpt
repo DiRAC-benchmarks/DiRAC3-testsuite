@@ -1,0 +1,413 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Begin optimization report for: BUILD_FIELD_MODULE::BUILD_FIELD
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at build_field.f90(155,4)
+   remark #15523: loop was not vectorized: loop control variable 334 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(155,4)
+      remark #15523: loop was not vectorized: loop control variable 332 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(155,4)
+         remark #15523: loop was not vectorized: loop control variable 330 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(156,4)
+   remark #15523: loop was not vectorized: loop control variable 346 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(156,4)
+      remark #15523: loop was not vectorized: loop control variable 344 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(156,4)
+         remark #15523: loop was not vectorized: loop control variable 342 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(157,4)
+   remark #15523: loop was not vectorized: loop control variable 358 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(157,4)
+      remark #15523: loop was not vectorized: loop control variable 356 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(157,4)
+         remark #15523: loop was not vectorized: loop control variable 354 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(158,4)
+   remark #15523: loop was not vectorized: loop control variable 370 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(158,4)
+      remark #15523: loop was not vectorized: loop control variable 368 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(158,4)
+         remark #15523: loop was not vectorized: loop control variable 366 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(159,4)
+   remark #15523: loop was not vectorized: loop control variable 382 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(159,4)
+      remark #15523: loop was not vectorized: loop control variable 380 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(159,4)
+         remark #15523: loop was not vectorized: loop control variable 378 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(160,4)
+   remark #15523: loop was not vectorized: loop control variable 394 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(160,4)
+      remark #15523: loop was not vectorized: loop control variable 392 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(160,4)
+         remark #15523: loop was not vectorized: loop control variable 390 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(161,4)
+   remark #15523: loop was not vectorized: loop control variable 406 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(161,4)
+      remark #15523: loop was not vectorized: loop control variable 404 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(161,4)
+         remark #15523: loop was not vectorized: loop control variable 402 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(163,4)
+   remark #15523: loop was not vectorized: loop control variable 418 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(163,4)
+      remark #15523: loop was not vectorized: loop control variable 416 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(163,4)
+         remark #15523: loop was not vectorized: loop control variable 414 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(164,4)
+   remark #15523: loop was not vectorized: loop control variable 430 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(164,4)
+      remark #15523: loop was not vectorized: loop control variable 428 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(164,4)
+         remark #15523: loop was not vectorized: loop control variable 426 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(165,4)
+   remark #15523: loop was not vectorized: loop control variable 442 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(165,4)
+      remark #15523: loop was not vectorized: loop control variable 440 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(165,4)
+         remark #15523: loop was not vectorized: loop control variable 438 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(166,4)
+   remark #15523: loop was not vectorized: loop control variable 454 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(166,4)
+      remark #15523: loop was not vectorized: loop control variable 452 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(166,4)
+         remark #15523: loop was not vectorized: loop control variable 450 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(167,4)
+   remark #15523: loop was not vectorized: loop control variable 466 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(167,4)
+      remark #15523: loop was not vectorized: loop control variable 464 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(167,4)
+         remark #15523: loop was not vectorized: loop control variable 462 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(168,4)
+   remark #15523: loop was not vectorized: loop control variable 478 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(168,4)
+      remark #15523: loop was not vectorized: loop control variable 476 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(168,4)
+         remark #15523: loop was not vectorized: loop control variable 474 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(169,4)
+   remark #15523: loop was not vectorized: loop control variable 490 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(169,4)
+      remark #15523: loop was not vectorized: loop control variable 488 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(169,4)
+         remark #15523: loop was not vectorized: loop control variable 486 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(171,4)
+   remark #15523: loop was not vectorized: loop control variable 502 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(171,4)
+      remark #15523: loop was not vectorized: loop control variable 500 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(171,4)
+         remark #15523: loop was not vectorized: loop control variable 498 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(172,4)
+   remark #15523: loop was not vectorized: loop control variable 514 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(172,4)
+      remark #15523: loop was not vectorized: loop control variable 512 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(172,4)
+         remark #15523: loop was not vectorized: loop control variable 510 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(173,4)
+   remark #15523: loop was not vectorized: loop control variable 526 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(173,4)
+      remark #15523: loop was not vectorized: loop control variable 524 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(173,4)
+         remark #15523: loop was not vectorized: loop control variable 522 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(174,4)
+   remark #15523: loop was not vectorized: loop control variable 538 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(174,4)
+      remark #15523: loop was not vectorized: loop control variable 536 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(174,4)
+         remark #15523: loop was not vectorized: loop control variable 534 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(175,4)
+   remark #15523: loop was not vectorized: loop control variable 550 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(175,4)
+      remark #15523: loop was not vectorized: loop control variable 548 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(175,4)
+         remark #15523: loop was not vectorized: loop control variable 546 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(176,4)
+   remark #15523: loop was not vectorized: loop control variable 562 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(176,4)
+      remark #15523: loop was not vectorized: loop control variable 560 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(176,4)
+         remark #15523: loop was not vectorized: loop control variable 558 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(178,4)
+   remark #15523: loop was not vectorized: loop control variable 574 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(178,4)
+      remark #15523: loop was not vectorized: loop control variable 572 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(178,4)
+         remark #15523: loop was not vectorized: loop control variable 570 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(179,4)
+   remark #15523: loop was not vectorized: loop control variable 586 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(179,4)
+      remark #15523: loop was not vectorized: loop control variable 584 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(179,4)
+         remark #15523: loop was not vectorized: loop control variable 582 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(180,4)
+   remark #15523: loop was not vectorized: loop control variable 598 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(180,4)
+      remark #15523: loop was not vectorized: loop control variable 596 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(180,4)
+         remark #15523: loop was not vectorized: loop control variable 594 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(181,4)
+   remark #15523: loop was not vectorized: loop control variable 610 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(181,4)
+      remark #15523: loop was not vectorized: loop control variable 608 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(181,4)
+         remark #15523: loop was not vectorized: loop control variable 606 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(182,4)
+   remark #15523: loop was not vectorized: loop control variable 622 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(182,4)
+      remark #15523: loop was not vectorized: loop control variable 620 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(182,4)
+         remark #15523: loop was not vectorized: loop control variable 618 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(183,4)
+   remark #15523: loop was not vectorized: loop control variable 634 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(183,4)
+      remark #15523: loop was not vectorized: loop control variable 632 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(183,4)
+         remark #15523: loop was not vectorized: loop control variable 630 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(185,4)
+   remark #15523: loop was not vectorized: loop control variable 642 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(186,4)
+   remark #15523: loop was not vectorized: loop control variable 646 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(187,4)
+   remark #15523: loop was not vectorized: loop control variable 650 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(188,4)
+   remark #15523: loop was not vectorized: loop control variable 654 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(189,4)
+   remark #15523: loop was not vectorized: loop control variable 658 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(190,4)
+   remark #15523: loop was not vectorized: loop control variable 662 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(191,4)
+   remark #15523: loop was not vectorized: loop control variable 666 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(192,4)
+   remark #15523: loop was not vectorized: loop control variable 670 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(193,4)
+   remark #15523: loop was not vectorized: loop control variable 674 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(194,4)
+   remark #15523: loop was not vectorized: loop control variable 678 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(195,4)
+   remark #15523: loop was not vectorized: loop control variable 682 was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at build_field.f90(196,4)
+   remark #15523: loop was not vectorized: loop control variable 690 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(196,4)
+      remark #15523: loop was not vectorized: loop control variable 688 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(196,4)
+         remark #15523: loop was not vectorized: loop control variable 686 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(197,4)
+   remark #15523: loop was not vectorized: loop control variable 702 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(197,4)
+      remark #15523: loop was not vectorized: loop control variable 700 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(197,4)
+         remark #15523: loop was not vectorized: loop control variable 698 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(198,4)
+   remark #15523: loop was not vectorized: loop control variable 714 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(198,4)
+      remark #15523: loop was not vectorized: loop control variable 712 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(198,4)
+         remark #15523: loop was not vectorized: loop control variable 710 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at build_field.f90(199,4)
+   remark #15523: loop was not vectorized: loop control variable 726 was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at build_field.f90(199,4)
+      remark #15523: loop was not vectorized: loop control variable 724 was found, but loop iteration count cannot be computed before executing the loop
+
+      LOOP BEGIN at build_field.f90(199,4)
+         remark #15523: loop was not vectorized: loop control variable 722 was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

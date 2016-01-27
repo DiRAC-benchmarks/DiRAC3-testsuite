@@ -1,0 +1,341 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Begin optimization report for: ADVEC_CELL_KERNEL_MODULE::ADVEC_CELL_KERNEL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at advec_cell_kernel.f90(102,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(103,9)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(104,11)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(104,11)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 8 
+         remark #15451: unmasked unaligned unit stride stores: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 28 
+         remark #15477: vector loop cost: 7.750 
+         remark #15478: estimated potential speedup: 3.440 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(104,11)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(116,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(117,9)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(118,11)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(118,11)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 3 
+         remark #15451: unmasked unaligned unit stride stores: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 13 
+         remark #15477: vector loop cost: 4.000 
+         remark #15478: estimated potential speedup: 2.930 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(118,11)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(118,11)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(137,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 169 and tmpflopcount line 191
+
+   LOOP BEGIN at advec_cell_kernel.f90(138,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 169 and tmpflopcount line 191
+
+      LOOP BEGIN at advec_cell_kernel.f90(139,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 169 and tmpflopcount line 186
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(206,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(207,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(208,9)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(208,9)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 13 
+         remark #15451: unmasked unaligned unit stride stores: 6 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 100 
+         remark #15477: vector loop cost: 31.000 
+         remark #15478: estimated potential speedup: 3.110 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(208,9)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(232,9)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(233,11)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(234,13)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(234,13)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 5 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 23 
+         remark #15477: vector loop cost: 6.250 
+         remark #15478: estimated potential speedup: 3.270 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(234,13)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(234,13)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(245,9)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(246,11)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(247,13)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(247,13)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 5 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 23 
+         remark #15477: vector loop cost: 6.250 
+         remark #15478: estimated potential speedup: 3.270 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(247,13)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(247,13)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(268,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 300 and tmpflopcount line 319
+
+   LOOP BEGIN at advec_cell_kernel.f90(269,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 300 and tmpflopcount line 319
+
+      LOOP BEGIN at advec_cell_kernel.f90(270,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 300 and tmpflopcount line 314
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(328,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(329,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(330,9)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(330,9)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 13 
+         remark #15451: unmasked unaligned unit stride stores: 6 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 100 
+         remark #15477: vector loop cost: 31.000 
+         remark #15478: estimated potential speedup: 3.110 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(330,9)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(355,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(356,9)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(357,11)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(357,11)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 8 
+         remark #15451: unmasked unaligned unit stride stores: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 28 
+         remark #15477: vector loop cost: 7.750 
+         remark #15478: estimated potential speedup: 3.440 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(357,11)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(369,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(370,9)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(371,11)
+      <Peeled loop for vectorization, Distributed chunk1>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(371,11)
+      <Distributed chunk1>
+         remark #15301: PARTIAL LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 3 
+         remark #15451: unmasked unaligned unit stride stores: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 13 
+         remark #15477: vector loop cost: 4.000 
+         remark #15478: estimated potential speedup: 2.930 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(371,11)
+      <Remainder loop for vectorization, Distributed chunk1>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(371,11)
+      <Remainder loop for vectorization, Distributed chunk1>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(371,11)
+      <Distributed chunk2>
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 1 
+         remark #15477: vector loop cost: 2.000 
+         remark #15478: estimated potential speedup: 0.500 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(389,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 422 and tmpflopcount line 442
+
+   LOOP BEGIN at advec_cell_kernel.f90(390,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 422 and tmpflopcount line 442
+
+      LOOP BEGIN at advec_cell_kernel.f90(391,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed OUTPUT dependence between tmpflopcount line 422 and tmpflopcount line 437
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at advec_cell_kernel.f90(452,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at advec_cell_kernel.f90(453,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at advec_cell_kernel.f90(454,9)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(454,9)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 13 
+         remark #15451: unmasked unaligned unit stride stores: 6 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 100 
+         remark #15477: vector loop cost: 31.000 
+         remark #15478: estimated potential speedup: 3.110 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at advec_cell_kernel.f90(454,9)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

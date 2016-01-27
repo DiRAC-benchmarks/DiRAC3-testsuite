@@ -1,0 +1,155 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Begin optimization report for: VISIT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at visit.f90(65,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at visit.f90(70,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 2 
+   remark #15477: vector loop cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at visit.f90(70,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at visit.f90(92,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at visit.f90(101,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at visit.f90(122,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between 266 line 123 and 266 line 123
+   LOOP END
+
+   LOOP BEGIN at visit.f90(126,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between 266 line 127 and 266 line 127
+   LOOP END
+
+   LOOP BEGIN at visit.f90(130,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between 266 line 131 and 266 line 131
+   LOOP END
+
+   LOOP BEGIN at visit.f90(136,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_36 line 137 and ARGBLOCK_REC_36 line 138
+
+      LOOP BEGIN at visit.f90(137,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed OUTPUT dependence between 266 line 138 and 266 line 138
+
+         LOOP BEGIN at visit.f90(138,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed OUTPUT dependence between ARGBLOCK_REC_36 line 138 and ARGBLOCK_REC_36 line 138
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at visit.f90(142,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_40 line 143 and ARGBLOCK_REC_40 line 144
+
+      LOOP BEGIN at visit.f90(143,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed OUTPUT dependence between 266 line 144 and 266 line 144
+
+         LOOP BEGIN at visit.f90(144,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed OUTPUT dependence between ARGBLOCK_REC_40 line 144 and ARGBLOCK_REC_40 line 144
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at visit.f90(148,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_44 line 149 and ARGBLOCK_REC_44 line 150
+
+      LOOP BEGIN at visit.f90(149,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed OUTPUT dependence between 266 line 150 and 266 line 150
+
+         LOOP BEGIN at visit.f90(150,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed OUTPUT dependence between ARGBLOCK_REC_44 line 150 and ARGBLOCK_REC_44 line 150
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at visit.f90(154,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_48 line 155 and ARGBLOCK_REC_48 line 159
+
+      LOOP BEGIN at visit.f90(155,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_48 line 156 and ARGBLOCK_REC_48 line 159
+
+         LOOP BEGIN at visit.f90(156,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_48 line 158 and ARGBLOCK_REC_48 line 159
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at visit.f90(166,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_55 line 167 and ARGBLOCK_REC_55 line 171
+
+      LOOP BEGIN at visit.f90(167,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_55 line 168 and ARGBLOCK_REC_55 line 171
+
+         LOOP BEGIN at visit.f90(168,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_55 line 170 and ARGBLOCK_REC_55 line 171
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at visit.f90(176,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_59 line 177 and ARGBLOCK_REC_59 line 181
+
+      LOOP BEGIN at visit.f90(177,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_59 line 178 and ARGBLOCK_REC_59 line 181
+
+         LOOP BEGIN at visit.f90(178,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_59 line 180 and ARGBLOCK_REC_59 line 181
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at visit.f90(186,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_63 line 187 and ARGBLOCK_REC_63 line 191
+
+      LOOP BEGIN at visit.f90(187,9)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_63 line 188 and ARGBLOCK_REC_63 line 191
+
+         LOOP BEGIN at visit.f90(188,11)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed ANTI dependence between ARGBLOCK_REC_63 line 190 and ARGBLOCK_REC_63 line 191
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

@@ -1,0 +1,52 @@
+
+------------------------------------------------------------
+Sender: LSF System <hpcadmin@m5418>
+Subject: Job 574249: <bsm_bench> Done
+
+Job <bsm_bench> was submitted from host <cosma-c> by user <dc-kash1> in cluster <cosma-p_cluster1>.
+Job was executed on host(s) <8*m5418>, in queue <cosma5>, as user <dc-kash1> in cluster <cosma-p_cluster1>.
+</cosma/home/dr002/dc-kash1> was used as the home directory.
+</cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/BSMBench> was used as the working directory.
+Started at Tue Nov 10 13:40:48 2015
+Results reported at Tue Nov 10 14:11:52 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -n 8
+#BSUB -x
+#BSUB -R "span[ptile=16]"
+#BSUB -J bsm_bench
+#BSUB -oo qphix_bench.out.%J
+#BSUB -eo qphix_bench.err.%J
+#BSUB -q cosma5
+#BSUB -P dr002
+#BSUB -W 02:00
+
+
+mpirun -np 8 /cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BSMBench/bsmbench_balance -i /cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BSMBench/sets/balance-8.bsmbench -o /cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BSMBench/output/balance8.out
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :  26469.22 sec.
+    Max Memory :      3927 MB
+    Max Swap   :     21765 MB
+
+    Max Processes  :        13
+    Max Threads    :       270
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <qphix_bench.err.574249> for stderr output of this job.
+

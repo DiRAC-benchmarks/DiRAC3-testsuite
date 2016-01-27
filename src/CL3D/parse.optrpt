@@ -1,0 +1,148 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Begin optimization report for: CLOVER_CASE_CHANGE::TOLOWER
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at parse.f90(35,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between tolower_result line 39 and tolower_result line 41
+LOOP END
+
+LOOP BEGIN at parse.f90(35,3)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: CLOVER_CASE_CHANGE::TOUPPER
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at parse.f90(54,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between toupper_result line 58 and toupper_result line 60
+LOOP END
+
+LOOP BEGIN at parse.f90(54,3)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: CLOVER_ISITANINT_MOD::ISITANINT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at parse.f90(83,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at parse.f90(83,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 15 
+   remark #15477: vector loop cost: 12.370 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at parse.f90(83,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: PARSE_MODULE::PARSE_GETWORD
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at parse.f90(257,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+===========================================================================
+
+Begin optimization report for: PARSE_MODULE::PARSE_GETLINE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at parse.f90(171,11)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at parse.f90(160,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between l line 161 and l line 161
+   LOOP END
+
+   LOOP BEGIN at parse.f90(172,10)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 15 
+      remark #15477: vector loop cost: 3.340 
+      remark #15478: estimated potential speedup: 3.880 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at parse.f90(174,25)
+      remark #25460: No loop optimizations reported
+   LOOP END
+
+   LOOP BEGIN at parse.f90(172,10)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at parse.f90(174,25)
+      remark #25460: No loop optimizations reported
+   LOOP END
+
+   LOOP BEGIN at parse.f90(183,20)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 16 
+      remark #15477: vector loop cost: 0.870 
+      remark #15478: estimated potential speedup: 10.780 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at parse.f90(183,20)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at parse.f90(370,5) inlined into parse.f90(196,26)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+   LOOP END
+
+   LOOP BEGIN at parse.f90(370,5) inlined into parse.f90(221,28)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+   LOOP END
+
+   LOOP BEGIN at parse.f90(172,10)
+   <Remainder loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at parse.f90(183,20)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: PARSE_MODULE::PARSE_SCAN
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at parse.f90(370,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+LOOP END
+===========================================================================

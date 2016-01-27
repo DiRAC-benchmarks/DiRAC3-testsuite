@@ -4,3 +4,6 @@
 [submodule "src/Gadget3EagleBench"]
 	path = src/Gadget3EagleBench
 	url = https://github.com/DiRAC-benchmarks/Gadget3EagleBench
+[submodule "src/Walls"]
+	path = src/Walls
+	url = https://github.com/DiRAC-benchmarks/Walls-benchmark

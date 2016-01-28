@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+MOM_ADV_FLOPS=$(sed -rn 's/^ FLOPS: Mom Adv[[:space:]]+:[[:space:]]+([[:digit:]]+).*\./\1/p' $1)
+MOM_ADV_BYTES=$(sed -rn 's/^ Momentum Adv Bytes[[:space:]]+:[[:space:]]+([[:digit:].eE+]+).*/\1/p' $1)
+MOM_ADV_TIME=$(sed -rn 's/^Momentum Advection[[:space:]]+:[[:space:]]+([[:digit:]]+\.[[:digit:]]+).*/\1/p' $1)
+
+# bc doesn't like exponential notation
+MOM_ADV_FLOPS=$(echo "$MOM_ADV_FLOPS" | sed -r 's/[eE]\+0*([[:digit:]]+)/*10^\1/g')
+MOM_ADV_BYTES=$(echo "$MOM_ADV_BYTES" | sed -r 's/[eE]\+0*([[:digit:]]+)/*10^\1/g')
+
+FLOP_RATE=$(echo "$MOM_ADV_FLOPS / $MOM_ADV_TIME" | bc)
+BYTE_RATE=$(echo "$MOM_ADV_BYTES / $MOM_ADV_TIME" | bc)
+
+column -t <(echo -e "MomAdvFLOPs MomAdvBytes MomAdvTime FLOP/s Bytes/s\n$MOM_ADV_FLOPS $MOM_ADV_BYTES $MOM_ADV_TIME $FLOP_RATE $BYTE_RATE")

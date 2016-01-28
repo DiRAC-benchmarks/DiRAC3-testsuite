@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Aggregate all "Timing on cb=... isign=...", take best of the lot
+TIMING_CB_ISIGN_GFLOPS=$(grep -A13 "Timing on cb" $1 | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')q
+TIMING_CB_ISIGN_GFLOPS=$(echo "$TIMING_CB_ISIGN_GFLOPS" | sort -g | tail -n 1)
+
+# Also for "Timing M: isign=..."
+TIMING_M_GFLOPS=$(grep -A16 "Timing M:" $1 | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')
+TIMING_M_GFLOPS=$(echo "$TIMING_M_GFLOPS" | sort -g | tail -n 1)
+
+# And the two solvers
+CG_GFLOPS=$(sed -rn 's/^CG GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $1)
+CG_GFLOPS=$(echo "$CG_GFLOPS" | sort -g | tail -n 1)
+
+BICGSTAB_GFLOPS=$(sed -rn 's/^BICGSTAB GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $1)
+BICGSTAB_GFLOPS=$(echo "$BICGSTAB_GFLOPS" | sort -g | tail -n 1)
+
+column -t <(echo -e "DSlash1 DSlash2 CG BICGSTAB Unit\n$TIMING_CB_ISIGN_GFLOPS $TIMING_M_GFLOPS $CG_GFLOPS $BICGSTAB_GFLOPS GFLOPS")

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+MAX_WRITE=$(sed -rn 's/^Max Write: ([[:digit:]]+\.[[:digit:]]+ .iB\/sec).*/\1/p' $1)
+MAX_READ=$(sed -rn 's/^Max Read:  ([[:digit:]]+\.[[:digit:]]+ .iB\/sec).*/\1/p' $1)
+
+column -t <(echo -e "Write WriteUnits Read ReadUnits\n$MAX_WRITE $MAX_READ")

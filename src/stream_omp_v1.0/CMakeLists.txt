@@ -1,8 +1,8 @@
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS} -O3")
-add_executable(stream_omp_v1 stream_omp_v1.0.c)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS} -O3 -DNTIMES=10000")
+add_executable(stream_omp_c stream_omp_v1.0.c)
 
 set(SYSTEM_NAME "cosmos")
-set(SYSTEM_CORES_PER_NODE 8)
+set(SYSTEM_CORES_PER_NODE 16)
 
 
 set(STREAM_RUNME_IN "${CMAKE_CURRENT_SOURCE_DIR}/${SYSTEM_NAME}_qsub_template.in")

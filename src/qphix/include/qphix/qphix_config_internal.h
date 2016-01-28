@@ -1,18 +1,18 @@
 /* include/qphix/qphix_config_internal.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Name of package */
-#define PACKAGE qphix
+#define PACKAGE DiRAC3-testsuite
 
 /* Define to the address where bug reports for this package should be sent. */
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME qphix
+#define PACKAGE_NAME DiRAC3-testsuite
 
 /* Define to the full name and version of this package. */
 #define PACKAGE_STRING qphix
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME qphix
+#define PACKAGE_TARNAME DiRAC3-testsuite
 
 /* Define to the home page for this package. */
 
@@ -51,7 +51,7 @@
 /* Parscalar Arch */
 
 #ifdef QPHIX_PARSCALAR
-#define QPHIX_PARSCALAR 
+#define QPHIX_PARSCALAR false
 #endif
 
 /* QMP Comms */
@@ -68,7 +68,7 @@
 /* Scalar Arch */
 
 #ifdef QPHIX_SCALAR
-#define QPHIX_SCALAR 
+#define QPHIX_SCALAR 1
 #endif
 
 /* Generate Scalar Specializations */

@@ -4,8 +4,8 @@
 #BSUB -x
 #BSUB -R "span[ptile=1]"
 #BSUB -J  ior_1
-#BSUB -oo qphix_bench.out.%J
-#BSUB -eo qphix_bench.err.%J
+#BSUB -oo ior_NW.SHF.out.%J
+#BSUB -eo ior_NW.SHF.err.%J
 #BSUB -q cosma5
 #BSUB -P dr002
 #BSUB -W 05:00

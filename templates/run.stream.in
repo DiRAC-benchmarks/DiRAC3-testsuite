@@ -1,0 +1,11 @@
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+
+for tt in 1 2 4 8 16
+do
+  echo "export OMP_NUM_THREADS=$tt"
+  export OMP_NUM_THREADS=$tt
+  echo "$<TARGET_FILE:stream_omp_c>"
+  $<TARGET_FILE:stream_omp_c>
+done
+
+popd

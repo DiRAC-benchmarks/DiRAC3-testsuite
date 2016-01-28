@@ -1,37 +1,16 @@
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS} -O3 -DNTIMES=10000")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS} -O3")
 add_executable(stream_omp_c stream_omp_v1.0.c)
 
-set(SYSTEM_NAME "cosmos")
-set(SYSTEM_CORES_PER_NODE 16)
+# Script defining modules required by stream
+set(SCRIPT_MODULES "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.stream.cosma-a")
 
-
-set(STREAM_RUNME_IN "${CMAKE_CURRENT_SOURCE_DIR}/${SYSTEM_NAME}_qsub_template.in")
-
-
-
-set(STREAM_OMP_LIST  01 02 04 08 16 24)
-set(STREAM_NODES 0)
-set(MOD1 0)
-# Loop over desired values of OMP_NUM_THREADS and configure individual RunMe scrips
-foreach(STREAM_OMP_NUM_THREADS ${STREAM_OMP_LIST})
-	if(NOT(${STREAM_OMP_NUM_THREADS} GREATER ${SYSTEM_CORES_PER_NODE}))
-		set(STREAM_NODES 1)
-	else()
-		MATH(EXPR MOD1 "${STREAM_OMP_NUM_THREADS}%${SYSTEM_CORES_PER_NODE}")
-		if(MOD1 GREATER 0)
-			MATH(EXPR STREAM_NODES "${STREAM_OMP_NUM_THREADS}/${SYSTEM_CORES_PER_NODE}+1")	
-		else()
-			MATH(EXPR STREAM_NODES "${STREAM_OMP_NUM_THREADS}/${SYSTEM_CORES_PER_NODE}")
-		endif()
-	endif()
-	set(STREAM_RANKS_PER_NODE ${STREAM_OMP_NUM_THREADS})
-	set(STREAM_JOB_${STREAM_OMP_NUM_THREADS} "STREAM_${STREAM_NPROCS}_${STREAM_OMP_NUM_THREADS}")
-        set(STREAM_RUNME  "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/${STREAM_JOB_${STREAM_OMP_NUM_THREADS}}.qsub")
-        configure_file(${STREAM_RUNME_IN} ${STREAM_RUNME})
-        file(GENERATE OUTPUT ${STREAM_RUNME} INPUT ${STREAM_RUNME})
-endforeach()
-
-# Configure RunAll script
-set(STREAM_RUNALL_IN "${CMAKE_CURRENT_SOURCE_DIR}/RunStream.in")
-set(STREAM_RUNALL    "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/RunStream")
-configure_file(${STREAM_RUNALL_IN} ${STREAM_RUNALL})
+# Run and submission scripts for stream
+set(JOB_NAME       "Stream")
+set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.stream.cosma-a")
+set(SCRIPT_RUN_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/run.stream.in")
+set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.stream.cosma-a")
+set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.cosma-a.in")
+configure_file(${SCRIPT_RUN_IN} ${SCRIPT_RUN})
+configure_file(${SCRIPT_SUB_IN} ${SCRIPT_SUB})
+file(GENERATE OUTPUT ${SCRIPT_RUN} INPUT ${SCRIPT_RUN})
+file(GENERATE OUTPUT ${SCRIPT_SUB} INPUT ${SCRIPT_SUB})

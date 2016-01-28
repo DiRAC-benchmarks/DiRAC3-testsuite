@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#BSUB -n 1
+#BSUB -x
+#BSUB -R "span[ptile=16]"
+#BSUB -J qphix_soa8
+#BSUB -oo qphix_bench.%J
+#BSUB -eo qphix_bench.err.%J
+#BSUB -q cosma5
+#BSUB -P dr002
+#BSUB -W 00:30
+
+
+D3TS="/cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite"
+
+source ${D3TS}/scripts/modules.sh
+module swap platform_mpi intel_mpi
+
+
+vol="-x 16 -y 16 -z 16 -t 16 "
+block="-by 4 -bz 4" 
+minct="1"
+c=16
+${D3TS}/bin/time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f

@@ -7,7 +7,7 @@ Requirements:
 Build benchmarks:
 
 ```
-git clone --recursive https://github.com/DiRAC-benchmarks/DiRAC3-testsuite.git
+git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
 cd DiRAC3-testsuite
 mkdir bin
 mkdir build

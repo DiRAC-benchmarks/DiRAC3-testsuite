@@ -1,0 +1,12 @@
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+
+foreach dd (4 8 16 32 64)
+  foreach tt (1 2 4 8 16)
+    echo "export OMP_NUM_THREADS=$tt"
+    export OMP_NUM_THREADS=$tt
+    echo "$<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd"
+    $<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd
+  end
+end
+
+popd

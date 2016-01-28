@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#BSUB -P dr002
+#BSUB -q cosma5
+#BSUB -n 16
+#BSUB -J ${JOB_NAME}
+#BSUB -oo ${JOB_NAME}.out.%J
+#BSUB -eo ${JOB_NAME}.err.%J
+#BSUB -W 1:00
+
+# Load modules
+source ${SCRIPT_MODULES}
+
+# Run the benchmark
+source ${SCRIPT_RUN}

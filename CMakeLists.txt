@@ -34,6 +34,9 @@ SET(DIRAC3_TESTSUITE_MODULES_PATH ${CMAKE_SOURCE_DIR}/modules)
 # Directory for script templates
 SET(DIRAC3_TESTSUITE_TEMPLATES_PATH ${CMAKE_SOURCE_DIR}/templates)
 
+# Run directory
+SET(DIRAC3_TESTSUITE_RUN_PATH ${CMAKE_SOURCE_DIR}/run)
+
 # Find necessary packages and libraries
 find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)

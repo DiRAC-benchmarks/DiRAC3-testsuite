@@ -42,3 +42,9 @@ bin/*
 build/*
 outputs/*
 scripts/*
+
+# Temporary files
+*.swp
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake

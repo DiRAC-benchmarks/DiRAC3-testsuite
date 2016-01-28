@@ -1,6 +1,0 @@
-#!/bin/sh
-
-env="${MILCMK_ENV}"
-
-qsub -A Catalyst -t 30 --env "$env" -n 1 --proccount 1 --mode c1 $<TARGET_FILE:${MILCMK_FTARGET}>
-qsub -A Catalyst -t 30 --env "$env" -n 1 --proccount 1 --mode c1 $<TARGET_FILE:${MILCMK_DTARGET}>

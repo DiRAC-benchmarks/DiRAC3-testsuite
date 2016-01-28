@@ -45,6 +45,7 @@ scripts/*
 
 # Temporary files
 *.swp
+build/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake

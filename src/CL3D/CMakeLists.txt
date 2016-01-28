@@ -69,10 +69,9 @@ FIND_PACKAGE(OpenMP)
     MESSAGE("DEBUG: adding this switch ${OpenMP_Fortran_FLAGS}")
 ENDIF()
 
-
 file(GLOB CL3D_F_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/*.f90)
-list(REMOVE_ITEM CL3D_F_SOURCE "ad.f90")
 file(GLOB CL3D_C_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
 
 add_executable(clover_leaf ${CL3D_C_SOURCE} ${CL3D_F_SOURCE})
+
 target_link_libraries(clover_leaf ${MPI_Fortran_LIBRARIES})

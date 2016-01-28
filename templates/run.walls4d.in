@@ -1,0 +1,15 @@
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+ln -s ${WALLS_INPUT_FILE}
+
+for dd in 4 8 16 32 64
+do
+  for tt in 1 2 4 8 16
+  do
+    echo "export OMP_NUM_THREADS=$tt"
+    export OMP_NUM_THREADS=$tt
+    echo "$<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd"
+    $<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd
+  done
+done
+
+popd

@@ -28,6 +28,12 @@ SET(DIRAC3_TESTSUITE_OUTPUTS_PATH ${CMAKE_SOURCE_DIR}/outputs)
 # Directory for scripts
 SET(DIRAC3_TESTSUITE_SCRIPTS_PATH ${CMAKE_SOURCE_DIR}/scripts)
 
+# Directory for module scripts
+SET(DIRAC3_TESTSUITE_MODULES_PATH ${CMAKE_SOURCE_DIR}/modules)
+
+# Directory for script templates
+SET(DIRAC3_TESTSUITE_TEMPLATES_PATH ${CMAKE_SOURCE_DIR}/templates)
+
 # Find necessary packages and libraries
 find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)

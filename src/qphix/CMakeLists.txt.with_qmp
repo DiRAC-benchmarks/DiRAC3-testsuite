@@ -9,7 +9,7 @@ cmake_minimum_required (VERSION 2.6)
 project(qphix C CXX)
 #AC_CONFIG_AUX_DIR(config)
 
-SET(PARALLEL_ARCH "scalar")
+SET(PARALLEL_ARCH "parscalar")
 
 SET(SOALEN 8)
 

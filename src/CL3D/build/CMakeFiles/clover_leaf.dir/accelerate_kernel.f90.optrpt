@@ -1,0 +1,218 @@
+
+Begin optimization report for: ACCELERATE_KERNEL_MODULE::ACCELERATE_KERNEL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(63,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(64,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(65,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(65,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 16 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 77 
+         remark #15477: vector loop cost: 41.250 
+         remark #15478: estimated potential speedup: 1.830 
+         remark #15479: lightweight vector operations: 39 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(65,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(85,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(86,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(87,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(87,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 14 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 28.250 
+         remark #15478: estimated potential speedup: 1.290 
+         remark #15479: lightweight vector operations: 27 
+         remark #15480: medium-overhead vector operations: 2 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(87,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(99,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(100,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(101,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(101,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 14 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 28.250 
+         remark #15478: estimated potential speedup: 1.290 
+         remark #15479: lightweight vector operations: 27 
+         remark #15480: medium-overhead vector operations: 2 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(101,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(114,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(115,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(116,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(116,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 14 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 28.250 
+         remark #15478: estimated potential speedup: 1.290 
+         remark #15479: lightweight vector operations: 27 
+         remark #15480: medium-overhead vector operations: 2 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(116,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(129,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(130,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(131,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(131,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 13 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 26.750 
+         remark #15478: estimated potential speedup: 1.360 
+         remark #15479: lightweight vector operations: 28 
+         remark #15480: medium-overhead vector operations: 1 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(131,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(144,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(145,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(146,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(146,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 13 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 26.750 
+         remark #15478: estimated potential speedup: 1.360 
+         remark #15479: lightweight vector operations: 28 
+         remark #15480: medium-overhead vector operations: 1 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(146,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(158,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(159,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(160,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(160,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 13 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 37 
+         remark #15477: vector loop cost: 26.750 
+         remark #15478: estimated potential speedup: 1.360 
+         remark #15479: lightweight vector operations: 28 
+         remark #15480: medium-overhead vector operations: 1 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/accelerate_kernel.f90(160,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

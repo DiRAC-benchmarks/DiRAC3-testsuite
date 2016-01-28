@@ -26,10 +26,10 @@ enable_language (Fortran)
 
 set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -restrict")
 
-find_package(MPI)
-add_definitions(${MPI_Fortran_COMPILE_FLAGS})
+find_package(MPI REQUIRED)
+# add_definitions(${MPI_Fortran_COMPILE_FLAGS})
 include_directories(${MPI_Fortran_INCLUDE_PATH})
-link_directories(${MPI_Fortran_LIBRARIES})
+# link_directories(${MPI_Fortran_LIBRARIES})
 
 # FFLAGS depend on the compiler
 get_filename_component (Fortran_COMPILER_NAME ${CMAKE_Fortran_COMPILER} NAME)
@@ -71,6 +71,7 @@ ENDIF()
 
 
 file(GLOB CL3D_F_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/*.f90)
+list(REMOVE_ITEM CL3D_F_SOURCE "ad.f90")
 file(GLOB CL3D_C_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
 
 add_executable(clover_leaf ${CL3D_C_SOURCE} ${CL3D_F_SOURCE})

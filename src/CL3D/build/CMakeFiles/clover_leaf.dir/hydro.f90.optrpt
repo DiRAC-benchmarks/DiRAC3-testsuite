@@ -1,0 +1,19 @@
+
+Begin optimization report for: HYDRO
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/hydro.f90(48,17)
+   remark #15521: loop was not vectorized: explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/hydro.f90(114,13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between 466 line 114 and 466 line 114
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/hydro.f90(114,13)
+<Remainder>
+LOOP END
+===========================================================================

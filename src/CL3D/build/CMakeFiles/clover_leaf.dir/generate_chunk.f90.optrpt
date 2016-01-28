@@ -1,0 +1,23 @@
+
+Begin optimization report for: GENERATE_CHUNK
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk.f90(36,3)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 13 
+   remark #15460: masked strided loads: 13 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 48 
+   remark #15477: vector loop cost: 39.000 
+   remark #15478: estimated potential speedup: 1.230 
+   remark #15479: lightweight vector operations: 38 
+   remark #15481: heavy-overhead vector operations: 1 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk.f90(36,3)
+<Remainder>
+LOOP END
+===========================================================================

@@ -1,0 +1,256 @@
+
+Begin optimization report for: GENERATE_CHUNK_KERNEL_MODULE::GENERATE_CHUNK_KERNEL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(98,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(99,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(100,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(100,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 4 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 4.330 
+         remark #15479: lightweight vector operations: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(100,7)
+      <Remainder>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(100,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(107,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(108,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(109,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(109,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 4 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 4.330 
+         remark #15479: lightweight vector operations: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(109,7)
+      <Remainder>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(109,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(116,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(117,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(118,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(118,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 4 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 4.330 
+         remark #15479: lightweight vector operations: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(118,7)
+      <Remainder>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(118,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(125,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(126,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(127,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(127,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 4 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 4.330 
+         remark #15479: lightweight vector operations: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(127,7)
+      <Remainder>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(127,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(134,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(135,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(136,7)
+      <Peeled>
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(136,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 4 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 4.330 
+         remark #15479: lightweight vector operations: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(136,7)
+      <Remainder>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(136,7)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(143,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(151,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(152,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(153,9)
+            remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+            LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(160,19)
+               remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+               remark #15346: vector dependence: assumed FLOW dependence between lt line 168 and lt line 163
+
+               LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(161,21)
+                  remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+                  remark #15346: vector dependence: assumed FLOW dependence between kt line 167 and kt line 163
+
+                  LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(162,23)
+                     remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+                     remark #15451: unmasked unaligned unit stride stores: 3 
+                     remark #15475: --- begin vector loop cost summary ---
+                     remark #15476: scalar loop cost: 11 
+                     remark #15477: vector loop cost: 9.000 
+                     remark #15478: estimated potential speedup: 0.660 
+                     remark #15479: lightweight vector operations: 7 
+                     remark #15480: medium-overhead vector operations: 1 
+                     remark #15481: heavy-overhead vector operations: 1 
+                     remark #15488: --- end vector loop cost summary ---
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(177,15)
+               remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+               remark #15346: vector dependence: assumed FLOW dependence between lt line 185 and lt line 180
+
+               LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(178,17)
+                  remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+                  remark #15346: vector dependence: assumed FLOW dependence between kt line 184 and kt line 180
+
+                  LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(179,19)
+                     remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+                     remark #15451: unmasked unaligned unit stride stores: 3 
+                     remark #15475: --- begin vector loop cost summary ---
+                     remark #15476: scalar loop cost: 11 
+                     remark #15477: vector loop cost: 9.000 
+                     remark #15478: estimated potential speedup: 0.660 
+                     remark #15479: lightweight vector operations: 7 
+                     remark #15480: medium-overhead vector operations: 1 
+                     remark #15481: heavy-overhead vector operations: 1 
+                     remark #15488: --- end vector loop cost summary ---
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(191,15)
+               remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+               remark #15346: vector dependence: assumed FLOW dependence between lt line 199 and lt line 194
+
+               LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(192,17)
+                  remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+                  remark #15346: vector dependence: assumed FLOW dependence between kt line 198 and kt line 194
+
+                  LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/generate_chunk_kernel.f90(193,19)
+                     remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+                     remark #15451: unmasked unaligned unit stride stores: 3 
+                     remark #15475: --- begin vector loop cost summary ---
+                     remark #15476: scalar loop cost: 11 
+                     remark #15477: vector loop cost: 9.000 
+                     remark #15478: estimated potential speedup: 0.660 
+                     remark #15479: lightweight vector operations: 7 
+                     remark #15480: medium-overhead vector operations: 1 
+                     remark #15481: heavy-overhead vector operations: 1 
+                     remark #15488: --- end vector loop cost summary ---
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

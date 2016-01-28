@@ -1,0 +1,66 @@
+
+Begin optimization report for: FIELD_SUMMARY_KERNEL_MODULE::FIELD_SUMMARY_KERNEL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(57,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between .2.7_2F64.54 line 70 and .2.7_2F64.54 line 70
+
+   LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(58,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between .2.7_2F64.54 line 70 and .2.7_2F64.54 line 70
+
+      LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(59,7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed FLOW dependence between j line 75 and j line 63
+
+         LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(61,9)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+            remark #15346: vector dependence: assumed FLOW dependence between lv line 67 and lv line 64
+
+            LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(62,11)
+               remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+               remark #15346: vector dependence: assumed FLOW dependence between kv line 66 and kv line 64
+
+               LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(63,13)
+                  remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+                  remark #15450: unmasked unaligned unit stride loads: 3 
+                  remark #15475: --- begin vector loop cost summary ---
+                  remark #15476: scalar loop cost: 30 
+                  remark #15477: vector loop cost: 16.000 
+                  remark #15478: estimated potential speedup: 0.900 
+                  remark #15479: lightweight vector operations: 24 
+                  remark #15480: medium-overhead vector operations: 2 
+                  remark #15488: --- end vector loop cost summary ---
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(56,7)
+<Peeled>
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(56,7)
+   remark #15301: BLOCK WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 9 
+   remark #15477: vector loop cost: 3.500 
+   remark #15478: estimated potential speedup: 1.250 
+   remark #15479: lightweight vector operations: 3 
+   remark #15480: medium-overhead vector operations: 2 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/field_summary_kernel.f90(56,7)
+<Remainder>
+LOOP END
+===========================================================================

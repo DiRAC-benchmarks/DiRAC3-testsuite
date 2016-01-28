@@ -1,0 +1,4 @@
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/ShuffleSeq/CMakeFiles/ShuffSeq.dir
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/CheckOrder/CMakeFiles/CheckOrder.dir
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/BigSort/CMakeFiles/BigSort.dir
+/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/BigSort-20130808/build/GenSeq/CMakeFiles/GenSeq.dir

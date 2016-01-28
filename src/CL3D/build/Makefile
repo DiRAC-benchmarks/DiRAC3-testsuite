@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D
+CMAKE_BINARY_DIR = /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,9 +73,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/CMakeFiles /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/build/CMakeFiles /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -146,14 +146,6 @@ accelerate_kernel.o: accelerate_kernel.f90.o
 accelerate_kernel.f90.o:
 	$(MAKE) -f CMakeFiles/clover_leaf.dir/build.make CMakeFiles/clover_leaf.dir/accelerate_kernel.f90.o
 .PHONY : accelerate_kernel.f90.o
-
-ad.o: ad.f90.o
-.PHONY : ad.o
-
-# target to build an object file
-ad.f90.o:
-	$(MAKE) -f CMakeFiles/clover_leaf.dir/build.make CMakeFiles/clover_leaf.dir/ad.f90.o
-.PHONY : ad.f90.o
 
 advec_cell_driver.o: advec_cell_driver.f90.o
 .PHONY : advec_cell_driver.o
@@ -512,7 +504,6 @@ help:
 	@echo "... PdV_kernel.o"
 	@echo "... accelerate.o"
 	@echo "... accelerate_kernel.o"
-	@echo "... ad.o"
 	@echo "... advec_cell_driver.o"
 	@echo "... advec_cell_kernel.o"
 	@echo "... advec_mom_driver.o"

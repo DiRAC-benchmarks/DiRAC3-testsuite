@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cosma/home/dr002/dc-kash1/cosma5/DiRAC3-testsuite/src/CL3D/timer_c.c
+sys/time.h
+-
+sys/times.h
+-
+sys/resource.h
+-
+stdlib.h
+-
+

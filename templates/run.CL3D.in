@@ -1,0 +1,9 @@
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+ln -s ${CL3D_INPUT_FILE}
+
+export OMP_NUM_THREADS=16
+export KMP_AFFINITY=verbose,scatter
+
+$<TARGET_FILE:clover_leaf>
+
+popd

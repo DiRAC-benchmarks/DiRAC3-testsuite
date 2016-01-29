@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Aggregate all "Timing on cb=... isign=...", take best of the lot
-TIMING_CB_ISIGN_GFLOPS=$(grep -A13 "Timing on cb" $1 | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')q
+TIMING_CB_ISIGN_GFLOPS=$(grep -A13 "Timing on cb" $1 | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')
 TIMING_CB_ISIGN_GFLOPS=$(echo "$TIMING_CB_ISIGN_GFLOPS" | sort -g | tail -n 1)
 
 # Also for "Timing M: isign=..."

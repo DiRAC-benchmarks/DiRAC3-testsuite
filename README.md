@@ -9,11 +9,14 @@ Build benchmarks:
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
 cd DiRAC3-testsuite
-mkdir bin
-mkdir build
-mkdir run
-mkdir scripts
-cd build
+mkdir bin build run scripts
 cmake .. -DDIRAC3_PRIVATE=TRUE
 make all
+```
+
+Archer Cray XC30 build:
+
+```
+CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_PRIVATE=TRUE
+CRAYPE_LINK_TYPE=dynamic make all
 ```

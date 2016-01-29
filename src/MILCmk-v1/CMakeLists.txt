@@ -36,14 +36,14 @@ set_target_properties(${MILCMK_DTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAG
 target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_C_LIBRARIES} ${M_LIBRARIES})
 
 # Script defining modules required by MILC
-set(SCRIPT_MODULES "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.milc.cosma-a")
+set(SCRIPT_MODULES "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.milc.${DIRAC3_HOST}")
 
 # Run and submission scripts for MILC-F3
 set(JOB_NAME       "MILC-F3")
-set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.milcf3.cosma-a")
+set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.milcf3.${DIRAC3_HOST}")
 set(SCRIPT_RUN_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/run.milcf3.in")
-set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.milcf3.cosma-a")
-set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.cosma-a.in")
+set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.milcf3.${DIRAC3_HOST}")
+set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")
 configure_file(${SCRIPT_RUN_IN} ${SCRIPT_RUN})
 configure_file(${SCRIPT_SUB_IN} ${SCRIPT_SUB})
 file(GENERATE OUTPUT ${SCRIPT_RUN} INPUT ${SCRIPT_RUN})
@@ -51,10 +51,10 @@ file(GENERATE OUTPUT ${SCRIPT_SUB} INPUT ${SCRIPT_SUB})
 
 # Run and submission scripts for MILC-D3
 set(JOB_NAME       "MILC-D3")
-set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.milcd3.cosma-a")
+set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.milcd3.${DIRAC3_HOST}")
 set(SCRIPT_RUN_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/run.milcd3.in")
-set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.milcd3.cosma-a")
-set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.cosma-a.in")
+set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.milcd3.${DIRAC3_HOST}")
+set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")
 configure_file(${SCRIPT_RUN_IN} ${SCRIPT_RUN})
 configure_file(${SCRIPT_SUB_IN} ${SCRIPT_SUB})
 file(GENERATE OUTPUT ${SCRIPT_RUN} INPUT ${SCRIPT_RUN})

@@ -1,0 +1,13 @@
+#!/bin/bash --login
+
+#PBS -A d63
+#PBS -q short
+#PBS -l select=1
+#PBS -N ${JOB_NAME}
+#PBS -l walltime=00:10:00
+
+# Load modules
+source ${SCRIPT_MODULES}
+
+# Run the benchmark
+source ${SCRIPT_RUN}

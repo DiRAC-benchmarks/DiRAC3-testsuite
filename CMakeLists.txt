@@ -42,8 +42,8 @@ find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)
 find_library(M_LIBRARIES m REQUIRED)
 
-set(DIRAC3_TESTSUITE_BIN_PATH ${EXECUTABLE_OUTPUT_PATH})
-
+# Name of system
+set(DIRAC3_HOST "archer")
 
 # Add source
 add_subdirectory(src)

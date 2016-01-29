@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 project(DiRAC3-testsuite C CXX Fortran)
 
 SET(DIRAC3_TESTSUITE_VERSION_MAJOR 0)

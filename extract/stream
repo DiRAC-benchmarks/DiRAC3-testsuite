@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-ARRAY_SIZE=$(sed -rn 's/^Array size = ([[:digit:]]+),.*/\1/p' $1)
-MEMORY_REQUIRED=$(sed -rn 's/^Total memory required = ([[:digit:]]+\.[[:digit:]]+ [^B]B).*/\1/p' $1)
-REPETITIONS=$(sed -rn 's/^Each test is run ([[:digit:]]+) times.*/\1/p' $1)
-TICKS_PER_TEST=$(sed -rn 's/.*= ([[:digit:]]+) clock ticks\).*/\1/p' $1)
+THREADS=($(sed -rn 's/^Number of Threads requested = ([[:digit:]]+)$/\1/p' $1 | uniq))
 
-UNIT=$(sed -rn 's/.*[[:space:]]Rate \(([^B]B\/s).*/\1/p' $1)
-COPY=$(sed -rn 's/^Copy:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1)
-SCALE=$(sed -rn 's/^Scale:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1)
-ADD=$(sed -rn 's/^Add:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1)
-TRIAD=$(sed -rn 's/^Triad:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1)
+UNIT=($(sed -rn 's/.*[[:space:]]Rate \(([^B]B\/s).*/\1/p' $1))
+COPY=($(sed -rn 's/^Copy:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1))
+SCALE=($(sed -rn 's/^Scale:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1))
+ADD=($(sed -rn 's/^Add:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1))
+TRIAD=($(sed -rn 's/^Triad:[[:space:]]+([[:digit:]]+\..[[:digit:]]+)[[:space:]].*/\1/p' $1))
 
-column -t <(echo -e "Copy Scale Add Triad Units\n$COPY $SCALE $ADD $TRIAD $UNIT")
+OUTPUT="Threads Copy Scale Add Triad Units"$'\n'
+for ((i = 0; i <= ${#THREADS[@]}; i++)); do
+  OUTPUT="$OUTPUT${THREADS[i]} ${COPY[i]} ${SCALE[i]} ${ADD[i]} ${TRIAD[i]} ${UNIT[i]}"$'\n'
+done
+
+column -t <<< "$OUTPUT"

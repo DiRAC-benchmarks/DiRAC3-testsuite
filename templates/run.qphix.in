@@ -1,0 +1,9 @@
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+
+vol="-x 16 -y 16 -z 16 -t 16 "
+block="-by 4 -bz 4" 
+minct="1"
+c=16
+$<TARGET_FILE:time_dslash_noqdp> $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f
+
+popd

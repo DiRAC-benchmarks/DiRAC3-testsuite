@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(DiRAC3-testsuite C CXX Fortran)
 
+include(ExternalProject)
+
 SET(DIRAC3_TESTSUITE_VERSION_MAJOR 0)
 SET(DIRAC3_TESTSUITE_VERSION_MINOR 1)
 
@@ -47,3 +49,13 @@ set(DIRAC3_HOST "archer")
 
 # Add source
 add_subdirectory(src)
+
+ExternalProject_Add(swiftsim-benchmark
+  DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
+  GIT_REPOSITORY git@github.com:DiRAC-benchmarks/swiftsim-benchmark.git
+  GIT_TAG benchmark
+  SOURCE_DIR ${CMAKE_BINARY_DIR}/swiftsim-benchmark
+  BUILD_IN_SOURCE 1
+  CONFIGURE_COMMAND ./autogen.sh && ./configure --prefix=${CMAKE_SOURCE_DIR}
+  BUILD_COMMAND make
+  INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/swiftsim-benchmark/examples && make install)

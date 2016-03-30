@@ -8,8 +8,14 @@ Requirements:
 * [libtool](https://www.gnu.org/software/libtool/)
 * [Automake >= 1.11](http://www.gnu.org/software/autoconf/autoconf.html)
 
-* SWIFT expects ```$(CC)``` and ```mpicc``` to have the same 'flavour' e.g. Intel, GCC, ...
+* SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, GCC, ...
   * You *might* need to set the ```I_MPI_CC``` environment variable for Intel MPI (as on DiRAC Complexity)
+  * If (as on DiRAC COSMOS) the system ```mpicc``` cannot be configured, place a shell script as follows before it in the path:
+
+      ```
+      #!/bin/sh
+      $CC "$@" # append MPI compiler, linker options as required
+      ```
 
 Build benchmarks:
 

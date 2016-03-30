@@ -2,7 +2,14 @@
 
 Requirements:
 
-* CMake v3.0
+* [CMake 3.x](https://cmake.org/download/#latest)
+* [METIS 5.x](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
+  * n.b. SWIFT will build without METIS, but with impaired load balance
+* [libtool](https://www.gnu.org/software/libtool/)
+* [Automake >= 1.11](http://www.gnu.org/software/autoconf/autoconf.html)
+
+* SWIFT expects ```$(CC)``` and ```mpicc``` to have the same 'flavour' e.g. Intel, GCC, ...
+  * You *might* need to set the ```I_MPI_CC``` environment variable for Intel MPI (as on DiRAC Complexity)
 
 Build benchmarks:
 

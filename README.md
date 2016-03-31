@@ -2,11 +2,11 @@
 
 ## Dependencies
 
-* [CMake 3.x](https://cmake.org/download/#latest)
+* [CMake 3.x](https://cmake.org/download/)
 * [METIS 5.x](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
   * n.b. SWIFT will build without METIS, but with impaired load balance
 * [libtool](https://www.gnu.org/software/libtool/)
-* [Automake >= 1.11](http://www.gnu.org/software/autoconf/autoconf.html)
+* [Automake >= 1.11](http://www.gnu.org/software/automake/)
 * [HDF5](https://www.hdfgroup.org/downloads/index.html)
 
 ## Other requirements

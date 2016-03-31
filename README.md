@@ -15,8 +15,9 @@
   * If (as on DiRAC COSMOS) the system ```mpicc``` cannot be configured, place a shell script like this before it in the path:
    ```
    #!/bin/sh
-   $CC "$@" # append MPI compiler, linker options as required
+   icc "$@" # append MPI compiler, linker options as required
    ```
+  * n.b. ```configure``` sets the environment variable ```CC=mpicc```, so the compiler (here ```icc```) must be named directly.
 
 ## To build benchmarks...
 

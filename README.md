@@ -7,6 +7,7 @@
   * n.b. SWIFT will build without METIS, but with impaired load balance
 * [libtool](https://www.gnu.org/software/libtool/)
 * [Automake >= 1.11](http://www.gnu.org/software/autoconf/autoconf.html)
+* [HDF5](https://www.hdfgroup.org/downloads/index.html)
 
 ## Other requirements
 

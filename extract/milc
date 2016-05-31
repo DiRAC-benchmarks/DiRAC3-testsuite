@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+import argparse, csv, re, sys
+
+def main():
+
+    # Parse command line arguments for list of data files and CSV output file
+    parser = argparse.ArgumentParser(description="Parse the output of the MILC benchmark for performance metrics")
+    parser.add_argument('files', type=argparse.FileType('r'), help='The datafiles to parse', nargs='+')
+    parser.add_argument('csv',   type=argparse.FileType('w'), help='The CSV file to write')
+    args = parser.parse_args()
+
+    # Regex for parsing data files
+    re_prec = r"(?:QLA_Precision = )(?P<precision>[DF])(?:\n)"
+    re_omp  = r"(?:OMP THREADS = )(?P<ompnumthreads>[0-9]+)(?:\n)"
+    re_len  = r"(?:len = )(?P<len>[0-9]+)(?:[\S\s]*?)"
+    re_1    = r"(?:QLA_V_vpeq_M_times_pV.*mflops= *)(?P<bench1>[0-9]*\.?[0-9]*)(?:\n)"
+    re_2    = r"(?:QLA_V_veq_Ma_times_V.*mflops= *)(?P<bench2>[0-9]*\.?[0-9]*)(?:\n)"
+    re_3    = r"(?:QLA_V_vmeq_pV.*mflops= *)(?P<bench3>[0-9]*\.?[0-9]*)(?:\n)"
+    re_4    = r"(?:QLA_D_vpeq_spproj_M_times_pD.*mflops= *)(?P<bench4>[0-9]*\.?[0-9]*)(?:\n)"
+    re_5    = r"(?:QLA_M_veq_M_times_pM.*mflops= *)(?P<bench5>[0-9]*\.?[0-9]*)(?:\n)"
+    re_6    = r"(?:QLA_r_veq_norm2_V.*mflops= *)(?P<bench6>[0-9]*\.?[0-9]*)(?:\n)"
+    re_7    = r"(?:QLA_c_veq_V_dot_V.*mflops= *)(?P<bench7>[0-9]*\.?[0-9]*)(?:\n)"
+    re_header   = re.compile( re_prec + re_omp )
+    re_flops    = re.compile( re_len + re_1 + re_2 + re_3 + re_4 + re_5 + re_6 + re_7 )
+
+    # Names of each field
+    fields = ['OMP_NUM_THREADS', 'Array Length', 'length', \
+                 'QLA_V_vpeq_M_times_pV', \
+                 'QLA_V_veq_Ma_times_V', \
+                 'QLA_V_vmeq_pV','QLA_D_vpeq_spproj_M_times_pD', \
+                 'QLA_M_veq_M_times_pM', \
+                 'QLA_r_veq_norm2_V', \
+                 'QLA_c_veq_V_dot_V' ]
+
+    # CSV file writer
+    writer = csv.DictWriter(args.csv, fieldnames=fields)
+    writer.writeheader()
+
+    # Write from each data file to CSV
+    for datafile in args.files:
+        datalist = datafile.read().split('qla_bench-qla')
+        del datalist[0]
+        for datablock in datalist:
+            header_data = re_header.findall(datablock)[0]
+            flop_data   = re_flops.findall(datablock)
+            for entries in flop_data:
+                entries = header_data + entries
+                writer.writerow({ field : entry for field,entry in zip(fields,entries) })
+
+
+if __name__ == "__main__":
+
+    main()

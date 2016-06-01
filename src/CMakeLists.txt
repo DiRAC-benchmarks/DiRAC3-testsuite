@@ -1,4 +1,3 @@
-#add_subdirectory(Grid)
 #add_subdirectory(ior)
 add_subdirectory(MILCmk-v1)
 # add_subdirectory(qphix)

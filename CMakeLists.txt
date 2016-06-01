@@ -50,6 +50,18 @@ set(DIRAC3_HOST "archer")
 # Add source
 add_subdirectory(src)
 
+# Grid Benchmark
+ExternalProject_Add(grid-benchmark
+  DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
+  GIT_REPOSITORY git@github.com:paboyle/Grid
+  GIT_TAG master
+  SOURCE_DIR ${CMAKE_BINARY_DIR}/grid-benchmark
+  BUILD_IN_SOURCE 1
+	CONFIGURE_COMMAND ./scripts/reconfigure_script && mkdir -p builds/icpc-avx-openmp &&  cd builds/icpc-avx-openmp && CXX=icpc ../../configure --enable-precision=single --enable-simd=AVX "CXXFLAGS=-mavx -fopenmp -O3 -std=c++11" "LIBS=-fopenmp -lgmp -lmpfr" --enable-comms=none --prefix=${CMAKE_SOURCE_DIR}
+  BUILD_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/builds/icpc-avx-openmp && make all
+	INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/builds/icpc-avx-openmp && make install)
+
+# Swift Benchmark
 ExternalProject_Add(swiftsim-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
   GIT_REPOSITORY git@github.com:DiRAC-benchmarks/swiftsim-benchmark.git

@@ -65,6 +65,24 @@ ExternalProject_Add(grid-benchmark
   BUILD_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/builds/icpc-avx-openmp && make all
 	INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/builds/icpc-avx-openmp && make install)
 
+if(DIRAC3_TESTSUITE_MODULES_PATH AND DIRAC3_TESTSUITE_SCRIPTS_PATH AND DIRAC3_TESTSUITE_TEMPLATES_PATH AND DIRAC3_HOST)
+
+	# Script defining modules required by Walls
+	set(SCRIPT_MODULES "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.grid.${DIRAC3_HOST}")
+
+	# Run and submission scripts for Walls3D
+	set(JOB_NAME       "GridSingleNode")
+	set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.grid.${DIRAC3_HOST}")
+	set(SCRIPT_RUN_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/run.grid.in")
+	set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.grid.${DIRAC3_HOST}")
+	set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")
+	configure_file(${SCRIPT_RUN_IN} ${SCRIPT_RUN})
+	configure_file(${SCRIPT_SUB_IN} ${SCRIPT_SUB})
+	file(GENERATE OUTPUT ${SCRIPT_RUN} INPUT ${SCRIPT_RUN})
+	file(GENERATE OUTPUT ${SCRIPT_SUB} INPUT ${SCRIPT_SUB})
+
+endif(DIRAC3_TESTSUITE_MODULES_PATH AND DIRAC3_TESTSUITE_SCRIPTS_PATH AND DIRAC3_TESTSUITE_TEMPLATES_PATH AND DIRAC3_HOST)
+
 # Swift Benchmark
 ExternalProject_Add(swiftsim-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}

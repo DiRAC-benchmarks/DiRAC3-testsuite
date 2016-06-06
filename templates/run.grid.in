@@ -1,0 +1,16 @@
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+
+echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_dwf --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+${EXECUTABLE_OUTPUT_PATH}/Benchmark_dwf --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_asynch --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_asynch --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_bandwidth --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_bandwidth --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_su3 --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+${EXECUTABLE_OUTPUT_PATH}/Benchmark_su3 --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_wilson --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+${EXECUTABLE_OUTPUT_PATH}/Benchmark_wilson --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+#echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_zmm --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+#${EXECUTABLE_OUTPUT_PATH}/Benchmark_zmm --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+
+popd

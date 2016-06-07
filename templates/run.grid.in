@@ -1,16 +1,18 @@
 pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 
-echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_dwf --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-${EXECUTABLE_OUTPUT_PATH}/Benchmark_dwf --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_asynch --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_asynch --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_bandwidth --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_bandwidth --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_su3 --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-${EXECUTABLE_OUTPUT_PATH}/Benchmark_su3 --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_wilson --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-${EXECUTABLE_OUTPUT_PATH}/Benchmark_wilson --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-#echo ${EXECUTABLE_OUTPUT_PATH}/Benchmark_zmm --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
-#${EXECUTABLE_OUTPUT_PATH}/Benchmark_zmm --decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1
+export GRID_FLAGS-"--decomposition --threads $OMP_NUM_THREADS --mpi 1.1.1.1"
+
+echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_dwf $GRID_FLAGS
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_dwf $GRID_FLAGS
+echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_asynch $GRID_FLAGS
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_asynch $GRID_FLAGS
+echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_bandwidth $GRID_FLAGS
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_memory_bandwidth $GRID_FLAGS
+echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_su3 $GRID_FLAGS
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_su3 $GRID_FLAGS
+echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_wilson $GRID_FLAGS
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_wilson $GRID_FLAGS
+# echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_zmm $GRID_FLAGS
+# ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/Benchmark_zmm $GRID_FLAGS
 
 popd

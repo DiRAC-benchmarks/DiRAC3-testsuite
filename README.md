@@ -1,18 +1,38 @@
 # DiRAC3-testsuite
 
+## Benchmarks
+
+### Extreme-Scaling
+
+* [Grid](https://github.com/paboyle/Grid/) - Lattice quantum chromodynamics
+* [MILCmk](https://asc.llnl.gov/CORAL-benchmarks/) - Lattice quantum chromodynamics
+* [QPhiX](https://jeffersonlab.github.io/qphix/) - Lattice quantum chromodynamics
+
+### Memory-Intensive
+
+* [CloverLeaf3D](http://uk-mac.github.io/CloverLeaf3D/) - Magnetohydrodynamics on a structured grid
+* [Gadget3-Eagle](http://icc.dur.ac.uk/Eagle/) (Private) - Smoothed-particle hydrodynamics
+* [Stream](http://www.cs.virginia.edu/stream/) - Streaming memory bandwidth
+* [Stride](https://asc.llnl.gov/CORAL-benchmarks/) - Strided memory bandwidth
+* [Swift](http://icc.dur.ac.uk/swift/) - Smoothed-particle hydrodynamics
+
+### Data-Intensive
+
+* [IOR](https://sourceforge.net/projects/ior-sio/) - Filesystem I/O
+* [Walls](http://www.damtp.cam.ac.uk/research/gr/public/cs_evol.html) (Private) - Cosmological domain walls on a structured grid
+
 ## Dependencies
 
 * [CMake 3.x](https://cmake.org/download/)
 * [Python 2.7.x](https://www.python.org/downloads/)
-* [METIS 5.x](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
-  * n.b. SWIFT will build without METIS, but with impaired load balance
 * [libtool](https://www.gnu.org/software/libtool/)
 * [Automake >= 1.11](http://www.gnu.org/software/automake/)
-* [HDF5](https://www.hdfgroup.org/downloads/index.html) (inclding h5cc and h5pcc for Swift)
+* [HDF5](https://www.hdfgroup.org/downloads/index.html) (including h5cc and h5pcc for Swift)
+* [METIS 5.x](http://glaros.dtc.umn.edu/gkhome/metis/metis/download) (recommended, improves Swift load balance)
 
 ## Other requirements
 
-* SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, GCC, ...
+SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, GCC, ...
   * You *might* need to set the ```I_MPI_CC``` environment variable for Intel MPI (as on DiRAC Complexity)
   * If (as on DiRAC COSMOS) the system ```mpicc``` cannot be configured, place a shell script like this before it in the path:
    ```
@@ -21,7 +41,17 @@
    ```
   * n.b. ```configure``` sets the environment variable ```CC=mpicc```, so the compiler (here ```icc```) must be named directly.
 
-## To build benchmarks...
+## Configuration Instructions
+
+To run the benchmarks on a system, the following initial configurations are required:
+
+* Set `DIRAC3_HOST` in `CMakeLists.txt` to an appropriate `hostname` for the system
+* Create, modify and source a script named `modules/modules.hostname` that loads necessary modules and sets other environment variables.
+* Create and modify a template script named `templates/submit.hostname` for submitting benchmarks to a batch job scheduler.
+
+Sample module and submission template scripts are provided.
+
+## Build Instructions
 
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
@@ -32,17 +62,32 @@ cmake .. -DDIRAC3_PRIVATE=TRUE
 make all
 ```
 
-### Additional build instructions for Archer Cray XC30
+## Additional configuration for Archer Cray XC30
+
+The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using the modules listed in `modules/modules.archer`, including Intel compilers. The following additional configurations were necessary:
+
+* To use the Fortran compiler wrapper, set ```FC=ftn``` when calling cmake.
+
+* With Intel compilers, set ```CRAYPE_LINK_TYPE=dynamic``` when calling cmake and make.
+
+* Archer's HDF5 module does not have the ```h5cc``` and ```h5pcc``` scripts required by Swift. A local version of the HDF5 should be built, ensuring that the scripts are in ```PATH``` and the include and lib directories are added to ```CFLAGS``` and ```LDFLAGS``` respectively when calling make.
+
+* To use ```aprun```, make the following changes to `CMakeLists.txt` before and after the call to ```find_package(MPI REQUIRED)```:
+```
+find_program(MPIEXEC aprun)
+find_package(MPI REQUIRED)
+set(MPIEXEC_NUMPROC_FLAG -n)
+set(MPIEXEC_PREFLAGS -d $OMP_NUM_THREADS -cc numa_node)
+```
+(Note that the flag ```-cc numa_node``` is only needed with Intel compilers).
+
+* With Intel compilers, add the line ```export KMP_AFFINITY=disabled``` to `templates/submit.archer.in`.
+
+The final build command is then:
 
 ```
-module swap PrgEnv-cray PrgEnv-intel
-module swap intel intel/16.0.2.181
-module load gcc
-module load python-compute
-module load autotools
-module load metis
+cd build
+source ../modules/modules.archer
 CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_PRIVATE=TRUE
-CRAYPE_LINK_TYPE=dynamic LDFLAGS=-L/path/to/libhdf5 make all
+CRAYPE_LINK_TYPE=dynamic CFLAGS=-I/path/to/hdf5/include LDFLAGS=-L/path/to/hdf5/lib make all
 ```
-
-Note that the HDF5 module on Archer does not include the h5cc and h5pcc scripts required by the Swift benchmark. A local version of the library should be built, ensuring that h5cc and h5pcc are in PATH and the directory containing libhdf5 is added to the link path using LDFLAGS when calling make.

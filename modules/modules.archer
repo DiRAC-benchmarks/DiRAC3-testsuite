@@ -1,0 +1,6 @@
+module swap PrgEnv-cray PrgEnv-intel
+module swap intel intel/16.0.2.181
+module load gcc
+module load python-compute
+module load autotools
+module load metis

@@ -35,5 +35,9 @@ find_library(M_LIBRARIES m REQUIRED)
 # Default system name
 set(DIRAC3_HOST "default")
 
+# Submission script template and module file for the system
+set(SUB_SCRIPT_IN      "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")
+set(DIRAC3_MODULE_FILE "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.${DIRAC3_HOST}")
+
 # Add source
 add_subdirectory(src)

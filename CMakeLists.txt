@@ -18,34 +18,22 @@ if("${SRCDIR}" STREQUAL "${BINDIR}")
 	message(FATAL_ERROR "Terminating CMake.")
 endif()
 
-# Directory for package searches
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-
-# Directory for executables
-SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
-
-# Directory for outputs
-SET(DIRAC3_TESTSUITE_OUTPUTS_PATH ${CMAKE_SOURCE_DIR}/outputs)
-
-# Directory for scripts
-SET(DIRAC3_TESTSUITE_SCRIPTS_PATH ${CMAKE_SOURCE_DIR}/scripts)
-
-# Directory for module scripts
-SET(DIRAC3_TESTSUITE_MODULES_PATH ${CMAKE_SOURCE_DIR}/modules)
-
-# Directory for script templates
-SET(DIRAC3_TESTSUITE_TEMPLATES_PATH ${CMAKE_SOURCE_DIR}/templates)
-
-# Run directory
-SET(DIRAC3_TESTSUITE_RUN_PATH ${CMAKE_SOURCE_DIR}/run)
+# Define various paths
+set(CMAKE_MODULE_PATH               ${PROJECT_SOURCE_DIR}/cmake)
+SET(EXECUTABLE_OUTPUT_PATH          ${PROJECT_SOURCE_DIR}/bin)
+SET(DIRAC3_TESTSUITE_MODULES_PATH   ${PROJECT_SOURCE_DIR}/modules)
+SET(DIRAC3_TESTSUITE_OUTPUTS_PATH   ${PROJECT_SOURCE_DIR}/outputs)
+SET(DIRAC3_TESTSUITE_RUN_PATH       ${PROJECT_SOURCE_DIR}/run)
+SET(DIRAC3_TESTSUITE_SCRIPTS_PATH   ${PROJECT_SOURCE_DIR}/scripts)
+SET(DIRAC3_TESTSUITE_TEMPLATES_PATH ${PROJECT_SOURCE_DIR}/templates)
 
 # Find necessary packages and libraries
 find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)
 find_library(M_LIBRARIES m REQUIRED)
 
-# Name of system
-set(DIRAC3_HOST "archer")
+# Default system name
+set(DIRAC3_HOST "default")
 
 # Add source
 add_subdirectory(src)

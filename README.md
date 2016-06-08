@@ -41,11 +41,10 @@ SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, G
    ```
   * n.b. ```configure``` sets the environment variable ```CC=mpicc```, so the compiler (here ```icc```) must be named directly.
 
-## Configuration Instructions
+## Module File and Submission Script Template
 
-To run the benchmarks on a system, the following initial configurations are required:
+Before building the benchmarks on a system, two files must be created for a `hostname` of your choice:
 
-* Set `DIRAC3_HOST` in `CMakeLists.txt` to an appropriate `hostname` for the system
 * Create, modify and source a script named `modules/modules.hostname` that loads necessary modules and sets other environment variables.
 * Create and modify a template script named `templates/submit.hostname` for submitting benchmarks to a batch job scheduler.
 
@@ -53,12 +52,14 @@ Sample module and submission template scripts are provided.
 
 ## Build Instructions
 
+The testsuite is downloaded, configured and built as below, passing the chosen `hostname` to cmake:
+
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
 cd DiRAC3-testsuite
 mkdir bin build run scripts
 cd build
-cmake .. -DDIRAC3_PRIVATE=TRUE
+cmake .. -DDIRAC3_HOST=hostname -DDIRAC3_PRIVATE=TRUE
 make all
 ```
 

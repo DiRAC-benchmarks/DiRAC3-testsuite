@@ -35,10 +35,12 @@
 SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, GCC, ...
   * You *might* need to set the ```I_MPI_CC``` environment variable for Intel MPI (as on DiRAC Complexity)
   * If (as on DiRAC COSMOS) the system ```mpicc``` cannot be configured, place a shell script like this before it in the path:
-   ```
-   #!/bin/sh
-   icc "$@" # append MPI compiler, linker options as required
-   ```
+
+    ```
+    #!/bin/sh
+    icc "$@" # append MPI compiler, linker options as required
+    ```
+
   * n.b. ```configure``` sets the environment variable ```CC=mpicc```, so the compiler (here ```icc```) must be named directly.
 
 ## Module File and Submission Script Template
@@ -74,13 +76,15 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
 * Archer's HDF5 module does not have the ```h5cc``` and ```h5pcc``` scripts required by Swift. A local version of the HDF5 should be built, ensuring that the scripts are in ```PATH``` and the include and lib directories are added to ```CFLAGS``` and ```LDFLAGS``` respectively when calling make.
 
 * To use ```aprun```, make the following changes to `CMakeLists.txt` before and after the call to ```find_package(MPI REQUIRED)```:
-```
-find_program(MPIEXEC aprun)
-find_package(MPI REQUIRED)
-set(MPIEXEC_NUMPROC_FLAG -n)
-set(MPIEXEC_PREFLAGS -d $OMP_NUM_THREADS -cc numa_node)
-```
-(Note that the flag ```-cc numa_node``` is only needed with Intel compilers).
+
+  ```
+  find_program(MPIEXEC aprun)
+  find_package(MPI REQUIRED)
+  set(MPIEXEC_NUMPROC_FLAG -n)
+  set(MPIEXEC_PREFLAGS -d $OMP_NUM_THREADS -cc numa_node)
+  ```
+
+  (Note that the flag ```-cc numa_node``` is only needed with Intel compilers).
 
 * With Intel compilers, add the line ```export KMP_AFFINITY=disabled``` to `templates/submit.archer.in`.
 

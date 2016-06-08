@@ -93,6 +93,6 @@ The final build command is then:
 ```
 cd build
 source ../modules/modules.archer
-CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_PRIVATE=TRUE
+CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE
 CRAYPE_LINK_TYPE=dynamic CFLAGS=-I/path/to/hdf5/include LDFLAGS=-L/path/to/hdf5/lib make all
 ```

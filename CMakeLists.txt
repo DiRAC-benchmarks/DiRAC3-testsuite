@@ -33,7 +33,9 @@ find_package(MPI REQUIRED)
 find_library(M_LIBRARIES m REQUIRED)
 
 # Default system name
-set(DIRAC3_HOST "default")
+if(NOT DIRAC3_HOST)
+	set(DIRAC3_HOST "default")
+endif(NOT DIRAC3_HOST)
 
 # Submission script template and module file for the system
 set(SUB_SCRIPT_IN      "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")

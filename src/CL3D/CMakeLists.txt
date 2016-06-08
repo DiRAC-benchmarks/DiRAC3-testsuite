@@ -2,17 +2,17 @@
 #
 # This file is part of CloverLeaf.
 #
-# CloverLeaf is free software: you can redistribute it and/or modify it under 
-# the terms of the GNU General Public License as published by the 
-# Free Software Foundation, either version 3 of the License, or (at your option) 
+# CloverLeaf is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your option)
 # any later version.
 #
-# CloverLeaf is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
-# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
+# CloverLeaf is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
 # details.
 #
-# You should have received a copy of the GNU General Public License along with 
+# You should have received a copy of the GNU General Public License along with
 # CloverLeaf. If not, see http://www.gnu.org/licenses/.
 
 #  @brief Makefile for CloverLeaf
@@ -77,21 +77,5 @@ add_executable(clover_leaf ${CL3D_C_SOURCE} ${CL3D_F_SOURCE})
 target_link_libraries(clover_leaf ${MPI_Fortran_LIBRARIES})
 
 # Generate scripts for DiRAC3 benchmarking
-if(DIRAC3_TESTSUITE_MODULES_PATH AND DIRAC3_TESTSUITE_SCRIPTS_PATH AND DIRAC3_TESTSUITE_TEMPLATES_PATH AND DIRAC3_HOST)
-  # Input file for Cloverleaf 3D
-  set(CL3D_INPUT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/inputs/clover.in")
-
-  # Script defining modules required by Cloverleaf 3D
-  set(SCRIPT_MODULES "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.CL3D.${DIRAC3_HOST}")
-
-  # Run and submission scripts for QPhiX
-  set(JOB_NAME       "CL3D")
-  set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.CL3D.${DIRAC3_HOST}")
-  set(SCRIPT_RUN_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/run.CL3D.in")
-  set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.CL3D.${DIRAC3_HOST}")
-  set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")
-  configure_file(${SCRIPT_RUN_IN} ${SCRIPT_RUN})
-  configure_file(${SCRIPT_SUB_IN} ${SCRIPT_SUB})
-  file(GENERATE OUTPUT ${SCRIPT_RUN} INPUT ${SCRIPT_RUN})
-  file(GENERATE OUTPUT ${SCRIPT_SUB} INPUT ${SCRIPT_SUB})
-endif(DIRAC3_TESTSUITE_MODULES_PATH AND DIRAC3_TESTSUITE_SCRIPTS_PATH AND DIRAC3_TESTSUITE_TEMPLATES_PATH AND DIRAC3_HOST)
+set(CL3D_INPUT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/inputs/clover.in")
+CREATE_DIRAC3_JOB("CL3D")

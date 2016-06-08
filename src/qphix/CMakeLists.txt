@@ -64,7 +64,7 @@ else()
 		MESSAGE(" QMP_CONFIG SERACH ${QMP_HOME}/bin")
 
 	endif()
-	
+
 	if("X${QMP_CONFIG}X" STREQUAL "XX")
 		MESSAGE( WARNING "configuration program qmp-config not found")
 		MESSAGE( WARNING "Set environment variables QMP_CFLAGS QMP_LDFAGS QMP_LIBS before configure")
@@ -77,10 +77,10 @@ else()
 		#set(${CMAKE_CXX_FLAGS} "${CMAKE_CXX_FLAGS} ${QPHIX_AUX_CFLAGS}")
 		#set (EXECUTE_COMMAND ${QMP_CONFIG} --ldflags)
 		#execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LDFLAGS)
-		
+
 		FIND_LIBRARY(QMP_LIB qmp "${QMP_HOME}/lib")
 		MESSAGE("DEBUG ${QMP_LIB} found")
-		
+
 		#set (EXECUTE_COMMAND ${QMP_CONFIG}  --libs)
 		#execute_process(COMMAND ${EXECUTE_COMMAND} RESULT_VARIABLE QPHIX_AUX_LIBS)
 	endif() #qmpconfig
@@ -201,7 +201,7 @@ add_subdirectory(lib)
 #add_subdirectory(include)
 add_subdirectory(tests)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h) 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h.cmake.in ${CMAKE_CURRENT_SOURCE_DIR}/include/qphix/qphix_config_internal.h)
 
 
 
@@ -211,18 +211,5 @@ MESSAGE("qmp link lib ${QMP_LIB}")
 target_link_libraries(time_dslash_noqdp qphix_solver ${QMP_LIB} ${MPI_C_LIBRARIES})
 
 # Generate scripts for DiRAC3 benchmarking
-if(DIRAC3_TESTSUITE_MODULES_PATH AND DIRAC3_TESTSUITE_SCRIPTS_PATH AND DIRAC3_TESTSUITE_TEMPLATES_PATH AND DIRAC3_HOST)
-  # Script defining modules required by QPhiX
-  set(SCRIPT_MODULES "${DIRAC3_TESTSUITE_MODULES_PATH}/modules.qphix.${DIRAC3_HOST}")
-
-  # Run and submission scripts for QPhiX
-  set(JOB_NAME       "QPhiX")
-  set(SCRIPT_RUN     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/run.qphix.${DIRAC3_HOST}")
-  set(SCRIPT_RUN_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/run.qphix.in")
-  set(SCRIPT_SUB     "${DIRAC3_TESTSUITE_SCRIPTS_PATH}/submit.qphix.${DIRAC3_HOST}")
-  set(SCRIPT_SUB_IN  "${DIRAC3_TESTSUITE_TEMPLATES_PATH}/submit.${DIRAC3_HOST}.in")
-  configure_file(${SCRIPT_RUN_IN} ${SCRIPT_RUN})
-  configure_file(${SCRIPT_SUB_IN} ${SCRIPT_SUB})
-  file(GENERATE OUTPUT ${SCRIPT_RUN} INPUT ${SCRIPT_RUN})
-  file(GENERATE OUTPUT ${SCRIPT_SUB} INPUT ${SCRIPT_SUB})
-endif(DIRAC3_TESTSUITE_MODULES_PATH AND DIRAC3_TESTSUITE_SCRIPTS_PATH AND DIRAC3_TESTSUITE_TEMPLATES_PATH AND DIRAC3_HOST)
+# Run and submission scripts for QPhiX
+CREATE_DIRAC3_JOB("qphix")

@@ -9,7 +9,7 @@
 #BSUB -W 1:00
 
 # Load modules
-source ${SCRIPT_MODULES}
+source ${DIRAC3_MODULE_FILE}
 
 # Run the benchmark
-source ${SCRIPT_RUN}
+source ${DIRAC3_RUN_SCRIPT}

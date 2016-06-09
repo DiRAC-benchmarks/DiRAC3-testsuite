@@ -3,7 +3,7 @@
 #PBS -A d63
 #PBS -q short
 #PBS -l select=1
-#PBS -N ${JOB_NAME}
+#PBS -N ${DIRAC3_JOB_NAME}
 #PBS -l walltime=00:10:00
 
 # Load modules

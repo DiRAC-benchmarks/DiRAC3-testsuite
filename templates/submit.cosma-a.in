@@ -3,9 +3,9 @@
 #BSUB -P dr002
 #BSUB -q cosma5
 #BSUB -n 16
-#BSUB -J ${JOB_NAME}
-#BSUB -oo ${JOB_NAME}.out.%J
-#BSUB -eo ${JOB_NAME}.err.%J
+#BSUB -J ${DIRAC3_JOB_NAME}
+#BSUB -oo ${DIRAC3_JOB_NAME}.out.%J
+#BSUB -eo ${DIRAC3_JOB_NAME}.err.%J
 #BSUB -W 1:00
 
 # Load modules

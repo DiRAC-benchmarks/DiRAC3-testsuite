@@ -81,7 +81,7 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
   find_program(MPIEXEC aprun)
   find_package(MPI REQUIRED)
   set(MPIEXEC_NUMPROC_FLAG -n)
-  set(MPIEXEC_PREFLAGS -d $OMP_NUM_THREADS -cc numa_node)
+  set(MPIEXEC_PREFLAGS "-d $OMP_NUM_THREADS -cc numa_node")
   ```
 
   (Note that the flag ```-cc numa_node``` is only needed with Intel compilers).

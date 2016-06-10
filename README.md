@@ -69,11 +69,18 @@ make all
 
 The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using the modules listed in `modules/modules.archer`, including Intel compilers. The following additional configurations were necessary:
 
+* The ```/home``` filesystem is not available on the compute nodes; we recommended building from source in ```/work```.
+
 * To use the Fortran compiler wrapper, set ```FC=ftn``` when calling cmake.
 
 * With Intel compilers, set ```CRAYPE_LINK_TYPE=dynamic``` when calling cmake and make.
 
-* Archer's HDF5 module does not have the ```h5cc``` and ```h5pcc``` scripts required by Swift. A local version of the HDF5 should be built, ensuring that the scripts are in ```PATH``` and the include and lib directories are added to ```CFLAGS``` and ```LDFLAGS``` respectively when calling make.
+* Archer's HDF5 module does not have the ```h5cc``` and ```h5pcc``` scripts required by Swift. A workaround is to create both scripts in ```PATH``` with the following body:
+
+  ```
+  #!/bin/sh
+  cc "$@"
+  ```
 
 * To use ```aprun```, make the following changes to `CMakeLists.txt` before and after the call to ```find_package(MPI REQUIRED)```:
 
@@ -94,5 +101,5 @@ The final build command is then:
 cd build
 source ../modules/modules.archer
 CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE
-CRAYPE_LINK_TYPE=dynamic CFLAGS=-I/path/to/hdf5/include LDFLAGS=-L/path/to/hdf5/lib make all
+CRAYPE_LINK_TYPE=dynamic make all
 ```

@@ -10,3 +10,9 @@ ExternalProject_Add(swiftsim-benchmark
     && CC=${CMAKE_C_COMPILER} ./configure --prefix=${CMAKE_SOURCE_DIR} --with-metis
   BUILD_COMMAND make
   INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/swiftsim-benchmark/examples && make install)
+
+# Download CosmoVolume initial conditions
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/download_ICs.cmake
+  "File(DOWNLOAD http://icc.dur.ac.uk/~jlvc76/Files/SWIFT/cosmoVolume.hdf5 ${DIRAC3_TESTSUITE_INPUTS_PATH}/cosmoVolume.hdf5)")
+ExternalProject_Add_Step(swiftsim-benchmark download_ICs
+  COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/download_ICs.cmake)

@@ -59,7 +59,7 @@ The testsuite is downloaded, configured and built as below, passing the chosen `
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
 cd DiRAC3-testsuite
-mkdir bin build run scripts
+mkdir build
 cd build
 cmake .. -DDIRAC3_HOST=hostname -DDIRAC3_PRIVATE=TRUE
 make all

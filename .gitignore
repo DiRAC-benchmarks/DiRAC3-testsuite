@@ -40,6 +40,7 @@
 # Directories
 bin/*
 build/*
+inputs/*
 outputs/*
 scripts/*
 run/*

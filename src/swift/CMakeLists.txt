@@ -16,3 +16,6 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/download_ICs.cmake
   "File(DOWNLOAD http://icc.dur.ac.uk/~jlvc76/Files/SWIFT/cosmoVolume.hdf5 ${DIRAC3_TESTSUITE_INPUTS_PATH}/cosmoVolume.hdf5)")
 ExternalProject_Add_Step(swiftsim-benchmark download_ICs
   COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/download_ICs.cmake)
+
+# Create run and submission scripts for SwiftSingleNode
+CREATE_DIRAC3_JOB("swift")

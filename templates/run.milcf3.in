@@ -1,11 +1,6 @@
 pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 
-for tt in 1 2 4 8 16
-do
-  echo "export OMP_NUM_THREADS=$tt"
-  export OMP_NUM_THREADS=$tt
-  echo "$<TARGET_FILE:qla_bench-qla-1-f3>"
-  $<TARGET_FILE:qla_bench-qla-1-f3>
-done
+echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} "$<TARGET_FILE:qla_bench-qla-1-f3>"
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} $<TARGET_FILE:qla_bench-qla-1-f3>
 
 popd

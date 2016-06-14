@@ -1,6 +1,7 @@
 pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 
 blockSize=1g
-mpirun -n 1 $<TARGET_FILE:ior> -vvv -b $blockSize -f ${IOR_INPUT_FILE}
+echo ${MPIEXEC} {MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} $<TARGET_FILE:ior> -vvv -b $blockSize -f ${IOR_INPUT_FILE}
+${MPIEXEC} {MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} $<TARGET_FILE:ior> -vvv -b $blockSize -f ${IOR_INPUT_FILE}
 
 popd

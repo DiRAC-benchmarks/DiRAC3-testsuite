@@ -11,12 +11,12 @@ def main():
 
     # Regex for parsing data files
     re_omp   = r"(?<=OMP_NUM_THREADS[ =])(?P<ompnumthreads>[0-9]+)\n.*"
-    re_grid  = r"(?<=walls_xeon_[34]d )(?P<gridsize>[0-9]+)(?:[\S\s]*?)"
+    re_grid  = r"(?<=walls_xeon_)(?P<dimensions>[34])d (?P<gridsize>[0-9]+)(?:[\S\s]*?)"
     re_gflop = r"(?<=GFLOP/s = )(?P<gflops>[0-9]*\.?[0-9]*)"
     regex    = re.compile( re_omp + re_grid + re_gflop )
 
     # Data fields
-    fields  = ['OpenMP Threads','Grid Size','GFlop/s']
+    fields  = ['OMP_NUM_THREADS','Dimensions','Grid Size','GFlop/s']
     nfields = len(fields)
 
     # CSV file writer

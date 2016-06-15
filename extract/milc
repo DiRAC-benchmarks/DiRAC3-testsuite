@@ -24,7 +24,7 @@ def main():
     re_flops    = re.compile( re_len + re_1 + re_2 + re_3 + re_4 + re_5 + re_6 + re_7 )
 
     # Names of each field
-    fields = ['OMP_NUM_THREADS', 'Array Length', 'length', \
+    fields = ['Precision', 'OMP_NUM_THREADS', 'Array Length', \
                  'QLA_V_vpeq_M_times_pV', \
                  'QLA_V_veq_Ma_times_V', \
                  'QLA_V_vmeq_pV','QLA_D_vpeq_spproj_M_times_pD', \
@@ -46,7 +46,6 @@ def main():
             for entries in flop_data:
                 entries = header_data + entries
                 writer.writerow({ field : entry for field,entry in zip(fields,entries) })
-
 
 if __name__ == "__main__":
 

@@ -1,1 +1,0 @@
-/cosma5/data/dr002/dc-kash1/DiRAC3-testsuite/src/qphix/build_mpi_intel/time_dslash_noqdp  -x 32 -y 8 -z 8 -t 8 -by 8 -bz 8 -pxy 1 -pxyz 0 -c 16 -sy 1 -sz 2 -minct 2 -compress12  -i 500 -prec f -geom 2 2 2 2

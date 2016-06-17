@@ -1,7 +1,0 @@
-MPI Application rank 0 killed before MPI_Finalize() with signal 6
-MPI Application rank 1 killed before MPI_Finalize() with signal 6
-MPI Application rank 4 killed before MPI_Finalize() with signal 6
-MPI Application rank 6 killed before MPI_Finalize() with signal 6
-MPI Application rank 5 killed before MPI_Finalize() with signal 6
-MPI Application rank 3 killed before MPI_Finalize() with signal 6
-MPI Application rank 12 killed before MPI_Finalize() with signal 6

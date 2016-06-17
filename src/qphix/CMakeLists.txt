@@ -13,3 +13,6 @@ ExternalProject_Add(qphix-benchmark
     --prefix=${CMAKE_SOURCE_DIR}
   BUILD_COMMAND make
   INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/qphix-benchmark/tests && make install)
+
+# Create run and submission scripts for QPhiX
+CREATE_DIRAC3_JOB("qphix")

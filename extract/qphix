@@ -15,4 +15,6 @@ CG_GFLOPS=$(echo "$CG_GFLOPS" | sort -g | tail -n 1)
 BICGSTAB_GFLOPS=$(sed -rn 's/^BICGSTAB GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $1)
 BICGSTAB_GFLOPS=$(echo "$BICGSTAB_GFLOPS" | sort -g | tail -n 1)
 
-column -t <(echo -e "DSlash1 DSlash2 CG BICGSTAB Unit\n$TIMING_CB_ISIGN_GFLOPS $TIMING_M_GFLOPS $CG_GFLOPS $BICGSTAB_GFLOPS GFLOPS")
+# CSV output
+OUTPUT="DSlash1 DSlash2 CG BICGSTAB Unit\n$TIMING_CB_ISIGN_GFLOPS $TIMING_M_GFLOPS $CG_GFLOPS $BICGSTAB_GFLOPS GFLOPS"
+column -t <(echo -e $OUTPUT) | awk 'BEGIN { OFS = "," }{ print $1,$2,$3,$4 }'

@@ -1,6 +1,3 @@
-[submodule "src/Gadget3Eagle"]
-	path = src/Gadget3Eagle
-	url = git@github.com:DiRAC-benchmarks/Gadget3EagleBench.git
 [submodule "src/Walls"]
 	path = src/Walls
 	url = git@github.com:DiRAC-benchmarks/Walls-benchmark.git

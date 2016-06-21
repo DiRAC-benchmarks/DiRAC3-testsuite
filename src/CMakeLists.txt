@@ -8,6 +8,6 @@ add_subdirectory(STRIDE_v1.1)
 add_subdirectory(swift)
 
 if(DIRAC3_PRIVATE)
-  #add_subdirectory(Gadget3EagleBench)
+  add_subdirectory(Gadget3Eagle)
   add_subdirectory(Walls)
 endif(DIRAC3_PRIVATE)

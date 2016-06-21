@@ -95,11 +95,13 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
 
 * With Intel compilers, add the line ```export KMP_AFFINITY=disabled``` to `templates/submit.archer.in`.
 
+* There is a conflict between the fftw2 library modules and the Intel programming environment when using CMake. We recommended passing the fftw2 installation path to CMake using the variable `FFTW2_ROOT`.
+
 The final build command is then:
 
 ```
 cd build
 source ../modules/modules.archer
-CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE
+CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE -DFFTW2_ROOT=/opt/cray/fftw/2.1.5.9
 CRAYPE_LINK_TYPE=dynamic make all
 ```

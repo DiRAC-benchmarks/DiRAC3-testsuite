@@ -5,3 +5,4 @@ module load python-compute/2.7.6
 module load autotools/1.14
 module load cray-hdf5-parallel/1.8.16
 module load metis/5.1.0_build2
+module load gsl/1.16

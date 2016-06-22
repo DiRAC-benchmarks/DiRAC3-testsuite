@@ -5,7 +5,9 @@ ExternalProject_Add(qmp-library
   GIT_TAG master
   SOURCE_DIR ${CMAKE_BINARY_DIR}/qmp-library
   BUILD_IN_SOURCE 1
-  CONFIGURE_COMMAND CC=${CMAKE_C_COMPILER} ./configure --with-qmp-comms-type=MPI --prefix=${CMAKE_SOURCE_DIR}
+  CONFIGURE_COMMAND autoreconf &&
+    CC=${CMAKE_C_COMPILER} ./configure "CFLAGS=-std=c99"
+    --with-qmp-comms-type=MPI --prefix=${CMAKE_SOURCE_DIR}
   BUILD_COMMAND make
   INSTALL_COMMAND make install)
 

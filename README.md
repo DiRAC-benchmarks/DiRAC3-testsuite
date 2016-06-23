@@ -124,6 +124,8 @@ The benchmarks have been tested on the [Cosma5 Cosmology Machine](https://www.co
 
 * The variable `MKLROOT` should be set to `/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl` when calling CMake.
 
+* The Intel compilers uses the default GNU v4.4.6 that does not support all of the C++11 features needed by the Grid benchmark. But the GNU v5.3.0 module conflicts with the Intel compiler module. In `src/Grid/CMakeLists.txt` the additional compiler flag `-cxxlib=/cosma/local/gcc/5.3.0` and link flag `-Wl,-rpath=/cosma/local/gcc/5.3.0/lib64` need to be added to the configuration command.
+
 The final build command is then:
 
 ```

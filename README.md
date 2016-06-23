@@ -59,6 +59,7 @@ The testsuite is downloaded, configured and built as below, passing the chosen `
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
 cd DiRAC3-testsuite
+source modules/modules.hostname
 mkdir build
 cd build
 cmake .. -DDIRAC3_HOST=hostname -DDIRAC3_PRIVATE=TRUE
@@ -93,15 +94,15 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
 
   (Note that the flag ```-cc numa_node``` is only needed with Intel compilers).
 
-* With Intel compilers, add the line ```export KMP_AFFINITY=disabled``` to `templates/submit.archer.in`.
+* With Intel compilers, add the lines `export KMP_AFFINITY=disabled` and `MPICH_MAX_THREAD_SAFETY=multiple` to `templates/submit.archer.in`.
 
 * There is a conflict between the fftw2 library modules and the Intel programming environment when using CMake. We recommended passing the fftw2 installation path to CMake using the variable `FFTW2_ROOT`.
 
 The final build command is then:
 
 ```
+source modules/modules.archer
 cd build
-source ../modules/modules.archer
 CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE -DFFTW2_ROOT=/opt/cray/fftw/2.1.5.9
 CRAYPE_LINK_TYPE=dynamic make all
 ```

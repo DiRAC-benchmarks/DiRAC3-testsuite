@@ -13,5 +13,9 @@ source ${DIRAC3_MODULE_FILE}
 echo export OMP_NUM_THREADS=24
 export OMP_NUM_THREADS=24
 
+# Additional environment variable settings for Intel compiler
+export KMP_AFFINITY=disabled
+export MPICH_MAX_THREAD_SAFETY=multiple
+
 # Run the benchmark
 source ${DIRAC3_RUN_SCRIPT}

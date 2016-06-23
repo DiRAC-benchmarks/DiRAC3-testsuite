@@ -1,6 +1,0 @@
-function module() {
-    eval $(/cosma/local/Modules-Durham/Modules/$MODULE_VERSION/bin/modulecmd bash $@)
-}
-
-module load intel_comp/c5/2015
-module load platform_mpi

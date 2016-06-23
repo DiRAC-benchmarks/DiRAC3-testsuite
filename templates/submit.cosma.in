@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/tcsh
 
 #BSUB -P dr002
 #BSUB -q cosma5
@@ -12,4 +12,4 @@
 source ${DIRAC3_MODULE_FILE}
 
 # Run the benchmark
-source ${DIRAC3_RUN_SCRIPT}
+bash ${DIRAC3_RUN_SCRIPT}

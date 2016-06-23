@@ -68,7 +68,7 @@ make all
 
 ## Additional configuration for Archer Cray XC30
 
-The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using the modules listed in `modules/modules.archer`, including Intel compilers. The following additional configurations were necessary:
+The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using the modules given in `modules/modules.archer`. The following additional configurations were necessary:
 
 * The ```/home``` filesystem is not available on the compute nodes; we recommended building from source in ```/work```.
 
@@ -105,4 +105,30 @@ source modules/modules.archer
 cd build
 CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE -DFFTW2_ROOT=/opt/cray/fftw/2.1.5.9
 CRAYPE_LINK_TYPE=dynamic make all
+```
+
+## Additional configuration for Cosma5 IBM iDataPlex
+
+The benchmarks have been tested on the [Cosma5 Cosmology Machine](https://www.cosma.dur.ac.uk) using the modules given in `modules/modules.cosma`. The following additional configurations were necessary:
+
+* While `tcsh` can be used to configure and build the testsuite and to submit jobs, in `submit.cosma.in` the run scripts must be called using `bash`.
+
+* Configure to use the MPI compiler wrappers ```CC=mpicc```, ```CXX=mpic++``` and ```FC=mpif90``` when calling cmake.
+
+* The run scripts are incorrectly configured to use `mpiexec` with the flag `-np` instead of `-n`. It should be set manually in `CMakeLists.txt` after finding MPI:
+
+  ```
+  find_package(MPI REQUIRED)
+  set(MPIEXEC_NUMPROC_FLAG -n)
+  ```
+
+* The variable `MKLROOT` should be set to `/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl` when calling CMake.
+
+The final build command is then:
+
+```
+source modules/modules.cosma
+cd build
+env CC=mpicc CXX=mpic++ FC=mpif90 MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl cmake .. -DDIRAC3_HOST=cosma -DDIRAC3_PRIVATE=TRUE
+make all
 ```

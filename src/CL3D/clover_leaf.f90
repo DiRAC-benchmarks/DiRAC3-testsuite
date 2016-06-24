@@ -44,9 +44,6 @@ PROGRAM clover_leaf
 
 !$ INTEGER :: OMP_GET_NUM_THREADS,OMP_GET_THREAD_NUM
 !Sid TODO - put this in an appropriate location 
-
-ALLOCATE(mom_flop_total(0:10))
-     mom_flop_total=0
   CALL clover_init_comms()
 
 !$OMP PARALLEL
@@ -76,7 +73,6 @@ ALLOCATE(mom_flop_total(0:10))
   CALL hydro
   
   ! Deallocate everything
-DEALLOCATE(mom_flop_total)
   
 END PROGRAM clover_leaf
 

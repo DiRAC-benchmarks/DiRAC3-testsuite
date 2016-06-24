@@ -214,6 +214,5 @@ MODULE definitions_module
   INTEGER                              :: number_of_chunks
 
   TYPE(grid_type)                      :: grid
-  REAL(KIND=8),ALLOCATABLE:: mom_flop_total(:)
 
 END MODULE definitions_module

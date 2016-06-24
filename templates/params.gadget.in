@@ -1,0 +1,314 @@
+% EAGLE configuration file -------------------------------------------------------
+
+RunLabel                    $GADGET_RUNLABEL
+
+% ---------- Relevant files -----------------------------
+
+InitCondFile                $GADGET_ICS_FILE
+OutputDir                   $GADGET_OUT_DIR
+EnergyFile                  energy.txt
+InfoFile                    info.txt
+TimingsFile                 timings.txt
+CpuFile                     cpu.txt
+TimebinFile                 timebins.txt
+
+SnapshotFileBase            snap
+SmallSnapshotFileBase       snip
+RestartFile                 restart
+
+CoolTablePath               $GADGET_COOOLING_TABLES
+YieldTablePath              $GADGET_YIELD_TABLES
+
+% ---------- CPU-time limit -----------------------------
+
+TimeLimitCPU               $GADGET_CPUTIME
+ResubmitOn                 0
+ResubmitCommand            dummy
+
+% ---------- Code options -------------------------------
+
+MaxMemSize                  $GADGET_PMEM
+SnapFormat                  3
+FoFFormat                   3
+ICFormat                    3
+
+NumFilesPerSnapshot         $GADGET_NFILES_SNAP
+NumFilesWrittenInParallel   $GADGET_NFILES_PARALLEL
+SmallOutputTar              1
+
+% ---------- Operation modes ---------------------------
+
+ComovingIntegrationOn               1
+CoolingOn                           1
+MetDepCoolingOn                     1
+StarformationOn                     1
+
+StellarEnergyFeedbackOn             1        %% Energy Feedback
+StellarMetalFeedbackOn              1        %% Enrichment
+SNII_MassTransferOn                 1        %% Include metal/mass released by Type II SNe
+SNII_EnergyTransferOn               1        %% Include energy injection by Type II SNe
+SNII_WindIsotropicOn                1        %% (Only used for kinetic feedback)
+SNIa_MassTransferOn                 1        %% Include metal/mass released by Type Ia SNe
+SNIa_EnergyTransferOn               1        %% Include energy injection by Type Ia SNe
+SNIa_EnergyTransferStochastic       1        %% Do re-heating stochastically, ensuring reheating temperature is SNII_Delta_T_K
+AGB_MassTransferOn                  1        %% Include metal/mass released from AGB stars
+AGB_EnergyTransferOn                1        %% Include thermal energy from accreted mass loss
+StellarEvol_FeedbackOn              1        %% % Include energy and momentum from mass loss onto accreted particle
+
+% ---------- Memory allocation parameters ---------------
+
+PartAllocFactor         $GADGET_PART_ALLOC_FACTOR
+MetAllocFactor          0.4
+BHAllocFactor           0.1
+BufferSize              150
+
+% ---------- Beginning and end --------------------------
+
+TimeBegin               0.00781250      % z = 127
+TimeMax                 1               % Z = 0
+
+% ---------- System of units ----------------------------
+
+UnitLength_in_cm                3.085678e24         % 1 Mpc
+UnitMass_in_g                   1.989e43            % 1e10 solarmass
+UnitVelocity_in_cm_per_s        1e5                 % 1 km/s
+GravityConstantInternal         0
+
+% ---------- Box information ----------------------------
+
+PeriodicBoundariesOn            1
+BoxSize                         $GADGET_BOXSIZE           % 100*0.6777 / 16
+Omega0                          0.307
+OmegaLambda                     0.693
+OmegaBaryon                     0.0482519
+HubbleParam                     0.6777
+
+% ---------- Softening lengths --------------------------
+
+MinGasHsmlFractional            0.1
+
+SofteningGas                    0.001802390         % Mpc/h
+SofteningHalo                   0.001802390
+SofteningDisk                   0.0
+SofteningBulge                  0.0
+SofteningStars                  0.001802390
+SofteningBndry                  0.001802390
+
+SofteningGasMaxPhys             0.000474390         % Mpc/h
+SofteningHaloMaxPhys            0.000474390
+SofteningDiskMaxPhys            0.0
+SofteningBulgeMaxPhys           0.0
+SofteningStarsMaxPhys           0.000474390
+SofteningBndryMaxPhys           0.000474390
+
+% ---------- Output options -----------------------------
+
+OutputListOn                    1
+OutputListFilename              $GADGET_SNAPLIST_FILE
+
+TimeBetSnapshot                 dummy
+TimeOfFirstSnapshot             dummy
+
+SmallOutputListOn               1
+ExtraOutputListFilename         $GADGET_SNIPLIST_FILE
+
+TimeBetSmallSnapshot            dummy
+TimeOfFirstSmallSnapshot        dummy
+
+FoFOutputListOn                 1
+TimeBetOnTheFlyFoF              1.005
+
+TimeOfFirstGridOutput           0.05
+TimeBetGridOutput               1.025
+
+TimeBetLineOfSight              1.01
+TimeOfFirstLineOfSight          0.09
+
+CpuTimeBetRestartFile           $GADGET_TIMERESTART
+TimeBetStatistics               0.02
+MaxRMSDisplacementFac           0.25
+
+% ----------- SubFind parameters ------------------------
+
+%ErrTolThetaSubfind              0.6
+%DesLinkNgb                      20
+
+% ------ Accuracy of time integration -------------------
+
+TypeOfTimestepCriterion         0
+ErrTolIntAccuracy               0.025
+MaxSizeTimestep                 0.01
+MinSizeTimestep                 6e-8
+
+% ---------- Tree algorithm and force accuracy ----------
+
+ErrTolTheta                     0.6
+TypeOfOpeningCriterion          1
+ErrTolForceAcc                  0.005
+TreeDomainUpdateFrequency       0.005
+
+%  ---------- Parameters of SPH -------------------------
+
+DesNumNgb                       58
+DesNumNgbStar                   48.0
+DesNumNgbYoungStar              48.0
+MaxNumNgbDeviation              1
+CourantFac                      0.15
+MaxSmoothingLengthChange        1.26
+ArtBulkViscConst                2.00
+ArtBulkViscConstMin             0.05
+ArtDiffConst                    1.00
+ArtDiffConstMin                 0.00
+
+% ---------- Initial gas parameters ---------------------
+
+MinGasTemp                      100.0
+InitGasTemp                     268.7
+
+% ---------- Initial abundances -------------------------
+
+InitMetallicity                 0.0000
+InitAbundance_Hydrogen          0.752
+InitAbundance_Helium            0.248
+InitAbundance_Carbon            0.000
+InitAbundance_Nitrogen          0.000
+InitAbundance_Oxygen            0.000
+InitAbundance_Neon              0.000
+InitAbundance_Magnesium         0.000
+InitAbundance_Silicon           0.000
+InitAbundance_Iron              0.000
+CalciumOverSilicon              0.0941736
+SulphurOverSilicon              0.6054160
+
+% ---------- Reionization parameters -------------------
+
+REION_H_ZCenter                 11.5
+REION_H_Heating_EVpH            2.0
+REION_He_ZCenter                3.5
+REION_He_ZSigma                 0.5
+REION_He_Heating_EVpH           2.0
+
+
+% ---------- Star formation parameters -----------------
+
+Generations                     1
+
+% ---------- Schmidt law parameters --------------------
+
+SF_SchmidtLawCoeff_MSUNpYRpKPC2         1.515e-4    % Schaye & Della Vecchia 2008 (For Chabrier IMF)
+SF_SchmidtLawExponent                   1.4
+SF_SchmidtLawHighDensExponent           2.0
+SF_SchmidtLawHighDensThresh_HpCM3       1000.0
+
+SF_THRESH_MaxPhysDensOn                 0
+SF_THRESH_MaxPhysDens_HpCM3             1e5
+SF_THRESH_MinOverDens                   57.7
+SF_THRESH_MinPhysDens_HpCM3             0.1
+SF_THRESH_TempMargin_DEX                0.5
+
+SF_THRESH_MetDepSFThreshNorm_HpCM3      0.1
+SF_THRESH_MetDepSFThreshSlope           -0.64
+SF_THRESH_MetDepSFThreshMaxThresh_HpCM3 10.0
+
+% ---------- Equation of state ------------------------
+
+EOS_NormPhysDens_HpCM3                  0.1
+
+EOS_Jeans_MinPhysDens_HpCM3             0.1
+EOS_Jeans_MinOverDens                   10.0
+EOS_Jeans_GammaEffective                1.3333333333
+EOS_Jeans_TempNorm_K                    8000.0
+
+EOS_Cool_MinOverDens                    10.0
+EOS_Cool_MinPhysDens_HpCM3              1e-5
+EOS_Cool_GammaEffective                 1.0
+EOS_Cool_TempNorm_K                     8000.0
+
+% ---------- IMF parameters -------------------------
+
+IMF_Model                               Chabrier    % IMF:    Chabrier or PowerLaw
+IMF_Exponent                            dummy       % For PowerLaw IMF only
+IMF_LifetimeModel                       P98         % (Portinari et al 1998)
+IMF_MinMass_MSUN                        0.1         % (Portinari et al 1998)
+IMF_MaxMass_MSUN                        100.0       % (Portinari et al 1998)
+
+% ---------- Enrichment parameters -----------------------
+
+StellarEvolutionCut_Gyr                 0.1
+StellarEvolutionTimestepInterval        10
+
+% ---------- SN Ia parameters -----------------------
+
+SNIa_Model                              Efolding    %% SN Ia model: Efolding or Gaussian
+SNIa_Energy_ERG                         1.0e51
+SNIa_EnergyFraction                     1.0
+SNIa_Efficiency                         2.0e-3
+SNIa_TimeScale                          2.0
+SNIa_EjectaVelocity_KMpS                10.0        %% Corresponds to AGB
+
+% ---------- SN II parameters -----------------------
+
+SNII_MinMass_MSUN                       6.0
+SNII_MaxMass_MSUN                       100.0
+
+SNII_Factor_Hydrogen                    1.0
+SNII_Factor_Helium                      1.0
+SNII_Factor_Carbon                      0.5
+SNII_Factor_Nitrogen                    1.0
+SNII_Factor_Oxygen                      1.0
+SNII_Factor_Neon                        1.0
+SNII_Factor_Magnesium                   2.0
+SNII_Factor_Silicon                     1.0
+SNII_Factor_Iron                        0.5
+
+SNII_MinEnergyFraction                  0.30
+SNII_MaxEnergyFraction                  3.00
+SNII_Tvir0_K                            0.0012663729            % Z_SOLAR = 0.012663729
+SNII_Width_logTvir_dex                  1.00
+SNII_Energy_ERG                         1.0e51
+SNII_WindDelay_YR                       3.0e7
+stellar_feedback_mode                   thermal                 % mode of stellar feedback: thermal or kinetic
+stellar_feedback_DeltaT                 constant                % dependence of heating temperature: constant or tvir or rho
+stellar_feedback_tvir                   vel_disp                % virial temperature calculation : constant or vel_disp or halo_mass
+SNII_Delta_T_K                          3.16228e+07             % only used if stellar_feedback_DeltaT == constant
+SNII_Delta_T_Divided_By_T_Vir           dummy                   % only used if stellar_feedback_DeltaT == tvir
+SNII_Min_Delta_T_K                      dummy                   % only used if stellar_feedback_DeltaT == rho
+SNII_Max_Delta_T_K                      dummy                   % only used if stellar_feedback_DeltaT == rho
+SNII_normalisation_Delta_T_K            dummy                   % only used if stellar_feedback_DeltaT == rho
+SNII_exponent_Delta_T                   dummy                   % only used if stellar_feedback_DeltaT == rho
+
+% ---------- Black holes parameters ----------------
+
+massDMpart                              -1
+BlackHoleNgbFactor                      1.0
+BlackHoleNumberOfNeighboursToHeat       1.0
+BlackHoleAccretionFactor                1.0
+BlackHoleEddingtonFactor                1.0
+BlackHoleAccretionSlope                 0.0
+BlackHoleRadiativeEfficiency            0.10
+BlackHoleFeedbackFactor                 0.15
+SeedBlackHoleMass_Msun                  1.0e5
+MinFoFMassForNewSeed_Msun               1.0e10
+BlackHoleMaxAccretionRadius             1.0e10
+BH_MaxRepositionDistanceFactor          3.0         % in terms of softening length at that epoch
+BH_MaxMergingDistanceFactor             3.0         % in terms of softening length at that epoch
+BH_maxHeatingProbability                0.3
+BH_feedback_mode                        constant    % constant,
+BH_ConstantHeatTemp                     3.16228e+08 % only used if BH_feedback_mode == constant
+BH_MinHeatTemp                          dummy       % only used if BH_feedback_mode != constant
+BH_MaxHeatTemp                          dummy       % only used if BH_feedback_mode != constant
+BH_MinHeatLimit                         dummy       % Corresponds to min,max accretion rate (in Msun/yr) for BH_feedback_mode=BH_mdot
+BH_MaxHeatLimit                         dummy       % min,max BH mass (in Msun) for BH_M and min,max virial temp (in K) for halo_tvir
+
+% Ang Mom Accretion model params
+BlackHoleViscousAlpha                   1.0e6
+
+SNII_zdep_power                         0.00
+SNII_rhogas_power                       1.00
+SNII_rhogas_physdensnormfac             6.7         % 6.7 = 10.00 h^2
+
+
+% ------------------------------------------------
+
+StellarEvolutionCut_Gyr_2               100         % We don't need this so just set it to 100
+StellarEvolutionTimestepInterval_2      10          % We don't need this so set it to 10

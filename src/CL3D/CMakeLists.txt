@@ -21,15 +21,13 @@
 #  @CMake Build System - DiRAC 3 project team
 
 cmake_minimum_required (VERSION 2.6)
-project(qphix C CXX Fortran)
+project(Fortran)
 enable_language (Fortran)
 
-set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS}  -g  -O3 -std=c99 -mavx -restrict")
-
 find_package(MPI REQUIRED)
-# add_definitions(${MPI_Fortran_COMPILE_FLAGS})
+add_definitions(${MPI_Fortran_COMPILE_FLAGS})
 include_directories(${MPI_Fortran_INCLUDE_PATH})
-# link_directories(${MPI_Fortran_LIBRARIES})
+link_directories(${MPI_Fortran_LIBRARIES})
 
 # FFLAGS depend on the compiler
 get_filename_component (Fortran_COMPILER_NAME ${CMAKE_Fortran_COMPILER} NAME)
@@ -41,8 +39,8 @@ if (Fortran_COMPILER_NAME MATCHES "gfortran*")
   set (CMAKE_Fortran_FLAGS "-O3 -march=native -funroll-loops")
   set (CMAKE_Fortran_FLAGS_DEBUG   " -O0 -g -O -Wall -Wextra -fbounds-check")
 elseif (Fortran_COMPILER_NAME MATCHES "ifort*")
-  set (CMAKE_Fortran_FLAGS "-O3 -no-prec-div -vec-report=3 -xHost -s")
-  set (CMAKE_Fortran_FLAGS_DEBUG   "-O0 -g -debug all -check all -traceback -check noarg_temp_created")
+    #set (CMAKE_Fortran_FLAGS "-O3 -no-prec-div -g -xHost -s")
+  set (CMAKE_Fortran_FLAGS   "-O0 -g -debug all -check all -traceback -check noarg_temp_created")
 elseif (Fortran_COMPILER_NAME MATCHES "ftn.*")
   set (CMAKE_Fortran_FLAGS "-O3 -em  -h acc_model=fast_addr:no_deep_copy:auto_async_all -hlist=m")
   set (CMAKE_Fortran_FLAGS_DEBUG   "-O0 -g -O -Wall -Wextra -fbounds-check")

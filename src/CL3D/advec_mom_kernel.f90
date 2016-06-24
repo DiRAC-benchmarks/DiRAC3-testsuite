@@ -23,11 +23,11 @@
 !>  leave it in the method.
 
 MODULE advec_mom_kernel_mod
+use data_module
 USE OMP_LIB
 CONTAINS
 
-SUBROUTINE advec_mom_kernel(flop,                           &
-                            mem,                            &
+SUBROUTINE advec_mom_kernel(mom_flop,                           &
                             x_min,x_max,y_min,y_max,z_min,z_max, &
                             xvel1,                               &
                             yvel1,                               &
@@ -61,7 +61,7 @@ SUBROUTINE advec_mom_kernel(flop,                           &
   INTEGER :: which_vel,sweep_number,direction
   LOGICAL :: advect_x
 
-  INTEGER (KIND=8) :: flop,tmpFlop,mem,tmpMem,iter,limiter_count
+  INTEGER (KIND=8) :: mom_flop,fc,mem,mbw,iter,limiter_count,flop
 
   REAL(KIND=8), TARGET,DIMENSION(x_min-2:x_max+3,y_min-2:y_max+3,z_min-2:z_max+3) :: xvel1,yvel1,zvel1
   REAL(KIND=8), DIMENSION(x_min-2:x_max+3,y_min-2:y_max+2,z_min-2:z_max+2) :: mass_flux_x
@@ -103,11 +103,9 @@ SUBROUTINE advec_mom_kernel(flop,                           &
   ENDIF
 
   flop=0
-  tmpFlop=0
-  
+  fc=0   
 
-
-
+iter=(z_max-z_min+5)*(y_max-y_min+5)*(x_max-x_min+5)
 ! I think these only have to be done once per cell advection sweep. So put in some logic so they are just done the first time
 IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
 !$OMP PARALLEL DO
@@ -121,10 +119,7 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
     ENDDO
 !$OMP END PARALLEL DO
-
-  iter=(z_max-z_min+5)*(y_max-y_min+5)*(x_max-x_min+5)
-  tmpFlop=iter*6 !sc - 16464
-  tmpMem=iter*10
+  fc=iter*6 !sc - 16464
   
   ELSEIF(sweep_number.EQ.1.AND.direction.EQ.3)THEN ! z first
 !$OMP PARALLEL DO
@@ -139,10 +134,10 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
     ENDDO
 !$OMP END PARALLEL DO
-  iter=(z_max-z_min+1+4)*(y_max-y_min+1+4)*(x_max-x_min+1+4)
-  tmpFlop=iter*6
-  tmpMem=iter*10
-  ELSEIF(sweep_number.EQ.2.AND.advect_x)THEN ! x first
+  fc=iter*6
+  
+
+ELSEIF(sweep_number.EQ.2.AND.advect_x)THEN ! x first
 !$OMP PARALLEL DO
     DO l=z_min-2,z_max+2
       DO k=y_min-2,y_max+2
@@ -154,10 +149,9 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
     ENDDO
 !$OMP END PARALLEL DO
- iter=(z_max-z_min+1+4)*(y_max-y_min+1+4)*(x_max-x_min+1+4)
- tmpFlop=iter*4
- tmpMem=iter*8
- ELSEIF(sweep_number.EQ.2.AND..NOT.advect_x)THEN ! Z first
+ fc=iter*4
+ 
+ELSEIF(sweep_number.EQ.2.AND..NOT.advect_x)THEN ! Z first
 !$OMP PARALLEL DO 
     DO l=z_min-2,z_max+2
       DO k=y_min-2,y_max+2
@@ -169,9 +163,7 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
     ENDDO
 !$OMP END PARALLEL DO
-  iter=(z_max-z_min+1+4)*(y_max-y_min+1+4)*(x_max-x_min+1+4)
-  tmpFlop=iter*4
-  tmpMem=iter*8
+  fc=iter*4
   ELSEIF(sweep_number.EQ.3.AND.direction.EQ.1)THEN ! z first
 !$OMP PARALLEL DO
     DO l=z_min-2,z_max+2
@@ -184,10 +176,9 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
     ENDDO
 !$OMP END PARALLEL DO
-  iter=(z_max-z_min+1+4)*(y_max-y_min+1+4)*(x_max-x_min+1+4)
-  tmpFlop=iter*2
-  tmpMem=iter*6
-  ELSEIF(sweep_number.EQ.3.AND.direction.EQ.3)THEN ! x first
+  fc=iter*2
+  
+ELSEIF(sweep_number.EQ.3.AND.direction.EQ.3)THEN ! x first
 !$OMP PARALLEL DO
     DO l=z_min-2,z_max+2
       DO k=y_min-2,y_max+2
@@ -199,15 +190,13 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
     ENDDO
 !$OMP END PARALLEL DO
-  iter=(z_max-z_min+1+4)*(y_max-y_min+1+4)*(x_max-x_min+1+4)
-  tmpFlop=iter*2
-  tmpMem=iter*6
+  fc=iter*2
 
   ENDIF
-  flop=flop+tmpFlop
-  mem=mem+tmpMem 
-  tmpFlop=0  
-  tmpMem=0
+  flop=flop+fc
+fc=0
+    
+  
 
 !----------------------------------- PRE and POST Volume calculation complete ----------------------------------
 
@@ -228,14 +217,13 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
         ENDDO
       ENDDO
 !$OMP END PARALLEL DO
-  iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+1+4)
-  tmpFlop=iter*8
-  tmpMem=iter*9
+  iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+5)
+  fc=iter*8
 !And do I need to calc the node mass for all 3 directions, or just once?
-   flop=flop+tmpFlop !sc 27664
-   mem=mem+tmpMem
-   tmpFlop=0 
-   tmpMem=0
+   flop=flop+fc
+fc=0 !sc 27664
+    
+   
 
 !------------------------------- Calculate node Flux complete ----------------------------------------------------
 
@@ -258,13 +246,12 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
 !$OMP END PARALLEL DO
 
-      iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+1+3)
-      tmpFlop=iter*16
-      tmpMem=iter*17
-      flop=flop+tmpFlop !sc 48464
-      mem=mem+tmpMem
-      tmpFlop=0
-      tmpMem=0
+      iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+4)
+      fc=iter*16
+      flop=flop+fc
+fc=0 !sc 48464
+      
+      
 
 
 !$OMP PARALLEL DO
@@ -278,13 +265,11 @@ IF(sweep_number.EQ.1.AND.direction.EQ.1)THEN ! x first
       ENDDO
 !$OMP END PARALLEL DO
 
-     iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+4)
-     tmpFlop=iter*2
-     tmpMem=iter*4
-     flop=flop+tmpFlop !sc 51064
-     mem=mem+tmpMem
-     tmpFlop=0
-     tmpMem=0
+     !iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+4)
+     fc=iter*2
+     flop=flop+fc
+fc=0 !sc 51064
+     
 
     ENDIF
 
@@ -345,12 +330,11 @@ limiter_count=0
     ENDDO
 !$OMP END PARALLEL DO
    iter=(z_max-z_max+2)*(y_max-y_min+2)*(x_max-x_min+3)
-   tmpFlop=tmpFlop+(iter*10)+(limiter_count*19)
-   tmpMem=tmpMem+(iter*24)+(limiter_count*10)
-   flop=flop+tmpFlop
-   mem=mem+tmpMem
-   tmpFlop=0
-   tmpMem=0
+   fc=fc+(iter*10)+(limiter_count*19)
+   flop=flop+fc
+fc=0
+   
+   
 
 !------------------------------------ Limiter calculation complete ------------------------------------------------------
 
@@ -364,12 +348,11 @@ limiter_count=0
     ENDDO
 !$OMP END PARALLEL DO
   iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+2)
-  tmpFlop=iter*7
-  tmpMem=iter*6
-  flop=flop+tmpFlop
-  mem=mem+tmpMem
-  tmpFlop=0
-  tmpMem=0
+  fc=iter*7
+  flop=flop+fc
+fc=0
+  
+  
 
 !------------------------------ Sid - Velocity calculation complete ------------------------------------------------------
 !------------------------------ repeat the same logic below for direction 2 and direction 3 ------------------------------
@@ -391,12 +374,11 @@ limiter_count=0
 !$OMP END PARALLEL DO
 
       iter=(z_max-z_min+2)*(y_max-y_min+5)*(x_max-x_min+2)
-      tmpFlop=iter*8
-      tmpMem=iter*9
-      mem=mem+tmpMem
-      flop=flop+tmpFlop
-      tmpFlop=0
-      tmpMem=0
+      fc=iter*8
+      flop=flop+fc
+fc=0
+      
+      
  
 !$OMP PARALLEL DO
       DO l=z_min,z_max+1
@@ -416,12 +398,10 @@ limiter_count=0
 !$OMP END PARALLEL DO
       
       iter=(z_max-z_min+2)*(y_max-y_min+4)*(x_max-x_min+2)
-      tmpFlop=iter*16
-      tmpMem=iter*17
-      flop=flop+tmpFlop
-      mem=mem+tmpMem
-      tmpMem=0
-      tmpFlop=0 
+      fc=iter*16
+      flop=flop+fc
+fc=0
+       
 
 !$OMP PARALLEL DO
       DO l=z_min,z_max+1
@@ -435,12 +415,11 @@ limiter_count=0
 !$OMP END PARALLEL DO
 
     iter=(z_max-z_min+2)*(y_max-y_min+4)*(x_max-x_min+2)
-    tmpFlop=iter*2
-    tmpMem=iter*4
-    flop=flop+tmpFlop
-    mem=mem+tmpMem
-    tmpFlop=0
-    tmpMem=0
+    fc=iter*2
+    flop=flop+fc
+fc=0
+    
+    
 ENDIF
 
 limiter_count=0
@@ -481,12 +460,11 @@ limiter_count=0
     ENDDO
 !$OMP END PARALLEL DO
   iter=(z_max-z_max+2)*(y_max-y_min+3)*(x_max-x_min+2)
-  tmpFlop=tmpFlop+(iter*9)+(limiter_count*19)
-  tmpMem=tmpMem+(iter*24)+(limiter_count*20)
-  flop=flop+tmpFlop
-  mem=mem+tmpMem
-  tmpFlop=0
-  tmpMem=0
+  fc=fc+(iter*9)+(limiter_count*19)
+  flop=flop+fc
+fc=0
+  
+  
  
 !$OMP PARALLEL DO
     DO l=z_min,z_max+1
@@ -498,12 +476,13 @@ limiter_count=0
     ENDDO
 !$OMP END PARALLEL DO
   iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+2)
-  tmpFlop=iter*7
-  tmpMem=iter*6
-  flop=flop+tmpFlop
-  mem=mem+tmpMem
-  tmpFlop=0
-  tmpMem=0
+  fc=iter*7
+  
+  flop=flop+fc
+fc=0
+  
+  
+  
 
   ELSEIF(direction.EQ.3)THEN
     IF(which_vel.EQ.1) THEN
@@ -523,12 +502,11 @@ limiter_count=0
 !$OMP END PARALLEL DO
 
       iter=(z_max-z_min+5)*(y_max-y_min+2)*(x_max-x_min+2)
-      tmpFlop=iter*8
-      tmpMem=iter*9
-      flop=flop+tmpFlop
-      mem=mem+tmpMem
-      tmpFlop=0
-      tmpMem=0
+      fc=iter*8
+      flop=flop+fc
+fc=0
+      
+      
 
 !$OMP PARALLEL DO
       DO l=z_min-1,z_max+2
@@ -548,12 +526,11 @@ limiter_count=0
       ENDDO
 !$OMP END PARALLEL DO
       iter=(z_max-z_min+4)*(y_max-y_min+2)*(x_max-x_min+2)
-      tmpFlop=iter*16
-      tmpMem=iter*17
-      mem=mem+tmpMem
-      flop=flop+tmpFlop
-      tmpFlop=0
-      tmpMem=0
+      fc=iter*16
+      flop=flop+fc
+fc=0
+      
+      
 
 !$OMP PARALLEL DO 
 DO l=z_min-1,z_max+2
@@ -567,13 +544,12 @@ DO l=z_min-1,z_max+2
       ENDDO
 !$OMP END PARALLEL DO
     iter=(z_max-z_min+4)*(y_max-y_min+2)*(x_max-x_min+2)
-    tmpFlop=iter*2
-    tmpMem=iter*4
-    flop=flop+tmpFlop
-    mem=mem+tmpMem
+    fc=iter*2
+    flop=flop+fc
+fc=0
     ENDIF
-    tmpFlop=0
-    tmpMem=0
+    
+    
     limiter_count=0
 
 !$OMP PARALLEL DO PRIVATE(upwind,donor,downwind,dif,sigma,width,limiter,vdiffuw,vdiffdw,auw,adw,wind) REDUCTION (+:limiter_count)
@@ -598,7 +574,7 @@ DO l=z_min-1,z_max+2
           vdiffdw=vel1(j,k,downwind)-vel1(j,k,donor)
           limiter=0.0
 
-          !tmpFlop=6
+          !fc=6
           IF(vdiffuw*vdiffdw.GT.0.0)THEN
             auw=ABS(vdiffuw)
             adw=ABS(vdiffdw)
@@ -615,12 +591,11 @@ DO l=z_min-1,z_max+2
 !$OMP END PARALLEL DO
 
   iter=(z_max-z_max+2)*(y_max-y_min+2)*(x_max-x_min+3)
-  tmpFlop=tmpFlop+(iter*10)+(limiter_count*18)
-  tmpMem=tmpMem+(iter*24)+(limiter_count*20)
-  flop=flop+tmpFlop
-  mem=mem+tmpMem
-  tmpFlop=0
-  tmpMem=0
+  fc=fc+(iter*10)+(limiter_count*18)
+  flop=flop+fc
+fc=0
+  
+  
 !$OMP PARALLEL DO 
     DO l=z_min,z_max+1
       DO k=y_min,y_max+1
@@ -632,11 +607,12 @@ DO l=z_min-1,z_max+2
     ENDDO
 !$OMP END PARALLEL DO
   iter=(z_max-z_min+2)*(y_max-y_min+2)*(x_max-x_min+2)
-  tmpFlop=iter*7
-  tmpMem=iter*6
+  fc=iter*7
+  flop=flop+fc
+fc=0
+  
   ENDIF
-
-  flop=flop+tmpFlop
-  mem=mem+tmpMem
+  mom_flop=mom_flop+flop
+  
 END SUBROUTINE advec_mom_kernel
 END MODULE advec_mom_kernel_mod

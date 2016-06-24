@@ -98,7 +98,6 @@ SUBROUTINE start
     chunks(c)%field%x_max = right(c)-left(c)+1
     chunks(c)%field%y_max = top(c)-bottom(c)+1
     chunks(c)%field%z_max = front(c)-back(c)+1
-
   ENDDO
 
   DEALLOCATE(left,right,bottom,top,back,front)

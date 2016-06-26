@@ -1,0 +1,160 @@
+advec_mom_kernel.pomp.f90(128): (col. 9) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(128): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(127): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(162): (col. 9) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(162): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(161): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(195): (col. 9) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(195): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(194): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(227): (col. 9) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(227): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(226): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(259): (col. 9) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(259): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(258): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(291): (col. 9) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(291): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(290): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(332): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(331): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(372): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(371): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(416): (col. 11) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(416): (col. 11) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(415): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(454): (col. 9) remark: loop was not vectorized: existence of vector dependence
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(453): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(452): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(534): (col. 11) remark: loop was not vectorized: subscript too complex
+advec_mom_kernel.pomp.f90(533): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(532): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(570): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(569): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(607): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(606): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(646): (col. 11) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(646): (col. 11) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(645): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(680): (col. 9) remark: loop was not vectorized: existence of vector dependence
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed OUTPUT dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed OUTPUT dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(679): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(678): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(743): (col. 11) remark: loop was not vectorized: subscript too complex
+advec_mom_kernel.pomp.f90(742): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(741): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(775): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(774): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(813): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(812): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(854): (col. 11) remark: loop was not vectorized: vectorization possible but seems inefficient
+advec_mom_kernel.pomp.f90(854): (col. 11) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(853): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(890): (col. 9) remark: loop was not vectorized: existence of vector dependence
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(889): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(888): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(951): (col. 11) remark: loop was not vectorized: subscript too complex
+advec_mom_kernel.pomp.f90(950): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(949): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(290): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(289): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(258): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(257): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(226): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(225): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(194): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(193): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(161): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(160): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(127): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(126): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(775): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(774): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(813): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(812): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(853): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(852): (col. 1) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(890): (col. 9) remark: loop was not vectorized: existence of vector dependence
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(916): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 916 and tmpflop line 916
+advec_mom_kernel.pomp.f90(889): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(888): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(949): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(949): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(948): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(570): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(569): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(607): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(606): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(645): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(644): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(680): (col. 9) remark: loop was not vectorized: existence of vector dependence
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 712
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed ANTI dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed FLOW dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(708): (col. 13) remark: vector dependence: assumed OUTPUT dependence between tmpflop line 708 and tmpflop line 712
+advec_mom_kernel.pomp.f90(712): (col. 11) remark: vector dependence: assumed OUTPUT dependence between tmpflop line 712 and tmpflop line 708
+advec_mom_kernel.pomp.f90(679): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(678): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(741): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(741): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(740): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(332): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(331): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(372): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(371): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(415): (col. 9) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(414): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(454): (col. 9) remark: loop was not vectorized: existence of vector dependence
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed FLOW dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(495): (col. 13) remark: vector dependence: assumed ANTI dependence between tmpflop line 495 and tmpflop line 495
+advec_mom_kernel.pomp.f90(453): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(452): (col. 5) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(532): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(532): (col. 7) remark: loop was not vectorized: not inner loop
+advec_mom_kernel.pomp.f90(531): (col. 5) remark: loop was not vectorized: not inner loop
+
+
+

@@ -45,16 +45,17 @@ SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, G
 
 ## Module File and Submission Script Template
 
-Before building the benchmarks on a system, two files must be created for a `hostname` of your choice:
+Before building the benchmarks, three files must be created for a `hostname` of your choice:
 
-* Create, modify and source a script named `modules/modules.hostname` that loads necessary modules and sets other environment variables.
-* Create and modify a template script named `templates/submit.hostname` for submitting benchmarks to a batch job scheduler.
+* A shell script named `modules/modules.hostname` that loads all necessary modules.
+* A CMake toolchain script named `cmake/toolchain.hostname.cmake` that specifies the compilers to use and defines additional variables regarding the hardware.
+* A template shell script named `templates/submit.hostname` for submitting benchmarks to a batch job scheduler.
 
-Sample module and submission template scripts are provided.
+Sample module, toolchain and submission template scripts are provided for a range of systems.
 
 ## Build Instructions
 
-The testsuite is downloaded, configured and built as below, passing the chosen `hostname` to cmake:
+The testsuite is downloaded, configured and built for the chosen `hostname` as below:
 
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
@@ -62,17 +63,17 @@ cd DiRAC3-testsuite
 source modules/modules.hostname
 mkdir build
 cd build
-cmake .. -DDIRAC3_HOST=hostname -DDIRAC3_PRIVATE=TRUE
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.hostname.cmake
 make all
 ```
+
+If you have access to the private benchmark repositories you should also pass the flag `-DDIRAC3_PRIVATE=TRUE` to `cmake`.
 
 ## Additional configuration for Archer Cray XC30
 
 The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using the modules given in `modules/modules.archer`. The following additional configurations were necessary:
 
 * The ```/home``` filesystem is not available on the compute nodes; we recommended building from source in ```/work```.
-
-* To use the Fortran compiler wrapper, set ```FC=ftn``` when calling cmake.
 
 * With Intel compilers, set ```CRAYPE_LINK_TYPE=dynamic``` when calling cmake and make.
 
@@ -94,16 +95,12 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
 
   (Note that the flag ```-cc numa_node``` is only needed with Intel compilers).
 
-* With Intel compilers, add the lines `export KMP_AFFINITY=disabled` and `MPICH_MAX_THREAD_SAFETY=multiple` to `templates/submit.archer.in`.
-
-* There is a conflict between the fftw2 library modules and the Intel programming environment when using CMake. We recommended passing the fftw2 installation path to CMake using the variable `FFTW2_ROOT`.
-
 The final build command is then:
 
 ```
 source modules/modules.archer
 cd build
-CRAYPE_LINK_TYPE=dynamic FC=ftn cmake .. -DDIRAC3_HOST=archer -DDIRAC3_PRIVATE=TRUE -DFFTW2_ROOT=/opt/cray/fftw/2.1.5.9
+CRAYPE_LINK_TYPE=dynamic cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.archer.cmake -DDIRAC3_PRIVATE=TRUE
 CRAYPE_LINK_TYPE=dynamic make all
 ```
 
@@ -112,8 +109,6 @@ CRAYPE_LINK_TYPE=dynamic make all
 The benchmarks have been tested on the [Cosma5 Cosmology Machine](https://www.cosma.dur.ac.uk) using the modules given in `modules/modules.cosma`. The following additional configurations were necessary:
 
 * While `tcsh` can be used to configure and build the testsuite and to submit jobs, in `submit.cosma.in` the run scripts must be called using `bash`.
-
-* Configure to use the MPI compiler wrappers ```CC=mpicc```, ```CXX=mpic++``` and ```FC=mpif90``` when calling cmake.
 
 * The run scripts are incorrectly configured to use `mpiexec` with the flag `-np` instead of `-n`. It should be set manually in `CMakeLists.txt` after finding MPI:
 
@@ -131,6 +126,6 @@ The final build command is then:
 ```
 source modules/modules.cosma
 cd build
-env CC=mpicc CXX=mpic++ FC=mpif90 MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl cmake .. -DDIRAC3_HOST=cosma -DDIRAC3_PRIVATE=TRUE
+env MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosma.cmake -DDIRAC3_PRIVATE=TRUE
 make all
 ```

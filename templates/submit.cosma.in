@@ -2,7 +2,7 @@
 
 #BSUB -P dr002
 #BSUB -q cosma5
-#BSUB -n 16
+#BSUB -n ${DIRAC3_JOB_CPUS}
 #BSUB -J ${DIRAC3_JOB_NAME}
 #BSUB -oo ${DIRAC3_JOB_NAME}.out.%J
 #BSUB -eo ${DIRAC3_JOB_NAME}.err.%J

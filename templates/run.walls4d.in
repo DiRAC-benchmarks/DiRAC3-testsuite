@@ -1,10 +1,12 @@
 pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 ln -s ${WALLS_INPUT_FILE}
 
+export OMP_NUM_THREADS=${HOST_CPUS_PER_NODE}
+
 for dd in 4 8 16 32 64
 do
-  echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} $<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd
-  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_PREFLAGS} $<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd
+  echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} $<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd
+  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} $<TARGET_FILE:walls_xeon_4d> $dd $dd $dd $dd
 done
 
 popd

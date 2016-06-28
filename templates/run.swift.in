@@ -3,16 +3,11 @@ pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 # For SWIFT, HyperThreading reduces per-thread performance but produces a modest
 # improvement in overall performance. Time calibrated to 'about five minutes on
 # COSMA'. Other parameters taken from 'runs_mpi_cv.sh'.
-MPI_PROCESSES=1
-THREADS_PER_PROCESS=$OMP_NUM_THREADS
 MAX_STEPS=1000
 
 # To restore checkpoint output at each step, remove '-o' option.
-echo ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} $MPI_PROCESSES ${MPIEXEC_PREFLAGS} \
-  ${EXECUTABLE_OUTPUT_PATH}/swift_mpi -t $THREADS_PER_PROCESS -r $MAX_STEPS \
-  -f ${DIRAC3_TESTSUITE_INPUTS_PATH}/cosmoVolume.hdf5 -m 0.705 -w 6000 -z 300 -c 1. -d 1e-7 -e 1e-2 -o
-${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} $MPI_PROCESSES ${MPIEXEC_PREFLAGS} \
-  ${EXECUTABLE_OUTPUT_PATH}/swift_mpi -t $THREADS_PER_PROCESS -r $MAX_STEPS \
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} \
+  ${EXECUTABLE_OUTPUT_PATH}/swift_mpi -t ${HOST_THREADS_PER_NODE} -r $MAX_STEPS \
   -f ${DIRAC3_TESTSUITE_INPUTS_PATH}/cosmoVolume.hdf5 -m 0.705 -w 6000 -z 300 -c 1. -d 1e-7 -e 1e-2 -o
 
 popd

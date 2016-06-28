@@ -17,5 +17,6 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/download_ICs.cmake
 ExternalProject_Add_Step(swiftsim-benchmark download_ICs
   COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/download_ICs.cmake)
 
-# Create run and submission scripts for SwiftSingleNode
-CREATE_DIRAC3_JOB("swift")
+# Create run and submission scripts for Swift jobs
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "swift" BENCHMARK_TAG "single" JOB_NODES  1)
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "swift" BENCHMARK_TAG "multi"  JOB_NODES 16)

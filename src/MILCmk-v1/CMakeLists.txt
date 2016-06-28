@@ -36,7 +36,7 @@ set_target_properties(${MILCMK_DTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAG
 target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_C_LIBRARIES} ${M_LIBRARIES})
 
 # Run and submission scripts for MILC-F3
-CREATE_DIRAC3_JOB("milcf3")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "milcf3" BENCHMARK_TAG "single" JOB_NODES 1)
 
 # Run and submission scripts for MILC-D3
-CREATE_DIRAC3_JOB("milcd3")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "milcd3" BENCHMARK_TAG "single" JOB_NODES 1)

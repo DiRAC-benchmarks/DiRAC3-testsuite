@@ -29,4 +29,7 @@ ExternalProject_Add(qphix-benchmark
   INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/qphix-benchmark/tests && make install)
 
 # Create run and submission scripts for QPhiX
-CREATE_DIRAC3_JOB("qphix")
+set(QPHIX_MPI_LAYOUT "1 1 1 1")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "qphix" BENCHMARK_TAG "single" JOB_NODES  1)
+set(QPHIX_MPI_LAYOUT "2 2 2 2")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "qphix" BENCHMARK_TAG "multi"  JOB_NODES 16)

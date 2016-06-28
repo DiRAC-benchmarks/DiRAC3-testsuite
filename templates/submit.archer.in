@@ -2,16 +2,12 @@
 
 #PBS -A d63
 #PBS -q short
-#PBS -l select=1
+#PBS -l select=${DIRAC3_JOB_NODES}
 #PBS -N ${DIRAC3_JOB_NAME}
 #PBS -l walltime=00:10:00
 
 # Load modules
 source ${DIRAC3_MODULE_FILE}
-
-# OpenMP threads
-echo export OMP_NUM_THREADS=24
-export OMP_NUM_THREADS=24
 
 # Additional environment variable settings for Intel compiler
 export KMP_AFFINITY=disabled

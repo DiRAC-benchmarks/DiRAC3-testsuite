@@ -7,9 +7,5 @@
 # Load modules
 source ${DIRAC3_MODULE_FILE}
 
-# OpenMP threads
-echo export OMP_NUM_THREADS=1
-export OMP_NUM_THREADS=1
-
 # Run the benchmark
 source ${DIRAC3_RUN_SCRIPT}

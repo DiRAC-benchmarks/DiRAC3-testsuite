@@ -76,4 +76,4 @@ target_link_libraries(clover_leaf ${MPI_Fortran_LIBRARIES})
 
 # Generate scripts for DiRAC3 benchmarking
 set(CL3D_INPUT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/inputs/clover.in")
-CREATE_DIRAC3_JOB("CL3D")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "CL3D" BENCHMARK_TAG "single" JOB_NODES 1)

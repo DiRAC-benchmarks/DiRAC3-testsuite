@@ -84,17 +84,6 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
   cc "$@"
   ```
 
-* To use ```aprun```, make the following changes to `CMakeLists.txt` before and after the call to ```find_package(MPI REQUIRED)```:
-
-  ```
-  find_program(MPIEXEC aprun)
-  find_package(MPI REQUIRED)
-  set(MPIEXEC_NUMPROC_FLAG -n)
-  set(MPIEXEC_PREFLAGS "-d $OMP_NUM_THREADS -cc numa_node")
-  ```
-
-  (Note that the flag ```-cc numa_node``` is only needed with Intel compilers).
-
 The final build command is then:
 
 ```

@@ -7,6 +7,6 @@ ExternalProject_Add(walls-benchmark
   BUILD_IN_SOURCE 1
         CONFIGURE_COMMAND mkdir -p bin build
                 && cd build
-                && CC=${CMAKE_C_COMPILER} ${CMAKE_COMMAND} ${CMAKE_BINARY_DIR}/grid-benchmark -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}
-  BUILD_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/build && make
-  INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/build && make install)
+                && CC=${CMAKE_C_COMPILER} ${CMAKE_COMMAND} ${CMAKE_BINARY_DIR}/walls-benchmark -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}
+  BUILD_COMMAND cd ${CMAKE_BINARY_DIR}/walls-benchmark/build && make
+  INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/walls-benchmark/build && make install)

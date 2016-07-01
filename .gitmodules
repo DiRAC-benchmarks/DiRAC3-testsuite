@@ -1,3 +1,0 @@
-[submodule "src/Walls"]
-	path = src/Walls
-	url = git@github.com:DiRAC-benchmarks/Walls-benchmark.git

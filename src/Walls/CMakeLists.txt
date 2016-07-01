@@ -10,3 +10,10 @@ ExternalProject_Add(walls-benchmark
     && CC=${CMAKE_C_COMPILER} ${CMAKE_COMMAND} ${CMAKE_BINARY_DIR}/walls-benchmark -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}
   BUILD_COMMAND cd ${CMAKE_BINARY_DIR}/walls-benchmark/build && make
   INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/walls-benchmark/build && make install)
+
+# Create run and submission scripts for Walls jobs
+set(WALLS_INPUT_FILE ${CMAKE_BINARY_DIR}/walls-benchmark/inputs/dados.txt)
+set(WALLS_MPI_LAYOUT "1 1 1")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "walls3d" BENCHMARK_TAG "single" JOB_NODES 1)
+set(WALLS_MPI_LAYOUT "2 2 2")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "walls3d" BENCHMARK_TAG "multi"  JOB_NODES 8)

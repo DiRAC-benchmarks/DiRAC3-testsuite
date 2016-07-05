@@ -71,11 +71,11 @@ If you have access to the private benchmark repositories you should also pass th
 
 ## Additional configuration for Archer Cray XC30
 
-The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using the modules given in `modules/modules.archer`. The following additional configurations were necessary:
+The benchmarks have been tested on the [Archer UK National Supercomputing Service](http://www.archer.ac.uk/) using Intel and GNU compilers. The modules used are given in `modules/modules.archer.intel` and `modules/modules.archer.gcc` respectively. The following additional configurations were necessary:
 
 * The ```/home``` filesystem is not available on the compute nodes; we recommended building from source in ```/work```.
 
-* With Intel compilers, set ```CRAYPE_LINK_TYPE=dynamic``` when calling cmake and make.
+* To link with shared libraries, set `CRAYPE_LINK_TYPE=dynamic` when calling cmake and make.
 
 * Archer's HDF5 module does not have the ```h5cc``` and ```h5pcc``` scripts required by Swift. A workaround is to create both scripts in ```PATH``` with the following body:
 
@@ -87,7 +87,7 @@ The benchmarks have been tested on the [Archer UK National Supercomputing Servic
 The final build command is then:
 
 ```
-source modules/modules.archer
+source modules/modules.archer.intel
 cd build
 CRAYPE_LINK_TYPE=dynamic cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.archer.cmake -DDIRAC3_PRIVATE=TRUE
 CRAYPE_LINK_TYPE=dynamic make all

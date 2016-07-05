@@ -1,5 +1,4 @@
 # :TODO:
-# Link to M_LIBRARIES using target_link_libraries not LDFLAGS as in original Makefile
 # Script files should be targets with custom commands so that make clean removes them
 # Construction of executables inside for loops should be a single function
 
@@ -20,8 +19,8 @@ set(STRIDE_GFFLAGS "-g  -DLINUX")
 set(STRIDE_GCFLAGS "-g  -DLINUX")
 
 # Libraries
-set(STRIDE_LDCFLAGS "${M_LIBRARIES}")
-set(STRIDE_LDFFLAGS ""              )
+set(STRIDE_LDCFLAGS "")
+set(STRIDE_LDFFLAGS "")
 
 # Object Files
 add_library           (STRIDE_SECC OBJECT secc.c)

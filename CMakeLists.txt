@@ -38,7 +38,6 @@ file(MAKE_DIRECTORY ${DIRAC3_TESTSUITE_SCRIPTS_PATH})
 # Find necessary packages and libraries
 find_package(OpenMP REQUIRED)
 find_package(MPI REQUIRED)
-find_library(M_LIBRARIES m REQUIRED)
 
 # Default system name
 if(NOT DIRAC3_HOST)

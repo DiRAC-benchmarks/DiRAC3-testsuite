@@ -1,0 +1,14 @@
+#! /bin/bash
+#PBS -q small2
+#PBS -l nodes=${DIRAC3_JOB_NODES}:ppn=8
+#PBS -N ${DIRAC3_JOB_NAME}
+#PBS -j oe
+#PBS -l walltime=0:10:00
+#PBS -V
+#PBS -A dr002
+
+# Load modules
+source ${DIRAC3_MODULE_FILE}
+
+# Run the benchmark
+bash ${DIRAC3_RUN_SCRIPT}

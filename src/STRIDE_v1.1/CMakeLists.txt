@@ -19,7 +19,7 @@ set(STRIDE_GFFLAGS "-g  -DLINUX")
 set(STRIDE_GCFLAGS "-g  -DLINUX")
 
 # Libraries
-set(STRIDE_LDCFLAGS "")
+set(STRIDE_LDCFLAGS ${M_LIBRARIES})
 set(STRIDE_LDFFLAGS "")
 
 # Object Files

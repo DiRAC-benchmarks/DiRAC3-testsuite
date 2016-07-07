@@ -14,7 +14,7 @@ list(REMOVE_ITEM IOR_SOURCE ${IOR_SOURCE_REMOVE})
 
 # IOR Executable
 add_executable(ior ${IOR_SOURCE})
-target_link_libraries(ior ${MPI_C_LIBRARIES})
+target_link_libraries(ior ${MPI_C_LIBRARIES} ${M_LIBRARIES})
 
 # Preprocessor Definitions
 add_definitions(-DHAVE_CONFIG_H)

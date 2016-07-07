@@ -13,11 +13,15 @@ ExternalProject_Add(qmp-library
 
 if (CMAKE_C_COMPILER_ID MATCHES "GNU")
   set (QPHIX_C_FLAGS "${OpenMP_C_FLAGS} -O3 -std=c99 -mavx")
+elseif (CMAKE_C_COMPILER_ID MATCHES "Clang")
+  set (QPHIX_C_FLAGS "${OpenMP_C_FLAGS} -O3 -std=c99 -mavx")
 elseif (CMAKE_C_COMPILER_ID MATCHES "Intel")
   set (QPHIX_C_FLAGS "${OpenMP_C_FLAGS} -O3 -fno-alias -std=c99 -xAVX -restrict")
 endif (CMAKE_C_COMPILER_ID MATCHES "GNU")
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  set (QPHIX_CXX_FLAGS "${OpenMP_CXX_FLAGS} -O3 -finline-functions -std=c++11 -mavx -Drestrict=__restrict__")
+elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set (QPHIX_CXX_FLAGS "${OpenMP_CXX_FLAGS} -O3 -finline-functions -std=c++11 -mavx -Drestrict=__restrict__")
 elseif (CMAKE_CXX_COMPILER_ID MATCHES "Intel")
   set (QPHIX_CXX_FLAGS "${OpenMP_CXX_FLAGS} -O3 -finline-functions -fno-alias -std=c++11 -xAVX -restrict")

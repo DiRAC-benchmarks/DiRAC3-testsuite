@@ -118,3 +118,20 @@ cd build
 env MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosma.cmake -DDIRAC3_PRIVATE=TRUE
 make all
 ```
+
+## Additional configuration for Cosmos SGI UV200
+
+The benchmarks have been tested on the [COSMOS UK National Cosmology Supercomputer](http://www.cosmos.damtp.cam.ac.uk/) using Clang (C and C++) and Intel (Fortran) compilers. The following additional configurations were necessary:
+
+* Automake is outdated for building Swift. A newer version should be built and installed so that the executable is in `PATH`.
+
+* Metis needs to be installed and its include and lib directories should be passed to `CPPFLAGS` and `LDFLAGS` respectively when calling make.
+
+The final build command is then:
+
+```
+source modules/modules.cosmos.clang
+cd build
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosmos.cmake -DDIRAC3_PRIVATE=TRUE
+CPPFLAGS=-I/path/to/metis/include LDFLAGS=-L/path/to/metis/lib make all
+```

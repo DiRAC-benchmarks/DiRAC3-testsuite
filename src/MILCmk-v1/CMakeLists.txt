@@ -26,14 +26,14 @@ get_filename_component(MILCMK_FTARGET ${MILCMK_QLA_DIR} NAME_WE)
 set(MILCMK_FTARGET "qla_bench-${MILCMK_FTARGET}-f3")
 add_executable(${MILCMK_FTARGET} ${MILCMK_BENCH_SOURCE} ${MILCMK_FSOURCE} ${MILCMK_ALIGNMENT_SOURCE})
 set_target_properties(${MILCMK_FTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAGSF}")
-target_link_libraries(${MILCMK_FTARGET} ${OpenMP_C_FLAGS} ${MPI_C_LIBRARIES})
+target_link_libraries(${MILCMK_FTARGET} ${OpenMP_C_FLAGS} ${MPI_C_LIBRARIES} ${M_LIBRARIES})
 
 # Double precision floating point executable
 get_filename_component(MILCMK_DTARGET ${MILCMK_QLA_DIR} NAME_WE)
 set(MILCMK_DTARGET "qla_bench-${MILCMK_DTARGET}-d3")
 add_executable(${MILCMK_DTARGET} ${MILCMK_BENCH_SOURCE} ${MILCMK_DSOURCE} ${MILCMK_ALIGNMENT_SOURCE})
 set_target_properties(${MILCMK_DTARGET} PROPERTIES COMPILE_FLAGS "${MILCMK_CFLAGSD}")
-target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_C_LIBRARIES})
+target_link_libraries(${MILCMK_DTARGET} ${OpenMP_C_FLAGS} ${MPI_C_LIBRARIES} ${M_LIBRARIES})
 
 # Run and submission scripts for MILC-F3
 CREATE_DIRAC3_JOB(BENCHMARK_NAME "milcf3" BENCHMARK_TAG "single" JOB_NODES 1)

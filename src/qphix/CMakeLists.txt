@@ -32,7 +32,7 @@ ExternalProject_Add(qphix-benchmark
   DEPENDS qmp-library
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
   GIT_REPOSITORY git@github.com:DiRAC-benchmarks/qphix.git
-  GIT_TAG devel
+  GIT_TAG DiRAC3-benchmark
   SOURCE_DIR ${CMAKE_BINARY_DIR}/qphix-benchmark
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND autoreconf &&

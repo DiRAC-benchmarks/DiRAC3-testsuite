@@ -45,10 +45,10 @@ SWIFT expects ```$CC``` and ```mpicc``` to have the same 'flavour' e.g. Intel, G
 
 ## Module File and Submission Script Template
 
-Before building the benchmarks, three files must be created for a `hostname` of your choice:
+Before building the benchmarks, three files must be created for a `hostname` and `compiler` of your choice:
 
-* A shell script named `modules/modules.hostname` that loads all necessary modules.
-* A CMake toolchain script named `cmake/toolchain.hostname.cmake` that specifies the compilers to use and defines additional variables regarding the hardware.
+* A shell script named `modules/modules.hostname.compiler` that loads all necessary modules.
+* A CMake toolchain script named `cmake/toolchain.hostname.compiler.cmake` that specifies the compilers to use and defines additional variables regarding the hardware.
 * A template shell script named `templates/submit.hostname` for submitting benchmarks to a batch job scheduler.
 
 Sample module, toolchain and submission template scripts are provided for a range of systems.
@@ -60,10 +60,10 @@ The testsuite is downloaded, configured and built for the chosen `hostname` as b
 ```
 git clone --recursive git@github.com:DiRAC-benchmarks/DiRAC3-testsuite.git
 cd DiRAC3-testsuite
-source modules/modules.hostname
+source modules/modules.hostname.compiler
 mkdir build
 cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.hostname.cmake
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.hostname.compiler.cmake
 make all
 ```
 
@@ -89,13 +89,13 @@ The final build command is then:
 ```
 source modules/modules.archer.intel
 cd build
-CRAYPE_LINK_TYPE=dynamic cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.archer.cmake -DDIRAC3_PRIVATE=TRUE
+CRAYPE_LINK_TYPE=dynamic cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.archer.intel.cmake -DDIRAC3_PRIVATE=TRUE
 CRAYPE_LINK_TYPE=dynamic make all
 ```
 
 ## Additional configuration for Cosma5 IBM iDataPlex
 
-The benchmarks have been tested on the [Cosma5 Cosmology Machine](https://www.cosma.dur.ac.uk) using the modules given in `modules/modules.cosma`. The following additional configurations were necessary:
+The benchmarks have been tested on the [Cosma5 Cosmology Machine](https://www.cosma.dur.ac.uk) using Intel compilers. The following additional configurations were necessary:
 
 * The variable `MKLROOT` should be set to `/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl` when calling make.
 
@@ -106,7 +106,7 @@ The final build command is then:
 ```
 source modules/modules.cosma.intel
 cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosma.cmake -DDIRAC3_PRIVATE=TRUE
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosma.intel.cmake -DDIRAC3_PRIVATE=TRUE
 env MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl make all
 ```
 
@@ -123,6 +123,6 @@ The final build command is then:
 ```
 source modules/modules.cosmos.clang
 cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosmos.cmake -DDIRAC3_PRIVATE=TRUE
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosmos.clang.cmake -DDIRAC3_PRIVATE=TRUE
 CPPFLAGS=-I/path/to/metis/include LDFLAGS=-L/path/to/metis/lib make all
 ```

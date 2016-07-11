@@ -7,6 +7,7 @@ set(CMAKE_Fortran_COMPILER /cosma/local/platform_mpi/9.1.2/bin/mpif90)
 set(DIRAC3_HOST          cosma)
 set(HOST_CPUS_PER_NODE      16)
 set(HOST_THREADS_PER_CPU     2)
+set(HOST_COMPILER_ID     intel)
 
 # Find MPI library but use aprun for parallel jobs
 find_package(MPI REQUIRED)

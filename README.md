@@ -97,33 +97,24 @@ CRAYPE_LINK_TYPE=dynamic make all
 
 The benchmarks have been tested on the [Cosma5 Cosmology Machine](https://www.cosma.dur.ac.uk) using the modules given in `modules/modules.cosma`. The following additional configurations were necessary:
 
-* While `tcsh` can be used to configure and build the testsuite and to submit jobs, in `submit.cosma.in` the run scripts must be called using `bash`.
+* The variable `MKLROOT` should be set to `/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl` when calling make.
 
-* The run scripts are incorrectly configured to use `mpiexec` with the flag `-np` instead of `-n`. It should be set manually in `CMakeLists.txt` after finding MPI:
-
-  ```
-  find_package(MPI REQUIRED)
-  set(MPIEXEC_NUMPROC_FLAG -n)
-  ```
-
-* The variable `MKLROOT` should be set to `/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl` when calling CMake.
-
-* The Intel compilers uses the default GNU v4.4.6 that does not support all of the C++11 features needed by the Grid benchmark. But the GNU v5.3.0 module conflicts with the Intel compiler module. In `src/Grid/CMakeLists.txt` the additional compiler flag `-cxxlib=/cosma/local/gcc/5.3.0` and link flag `-Wl,-rpath=/cosma/local/gcc/5.3.0/lib64` need to be added to the configuration command.
+* The Intel compilers use the default GNU v4.4.6 that does not support all of the C++11 features needed by the Grid benchmark. But the GNU v5.3.0 module conflicts with the Intel compiler module. In `src/Grid/CMakeLists.txt` the additional compiler flag `-cxxlib=/cosma/local/gcc/5.3.0` and link flag `-Wl,-rpath=/cosma/local/gcc/5.3.0/lib64` need to be added to the configuration command.
 
 The final build command is then:
 
 ```
-source modules/modules.cosma
+source modules/modules.cosma.intel
 cd build
-env MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosma.cmake -DDIRAC3_PRIVATE=TRUE
-make all
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosma.cmake -DDIRAC3_PRIVATE=TRUE
+env MKLROOT=/cosma/local/intel/Parallel_Studio_XE_2016-update3/mkl make all
 ```
 
 ## Additional configuration for Cosmos SGI UV200
 
 The benchmarks have been tested on the [COSMOS UK National Cosmology Supercomputer](http://www.cosmos.damtp.cam.ac.uk/) using Clang (C and C++) and Intel (Fortran) compilers. The following additional configurations were necessary:
 
-* Automake is outdated for building Swift. A newer version should be built and installed so that the executable is in `PATH`.
+* CMake and Automake are outdated. Newer versions should be built and installed so that the executables are in `PATH`.
 
 * Metis needs to be installed and its include and lib directories should be passed to `CPPFLAGS` and `LDFLAGS` respectively when calling make.
 

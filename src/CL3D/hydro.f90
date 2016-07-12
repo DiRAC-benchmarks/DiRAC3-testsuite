@@ -2,17 +2,17 @@
 !
 ! This file is part of CloverLeaf.
 !
-! CloverLeaf is free software: you can redistribute it and/or modify it under 
-! the terms of the GNU General Public License as published by the 
-! Free Software Foundation, either version 3 of the License, or (at your option) 
+! CloverLeaf is free software: you can redistribute it and/or modify it under
+! the terms of the GNU General Public License as published by the
+! Free Software Foundation, either version 3 of the License, or (at your option)
 ! any later version.
 !
-! CloverLeaf is distributed in the hope that it will be useful, but 
-! WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
-! FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more 
+! CloverLeaf is distributed in the hope that it will be useful, but
+! WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+! FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
 ! details.
 !
-! You should have received a copy of the GNU General Public License along with 
+! You should have received a copy of the GNU General Public License along with
 ! CloverLeaf. If not, see http://www.gnu.org/licenses/.
 
 !>  @brief Controls the main hydro cycle.
@@ -35,7 +35,7 @@ SUBROUTINE hydro
 
   INTEGER         :: loc(1)
   REAL(KIND=8)    :: timer,timerstart,wall_clock,step_clock
-  
+
   REAL(KIND=8)    :: grind_time,cells,rstep
   REAL(KIND=8)    :: step_time,step_grind
   REAL(KIND=8)    :: first_step,second_step
@@ -64,7 +64,7 @@ SUBROUTINE hydro
     CALL reset_field()
 
     advect_x = .NOT. advect_x
-  
+
     time = time + dt
 
     IF(summary_frequency.NE.0) THEN
@@ -150,7 +150,7 @@ SUBROUTINE hydro
 
         IF ( parallel%boss ) THEN
           WRITE(g_out,*)
-          WRITE(g_out,'(a58,2f16.4)')"Profiler Output                 Time            Percentage"
+          WRITE(g_out,'(a55,2f16.4)')"Profiler Output                    Time      Percentage"
           WRITE(g_out,'(a23,2f16.4)')"Timestep              :",profiler%timestep,100.0*(profiler%timestep/wall_clock)
           WRITE(g_out,'(a23,2f16.4)')"Ideal Gas             :",profiler%ideal_gas,100.0*(profiler%ideal_gas/wall_clock)
           WRITE(g_out,'(a23,2f16.4)')"Viscosity             :",profiler%viscosity,100.0*(profiler%viscosity/wall_clock)
@@ -166,8 +166,27 @@ SUBROUTINE hydro
           WRITE(g_out,'(a23,2f16.4)')"Visit                 :",profiler%visit,100.0*(profiler%visit/wall_clock)
           WRITE(g_out,'(a23,2f16.4)')"Total                 :",kernel_total,100.0*(kernel_total/wall_clock)
           WRITE(g_out,'(a23,2f16.4)')"The Rest              :",wall_clock-kernel_total,100.0*(wall_clock-kernel_total)/wall_clock
-          WRITE(g_out,'(a23,2f16.4)')"FLOP: Mom Adv         :",profiler%advec_mom_flop
-          WRITE(g_out,'(a23,2f16.4)')"FLOPS: Mom Adv        :",profiler%advec_mom_flop/profiler%mom_advection
+          WRITE(g_out,'(a23,2f16.4)')"GFLOP: Mom Adv        :",profiler%advec_mom_flop*1.0E-9
+          WRITE(g_out,'(a23,2f16.4)')"GFLOPS: Mom Adv       :",profiler%advec_mom_flop/profiler%mom_advection*1.0E-9
+          WRITE(*    ,*)
+          WRITE(*    ,'(a55,2f16.4)')"Profiler Output                    Time      Percentage"
+          WRITE(*    ,'(a23,2f16.4)')"Timestep              :",profiler%timestep,100.0*(profiler%timestep/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Ideal Gas             :",profiler%ideal_gas,100.0*(profiler%ideal_gas/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Viscosity             :",profiler%viscosity,100.0*(profiler%viscosity/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"PdV                   :",profiler%PdV,100.0*(profiler%PdV/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Revert                :",profiler%revert,100.0*(profiler%revert/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Acceleration          :",profiler%acceleration,100.0*(profiler%acceleration/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Fluxes                :",profiler%flux,100.0*(profiler%flux/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Cell Advection        :",profiler%cell_advection,100.0*(profiler%cell_advection/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Momentum Advection    :",profiler%mom_advection,100.0*(profiler%mom_advection/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Reset                 :",profiler%reset,100.0*(profiler%reset/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Halo Exchange         :",profiler%halo_exchange,100.0*(profiler%halo_exchange/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Summary               :",profiler%summary,100.0*(profiler%summary/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Visit                 :",profiler%visit,100.0*(profiler%visit/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"Total                 :",kernel_total,100.0*(kernel_total/wall_clock)
+          WRITE(*    ,'(a23,2f16.4)')"The Rest              :",wall_clock-kernel_total,100.0*(wall_clock-kernel_total)/wall_clock
+          WRITE(*    ,'(a23,2f16.4)')"GFLOP: Mom Adv        :",profiler%advec_mom_flop*1.0E-9
+          WRITE(*    ,'(a23,2f16.4)')"GFLOPS: Mom Adv       :",profiler%advec_mom_flop/profiler%mom_advection*1.0E-9
         ENDIF
       ENDIF
 

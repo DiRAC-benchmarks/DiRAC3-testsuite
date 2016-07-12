@@ -8,6 +8,7 @@ set(DIRAC3_HOST          archer)
 set(HOST_CPUS_PER_NODE       24)
 set(HOST_THREADS_PER_CPU      2)
 set(HOST_COMPILER_ID        gcc)
+set(HOST_SUBMIT_COMMAND    qsub)
 
 # Speciy the path to the FFTW2 library manually instead
 # of using the module due to a conflict error on Archer

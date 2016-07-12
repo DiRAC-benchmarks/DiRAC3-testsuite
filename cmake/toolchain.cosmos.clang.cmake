@@ -8,6 +8,7 @@ set(DIRAC3_HOST          cosmos)
 set(HOST_CPUS_PER_NODE        8)
 set(HOST_THREADS_PER_CPU      1)
 set(HOST_COMPILER_ID      clang)
+set(HOST_SUBMIT_COMMAND    msub)
 
 # OpenMP flags (CMake cannot detect itself)
 set(OPENMP_FOUND True)

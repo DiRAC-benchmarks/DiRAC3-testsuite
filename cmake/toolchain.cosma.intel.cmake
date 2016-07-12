@@ -4,10 +4,11 @@ set(CMAKE_CXX_COMPILER     /cosma/local/platform_mpi/9.1.2/bin/mpic++)
 set(CMAKE_Fortran_COMPILER /cosma/local/platform_mpi/9.1.2/bin/mpif90)
 
 # Hardware Specification
-set(DIRAC3_HOST          cosma)
-set(HOST_CPUS_PER_NODE      16)
-set(HOST_THREADS_PER_CPU     2)
-set(HOST_COMPILER_ID     intel)
+set(DIRAC3_HOST             cosma)
+set(HOST_CPUS_PER_NODE         16)
+set(HOST_THREADS_PER_CPU        2)
+set(HOST_COMPILER_ID        intel)
+set(HOST_SUBMIT_COMMAND  "bsub <")
 
 # Find MPI library but use aprun for parallel jobs
 find_package(MPI REQUIRED)

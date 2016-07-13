@@ -38,10 +38,11 @@ def main():
 
     # Write from each data file to CSV
     for datafile in args.files:
-        datalist = datafile.read().split('qla_bench-qla')
+        delimiter = "len ="
+        datalist = [delimiter + datablock for datablock in datafile.read().split(delimiter)]
+        header_data = re_header.findall(datalist[0])[0]
         del datalist[0]
         for datablock in datalist:
-            header_data = re_header.findall(datablock)[0]
             flop_data   = re_flops.findall(datablock)
             for entries in flop_data:
                 entries = header_data + entries

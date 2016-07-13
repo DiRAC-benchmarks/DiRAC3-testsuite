@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Run-specific definitions
 source ${GADGET3_EAGLE_BENCH_RUN_DEFS}
 
@@ -27,7 +28,7 @@ pushd $GADGET_RUN_DIR
 
 # Run the executable
 echo "$GADGET_RUN_COMMAND"
-$GADGET_RUN_COMMAND
+$GADGET_RUN_COMMAND 1> ${DIRAC3_JOB_OUTFILE} 2> ${DIRAC3_JOB_ERRFILE}
 
 # Function to delete any unnecessary files and directories - to be called on exit
 function finish {

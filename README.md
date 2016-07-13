@@ -126,3 +126,7 @@ cd build
 cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cosmos.clang.cmake -DDIRAC3_PRIVATE=TRUE
 CPPFLAGS=-I/path/to/metis/include LDFLAGS=-L/path/to/metis/lib make all
 ```
+
+## Running the Benchmarks
+
+For each benchmark, a batch job submission script named `scripts/submit.benchmark.hostname` is generated. These can be submitted either manually or all together using `bash scripts/submit.all`. Each job calls another generated script called `scripts/run.benchmark.hostname` that runs the benchmark while forwarding the stdout and sterr streams to `outputs/out.benchmark.hostname` and `outputs/err.benchmark.hostname` respectively.

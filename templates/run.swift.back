@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 
 # For SWIFT, HyperThreading reduces per-thread performance but produces a modest
@@ -11,6 +12,6 @@ MAX_STEPS=1000
 time mpirun -np $MPI_PROCESSES \
   ./swift_mpi -t $THREADS_PER_PROCESS -r $MAX_STEPS \
   -f CosmoVolume/cosmoVolume.hdf5 -m 0.705 -w 6000 -z 300 \
-  -c 1. -d 1e-7 -e 1e-2 -o
+  -c 1. -d 1e-7 -e 1e-2 -o 1> ${DIRAC3_JOB_OUTFILE} 2> ${DIRAC3_JOB_ERRFILE}
 
 popd

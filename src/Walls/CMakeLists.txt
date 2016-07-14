@@ -13,7 +13,7 @@ ExternalProject_Add(walls-benchmark
 
 # Create run and submission scripts for Walls jobs
 set(WALLS_INPUT_FILE ${DIRAC3_TESTSUITE_INPUTS_PATH}/dados.txt)
-set(WALLS_MPI_LAYOUT "1 1 1")
+set(WALLS_MPI_LAYOUT "1.1.1")
 CREATE_DIRAC3_JOB(BENCHMARK_NAME "walls3d" BENCHMARK_TAG "single" JOB_NODES 1)
-set(WALLS_MPI_LAYOUT "2 2 2")
+set(WALLS_MPI_LAYOUT "2.2.2")
 CREATE_DIRAC3_JOB(BENCHMARK_NAME "walls3d" BENCHMARK_TAG "multi"  JOB_NODES 8)

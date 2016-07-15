@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
-MOM_ADV_FLOPS=$(sed -rn 's/^ FLOPS: Mom Adv[[:space:]]+:[[:space:]]+([[:digit:]]+).*\./\1/p' $1)
-MOM_ADV_BYTES=$(sed -rn 's/^ Momentum Adv Bytes[[:space:]]+:[[:space:]]+([[:digit:].eE+]+).*/\1/p' $1)
+CL3D_GRIDX=$(sed -rn 's/^CloverLeaf3D Grid_x: ([[:digit:]]+)/\1/p' $1)
+CL3D_GRIDY=$(sed -rn 's/^CloverLeaf3D Grid_y: ([[:digit:]]+)/\1/p' $1)
+CL3D_GRIDZ=$(sed -rn 's/^CloverLeaf3D Grid_z: ([[:digit:]]+)/\1/p' $1)
+CL3D_MPI=$(sed -rn 's/^[[:space:]]*Task Count[[:space:]]*([[:digit:]]+)/\1/p' $1)
+CL3D_OMP=$(sed -rn 's/^[[:space:]]*Thread Count:[[:space:]]*([[:digit:]]+)/\1/p' $1)
 MOM_ADV_TIME=$(sed -rn 's/^Momentum Advection[[:space:]]+:[[:space:]]+([[:digit:]]+\.[[:digit:]]+).*/\1/p' $1)
+MOM_ADV_GFLOPS=$(sed -rn 's/^GFLOP: Mom Adv[[:space:]]+:[[:space:]]+([[:digit:]]+\.[[:digit:]]+).*/\1/p' $1)
 
-# bc doesn't like exponential notation
-MOM_ADV_FLOPS=$(echo "$MOM_ADV_FLOPS" | sed -r 's/[eE]\+0*([[:digit:]]+)/*10^\1/g')
-MOM_ADV_BYTES=$(echo "$MOM_ADV_BYTES" | sed -r 's/[eE]\+0*([[:digit:]]+)/*10^\1/g')
+# column -t <(echo -e "CL3D_GRID CL3D_MPI CL3D_OMP MOM_ADV_TIME MOM_ADV_GFLOPS\n$CL3D_GRID $CL3D_MPI $CL3D_OMP $MOM_ADV_TIME $MOM_ADV_GFLOPS")
 
-FLOP_RATE=$(echo "$MOM_ADV_FLOPS / $MOM_ADV_TIME" | bc)
-BYTE_RATE=$(echo "$MOM_ADV_BYTES / $MOM_ADV_TIME" | bc)
+OUTPUT="CL3D_GRIDX CL3D_GRIDY CL3D_GRIDZ CL3D_MPI CL3D_OMP MOM_ADV_TIME MOM_ADV_GFLOPS"$'\n'
+for ((i = 0; i <= ${#CL3D_GRID[@]}; i++)); do
+  OUTPUT="$OUTPUT${CL3D_GRIDX[i]} ${CL3D_GRIDY[i]} ${CL3D_GRIDZ[i]} ${CL3D_MPI[i]} ${CL3D_OMP[i]} ${MOM_ADV_TIME[i]} ${MOM_ADV_GFLOPS[i]}"$'\n'
+done
 
-column -t <(echo -e "MomAdvFLOPs MomAdvBytes MomAdvTime FLOP/s Bytes/s\n$MOM_ADV_FLOPS $MOM_ADV_BYTES $MOM_ADV_TIME $FLOP_RATE $BYTE_RATE")
+column -t <<< "$OUTPUT" | awk 'BEGIN { OFS = "," }{ print $1,$2,$3,$4,$5,$6,$7 }'

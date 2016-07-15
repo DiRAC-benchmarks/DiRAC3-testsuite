@@ -5,6 +5,16 @@ ln -s ${CL3D_INPUT_FILE}
 export OMP_NUM_THREADS=${HOST_CPUS_PER_NODE}
 # export KMP_AFFINITY=verbose,scatter
 
-${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} $<TARGET_FILE:clover_leaf> 1> ${DIRAC3_JOB_OUTFILE} 2> ${DIRAC3_JOB_ERRFILE}
+X_CELLS=$(sed -rn 's/^ x_cells=([[:digit:]]+)$/\1/p' ${CL3D_INPUT_FILE})
+Y_CELLS=$(sed -rn 's/^ y_cells=([[:digit:]]+)$/\1/p' ${CL3D_INPUT_FILE})
+Z_CELLS=$(sed -rn 's/^ z_cells=([[:digit:]]+)$/\1/p' ${CL3D_INPUT_FILE})
+
+echo "CloverLeaf3D Grid_x: $X_CELLS" 1>  ${DIRAC3_JOB_OUTFILE}
+echo "CloverLeaf3D Grid_y: $Y_CELLS" 1>> ${DIRAC3_JOB_OUTFILE}
+echo "CloverLeaf3D Grid_z: $Z_CELLS" 1>> ${DIRAC3_JOB_OUTFILE}
+echo "CloverLeaf3D Grid_x: $X_CELLS" 2>  ${DIRAC3_JOB_ERRFILE}
+echo "CloverLeaf3D Grid_y: $Y_CELLS" 2>> ${DIRAC3_JOB_ERRFILE}
+echo "CloverLeaf3D Grid_z: $Z_CELLS" 2>> ${DIRAC3_JOB_ERRFILE}
+${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} $<TARGET_FILE:clover_leaf> 1>> ${DIRAC3_JOB_OUTFILE} 2>> ${DIRAC3_JOB_ERRFILE}
 
 popd

@@ -11,9 +11,9 @@ def main():
 
     # Regex for parsing data files
     re_dim_proc = r"--- Running Walls in (?P<dims>[0-9]*) dimensions on (?P<procs>[0-9]*) MPI processes[\S\s]*?"
-    re_grid     = r"--- Cartesian Grid \[[Gwxyz,]*\] = \[(?P<grid>[0-9,]*)\][\S\s]*?"
-    re_mpi      = r"--- MPI Layout     \[[Mwxyz,]*\] = \[(?P<mpi>[0-9,]*)\][\S\s]*?"
-    re_cache    = r"--- Cache Block    \[[Bwxyz,]*\] = \[(?P<cache>[0-9,]*)\][\S\s]*?"
+    re_grid     = r"--- Cartesian Grid \[[Gwxyz\.]*\] = \[(?P<grid>[0-9\.]*)\][\S\s]*?"
+    re_mpi      = r"--- MPI Layout     \[[Mwxyz\.]*\] = \[(?P<mpi>[0-9\.]*)\][\S\s]*?"
+    re_cache    = r"--- Cache Block    \[[Bwxyz\.]*\] = \[(?P<cache>[0-9\.]*)\][\S\s]*?"
     re_time     = r"Time of simulation = (?P<time>[0-9\.]*)[\S\s]*?"
     re_gflops   = r"GFLOP/s = (?P<gflops>[0-9\.]*)[\S\s]*?"
     regex       = re.compile( re_dim_proc + re_grid + re_mpi + re_cache + re_time + re_gflops )

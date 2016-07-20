@@ -9,25 +9,41 @@ def main():
     parser.add_argument('csv',   type=argparse.FileType('w'), help='The CSV file to write')
     args = parser.parse_args()
 
-    # Regex for parsing data files
-    header_pattern = r"^Grid.*?Benchmarking (?P<name>.*?) bandwidth.*\n(?:^.*\n)*?(?P<items>(?:^Grid.*?[0-9]+\s*[0-9.e+-]+\s*[0-9.]+\s*[0-9.]+\s*[0-9.]+\s*\n)+)"
-    metric_pattern = r"(?P<length>[0-9]+)\s*(?P<bytes>[0-9.e+-]+)\s*(?P<gbps>[0-9.]+)\s*(?P<gflops>[0-9.]+)\s*(?P<seconds>[0-9.]+)"
-    header_regex   = re.compile( header_pattern , re.M)
-    metric_regex   = re.compile( metric_pattern , re.M )
-
-    # Data fields
-    fields  = ['Benchmark','Length','Bytes','GB/s','GFlops/s','Seconds']
+    # Benchmarks
+    bench_dict = {'DWF' : 'DWF'
+                 ,'READ' : 'READ'
+                 ,'fused AXPY' : 'fused-AXPY'
+                 ,'a*x + y' : 'a*x+y'
+                 ,'SCALE' : 'SCALE'
+                 ,'SU3xSU3  x= x*y' : 'SU3xSU3-x=x*y'
+                 ,'SU3xSU3  z= x*y' : 'SU3xSU3-z=x*y'
+                 ,'SU3xSU3  mult' : 'SU3xSU3-mult'
+                 ,'SU3xSU3  mac' : 'SU3xSU3-mac'
+                 ,'ZMM' : 'ZMM'}
+    bench_name = None
 
     # CSV file writer
-    writer = csv.DictWriter(args.csv, fieldnames=fields)
-    writer.writeheader()
+    writer = csv.writer(args.csv)
 
     # Write from each data file to CSV
     for datafile in args.files:
-        for entry in header_regex.findall(datafile.read()):
-            for perf_data in metric_regex.findall(entry[1]):
-                data = [entry[0],] + list(perf_data)
-                writer.writerow({ field : value for field, value in zip(fields,data) })
+        for line in iter(datafile):
+            line = line[:-1]
+            if re.match(r'^Grid.*ms :\s*(= Benchmarking )?(ZMM|SU3|DWF|READ|fused|SCALE|a\*x|L|V|[0-9])',line):
+                line = re.sub(r'^Grid.*ms :\s*(= Benchmarking )?', '', line)
+                line = re.sub(r'\s*bandwidth', '', line)
+                line = re.sub(r'\s*\;.*', '', line)
+                line = re.sub(r'\(.*\)', '', line)
+                line = re.sub(r'GB/s per thread', 'GB/s-per-thread', line)
+                line = re.sub(r' - ', '-', line)
+                if line in bench_dict:
+                    bench_name = bench_dict[line]
+                else:
+                    data = line.split()
+                    if data[0][0] == 'L' or data[0][0] == 'V':
+                        writer.writerow(['Benchmark',] + data)
+                    else:
+                        writer.writerow([bench_name,] + data)
 
 if __name__ == "__main__":
 

@@ -2,14 +2,17 @@
 ExternalProject_Add(grid-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
   GIT_REPOSITORY git@github.com:paboyle/Grid
-  GIT_TAG master
+  GIT_TAG develop
   SOURCE_DIR ${CMAKE_BINARY_DIR}/grid-benchmark
   BUILD_IN_SOURCE 1
-	CONFIGURE_COMMAND ./scripts/reconfigure_script
-		&& sed -i "s/lib tests benchmarks/lib benchmarks/g" Makefile.am
+	CONFIGURE_COMMAND aclocal -I m4
+    && autoheader -f
+    && automake -f --add-missing
+    && autoconf -f
+		&& sed -i "s/prerequisites lib benchmarks tests/prerequisites lib benchmarks/g" Makefile.am
 		&& mkdir -p builds/dirac3testsuite
 		&& cd builds/dirac3testsuite
-		&& CXX=${CMAKE_CXX_COMPILER} ../../configure --enable-precision=single --enable-simd=AVX "CXXFLAGS=${OpenMP_CXX_FLAGS} -mavx -O3 -std=c++11" "LIBS=${OpenMP_CXX_FLAGS} -lgmp -lmpfr" --enable-comms=mpi --prefix=${CMAKE_SOURCE_DIR}
+		&& CXX=${CMAKE_CXX_COMPILER} CC=${CMAKE_C_COMPILER} ../../configure --enable-precision=single --enable-simd=AVX "CXXFLAGS=${GRID_CXXFLAGS}" "LIBS=${GRID_LIBS}" --enable-comms=mpi --prefix=${CMAKE_SOURCE_DIR}
   BUILD_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/builds/dirac3testsuite && make all
 	INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/grid-benchmark/builds/dirac3testsuite && make install)
 

@@ -32,10 +32,11 @@ ExternalProject_Add(qphix-benchmark
   DEPENDS qmp-library
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
   GIT_REPOSITORY git@github.com:DiRAC-benchmarks/qphix.git
-  GIT_TAG DiRAC3-benchmark
+  GIT_TAG dirac3-benchmark
   SOURCE_DIR ${CMAKE_BINARY_DIR}/qphix-benchmark
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND autoreconf &&
+    sed -i "s/check_PROGRAMS += test_blas//g" tests/Makefile.am &&
     CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} ./configure
     "CXXFLAGS=${QPHIX_CXX_FLAGS}" "CFLAGS=${QPHIX_C_FLAGS}"
     --enable-parallel-arch=parscalar --enable-soalen=8 --enable-proc=AVX --enable-openmp

@@ -1,20 +1,37 @@
 #!/usr/bin/env bash
 
-# Aggregate all "Timing on cb=... isign=...", take best of the lot
-TIMING_CB_ISIGN_GFLOPS=$(grep -A13 "Timing on cb" $1 | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')
-TIMING_CB_ISIGN_GFLOPS=$(echo "$TIMING_CB_ISIGN_GFLOPS" | sort -g | tail -n 1)
+OUTPUT="LocalLattice MPILayout DSlash1 DSlash2 CG BICGSTAB Unit"
 
-# Also for "Timing M: isign=..."
-TIMING_M_GFLOPS=$(grep -A16 "Timing M:" $1 | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')
-TIMING_M_GFLOPS=$(echo "$TIMING_M_GFLOPS" | sort -g | tail -n 1)
+RAW_DATA=$( tail -n +2 $1 )
 
-# And the two solvers
-CG_GFLOPS=$(sed -rn 's/^CG GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $1)
-CG_GFLOPS=$(echo "$CG_GFLOPS" | sort -g | tail -n 1)
+split -l 172 $RAW_DATA ExtractQPhiXTemp
+QPHIX_LIST=$( find . -name "ExtractQPhiXTemp*" )
+for nn in $QPHIX_LIST
+do
+  if [ $(cat $nn | wc -l) -gt 1 ]; then
+    LOCAL_LATTICE=$(grep "Local Lattice Size" $nn | sed -rn 's/Local Lattice Size = ([[:digit:][:space:]]+)/\1/p')
+    LOCAL_LATTICE=$(echo $LOCAL_LATTICE | sed -rn 's/[[:space:]]/x/gp')
+    QMP_TOPOLOGY=$(grep "Declared QMP Topology" $nn | sed -rn 's/Declared QMP Topology: ([[:digit:][:space:]]+)/\1/p')
+    QMP_TOPOLOGY=$(echo $QMP_TOPOLOGY | sed -rn 's/[[:space:]]/x/gp')
 
-BICGSTAB_GFLOPS=$(sed -rn 's/^BICGSTAB GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $1)
-BICGSTAB_GFLOPS=$(echo "$BICGSTAB_GFLOPS" | sort -g | tail -n 1)
+    # Aggregate all "Timing on cb=... isign=...", take best of the lot
+    TIMING_CB_ISIGN_GFLOPS=$(grep -A13 "Timing on cb" $nn | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')
+    TIMING_CB_ISIGN_GFLOPS=$(echo "$TIMING_CB_ISIGN_GFLOPS" | sort -g | tail -n 1)
 
-# CSV output
-OUTPUT="DSlash1 DSlash2 CG BICGSTAB Unit\n$TIMING_CB_ISIGN_GFLOPS $TIMING_M_GFLOPS $CG_GFLOPS $BICGSTAB_GFLOPS GFLOPS"
-column -t <(echo -e $OUTPUT) | awk 'BEGIN { OFS = "," }{ print $1,$2,$3,$4 }'
+    # Also for "Timing M: isign=..."
+    TIMING_M_GFLOPS=$(grep -A16 "Timing M:" $nn | sed -rn 's/.*[[:space:]]([[:digit:]]+\.[[:digit:]]+) GFLOPS total.*/\1/p')
+    TIMING_M_GFLOPS=$(echo "$TIMING_M_GFLOPS" | sort -g | tail -n 1)
+
+    # And the two solvers
+    CG_GFLOPS=$(sed -rn 's/^CG GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $nn)
+    CG_GFLOPS=$(echo "$CG_GFLOPS" | sort -g | tail -n 1)
+
+    BICGSTAB_GFLOPS=$(sed -rn 's/^BICGSTAB GFLOPS=([[:digit:]]+\.[[:digit:]]+)$/\1/p' $nn)
+    BICGSTAB_GFLOPS=$(echo "$BICGSTAB_GFLOPS" | sort -g | tail -n 1)
+
+    # CSV output
+    OUTPUT="$OUTPUT\n$LOCAL_LATTICE $QMP_TOPOLOGY $TIMING_CB_ISIGN_GFLOPS $TIMING_M_GFLOPS $CG_GFLOPS $BICGSTAB_GFLOPS GFLOPs"
+  fi
+done
+
+column -t <(echo -e $OUTPUT) | awk 'BEGIN { OFS = "," }{ print $1,$2,$3,$4,$5,$6,$7 }'

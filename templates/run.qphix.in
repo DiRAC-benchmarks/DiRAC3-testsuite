@@ -2,10 +2,29 @@
 pushd ${DIRAC3_TESTSUITE_RUN_PATH}
 
 export OMP_NUM_THREADS=${HOST_CPUS_PER_NODE}
+
 vol="-x 16 -y 16 -z 16 -t 16"
 block="-by 4 -bz 4"
 minct=1
 c=$OMP_NUM_THREADS
-${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f -geom ${QPHIX_MPI_LAYOUT} 1> ${DIRAC3_JOB_OUTFILE} 2> ${DIRAC3_JOB_ERRFILE}
 
+M1=$( echo ${QPHIX_MPI_LAYOUT} | cut -f1 -d ' ' )
+M2=$( echo ${QPHIX_MPI_LAYOUT} | cut -f2 -d ' ' )
+M3=$( echo ${QPHIX_MPI_LAYOUT} | cut -f3 -d ' ' )
+M4=$( echo ${QPHIX_MPI_LAYOUT} | cut -f4 -d ' ' )
+
+echo "QPhiX Benchmark" > ${DIRAC3_JOB_OUTFILE}
+echo "QPhiX Benchmark" > ${DIRAC3_JOB_ERRFILE}
+
+for dd in 16 32
+do
+  vol="-x $( expr $M1 * $dd    ) -y $( expr $M2 * $dd    ) -z $( expr $M3 * $dd    ) -t $( expr $M4 * $dd )"
+  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f -geom ${QPHIX_MPI_LAYOUT} -dslash -mmat -cg -bicgstab 1>> ${DIRAC3_JOB_OUTFILE} 2>> ${DIRAC3_JOB_ERRFILE}
+  vol="-x $( expr $M1 * $dd * 2) -y $( expr $M2 * $dd    ) -z $( expr $M3 * $dd    ) -t $( expr $M4 * $dd )"
+  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f -geom ${QPHIX_MPI_LAYOUT} -dslash -mmat -cg -bicgstab 1>> ${DIRAC3_JOB_OUTFILE} 2>> ${DIRAC3_JOB_ERRFILE}
+  vol="-x $( expr $M1 * $dd * 2) -y $( expr $M2 * $dd * 2) -z $( expr $M3 * $dd    ) -t $( expr $M4 * $dd )"
+  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f -geom ${QPHIX_MPI_LAYOUT} -dslash -mmat -cg -bicgstab 1>> ${DIRAC3_JOB_OUTFILE} 2>> ${DIRAC3_JOB_ERRFILE}
+  vol="-x $( expr $M1 * $dd * 2) -y $( expr $M2 * $dd * 2) -z $( expr $M3 * $dd * 2) -t $( expr $M4 * $dd )"
+  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/time_dslash_noqdp $vol $block -pxy 1 -pxyz 0 -c $c -sy 1 -sz 2 -minct $minct -compress12  -i 500 -prec f -geom ${QPHIX_MPI_LAYOUT} -dslash -mmat -cg -bicgstab 1>> ${DIRAC3_JOB_OUTFILE} 2>> ${DIRAC3_JOB_ERRFILE}
+done
 popd

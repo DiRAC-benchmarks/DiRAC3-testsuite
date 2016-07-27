@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+pushd ${DIRAC3_TESTSUITE_RUN_PATH}
+ln -s ${WALLS_INPUT_FILE}
+
+OMP_NUM_THREADS=${HOST_CPUS_PER_NODE}
+echo "Walls Benchmark" > ${DIRAC3_JOB_OUTFILE}
+echo "Walls Benchmark" > ${DIRAC3_JOB_ERRFILE}
+dd=128
+for bb in 1 2 4 8 16 32 64 128
+do
+  ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${DIRAC3_JOB_NODES} ${MPIEXEC_PREFLAGS} ${EXECUTABLE_OUTPUT_PATH}/walls_xeon_mpi_4d -g $dd.$dd.$dd.$dd -m ${WALLS_MPI_LAYOUT} -b $bb.$bb.$bb.$dd 1>> ${DIRAC3_JOB_OUTFILE} 2>> ${DIRAC3_JOB_ERRFILE}
+done
+
+popd

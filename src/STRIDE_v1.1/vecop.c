@@ -44,7 +44,7 @@ main(argc, argv)
   double dsecnd( double *), dummy;
   void v1s1m3(), v1s2m3(), v1s3m3(), v2s2m3(), v2s2m4(), v1s1i3();
 
-  printf("Starting Setup...\n");
+  // printf("Starting Setup...\n");
   for( j = 0; j<N1; j++ ) {
     t = 2. * PI * j / N;
     x[j] = sin(t);
@@ -52,7 +52,7 @@ main(argc, argv)
     z[j] = x[j];
     idx[j] = j*4 % N1;
   }
-  printf("Setup Complete...\n");
+  // printf("Setup Complete...\n");
   t1 = 1./t;
   t2 = 1./t;
   t3 = 1./t;

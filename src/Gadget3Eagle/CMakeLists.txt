@@ -12,5 +12,7 @@ ExternalProject_Add(gadget-benchmark
   INSTALL_COMMAND cd ${CMAKE_BINARY_DIR}/gadget-benchmark/build && make install)
 
 # Create run and submission scripts for Gadget
-set(GADGET3_EAGLE_BENCH_RUN_DEFS "${CMAKE_BINARY_DIR}/gadget-benchmark/scripts/L06z000p100.defs")
-CREATE_DIRAC3_JOB(BENCHMARK_NAME "gadget" BENCHMARK_TAG "single" JOB_NODES 1)
+set(GADGET3_EAGLE_BENCH_RUN_DEFS "${CMAKE_BINARY_DIR}/gadget-benchmark/scripts/L06z000p100.serial.defs")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "gadget" BENCHMARK_TAG "serial"   JOB_NODES 1)
+set(GADGET3_EAGLE_BENCH_RUN_DEFS "${CMAKE_BINARY_DIR}/gadget-benchmark/scripts/L06z000p100.parallel.defs")
+CREATE_DIRAC3_JOB(BENCHMARK_NAME "gadget" BENCHMARK_TAG "parallel" JOB_NODES 8)

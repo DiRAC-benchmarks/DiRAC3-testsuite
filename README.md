@@ -29,6 +29,8 @@
 * [Automake >= 1.11](http://www.gnu.org/software/automake/)
 * [HDF5](https://www.hdfgroup.org/downloads/index.html) (including h5cc and h5pcc for Swift)
 * [METIS 5.x](http://glaros.dtc.umn.edu/gkhome/metis/metis/download) (recommended, improves Swift load balance)
+* [FFTW >= 2.1.5](http://www.fftw.org/download.html) (configured for both single and double precision, see [here](http://www.hpcadvisorycouncil.com/pdf/GADGET-2_Best_Practices.pdf))
+* [GSL](https://www.gnu.org/software/gsl/)
 
 ## Other requirements
 

@@ -1,32 +1,5 @@
-#!/usr/bin/env python
-import argparse, csv, re
+#!/usr/bin/env bash
 
-def main():
-
-    # Parse command line arguments for list of data files and CSV output file
-    parser = argparse.ArgumentParser(description="Parse the output of the Gadget benchmark for performance metrics")
-    parser.add_argument('files', type=argparse.FileType('r'), help='The datafiles to parse', nargs='+')
-    parser.add_argument('csv',   type=argparse.FileType('w'), help='The CSV file to write')
-    args = parser.parse_args()
-
-    # Regex for parsing data files
-
-    regex = re.compile( "Time in (?P<kernel>.*?) = (?P<runtime>[0-9\.]*)" )
-
-    # Data fields
-    fields  = ['Kernel','Time/s']
-    nfields = len(fields)
-
-    # CSV file writer
-    writer = csv.DictWriter(args.csv, fieldnames=fields)
-    writer.writeheader()
-
-    # Write from each data file to CSV
-    for datafile in args.files:
-        data = regex.findall(datafile.read())
-        for entries in data:
-            writer.writerow({ field : entry for field, entry in zip(fields,entries) })
-
-if __name__ == "__main__":
-
-    main()
+GADGET_MPI=$(grep "Running on" $1 | sed -rn 's/Running on ([[:digit:]]+) MPI tasks\./\1/p')
+grep "kernel" $1 | awk 'BEGIN { OFS = "," }{ print "MPI_Procs",$1,$2,$3,$4,$5,$6,$7 }'
+grep "bench_" $1 | awk 'BEGIN { OFS = "," }{ print "'$GADGET_MPI'",$1,$2,$3,$4,$5,$6,$7 }'

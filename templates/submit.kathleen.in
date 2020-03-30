@@ -1,0 +1,12 @@
+#!/bin/bash -l
+
+#$ -N #{DIRAC3_JOB_NAME}
+#$ -l h_rt=00:10:00
+#$ -pe mpi 40
+
+# Load modules
+source ${DIRAC3_MODULE_FILE}
+
+# Run the benchmark
+source ${DIRAC3_RUN_SCRIPT}
+
